@@ -15,7 +15,7 @@ public class VendaEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String data;
-    private ClienteEntity idCliente;
-    private List<ItemVendaEntity> itemsVenda;
+   // private ClienteEntity idCliente;
+   // private List<ItemVendaEntity> itemsVenda;
     private double total;
 }

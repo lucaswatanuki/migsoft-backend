@@ -5,10 +5,12 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.Entity;
+import javax.persistence.PrimaryKeyJoinColumn;
 import java.util.Scanner;
 
 @Entity(name = "fornecedor")
 @Data
+@PrimaryKeyJoinColumn(name = "id")
 public class FornecedorEntity extends Pessoa {
     private String cnpj;
     private String nomeFantasia;

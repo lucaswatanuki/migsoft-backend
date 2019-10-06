@@ -23,11 +23,6 @@ public class ClienteServiceImp implements ClienteService{
     }
 
     @Override
-    public ClienteEntity findByName(String nome) {
-        return clienteRepository.findByName(nome);
-    }
-
-    @Override
     public List<ClienteEntity> findAll() {
         return clienteRepository.findAll();
     }

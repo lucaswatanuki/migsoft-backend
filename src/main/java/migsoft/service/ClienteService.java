@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ClienteService{
      ClienteEntity findById(int id);
-     ClienteEntity findByName(String nome);
+ //    ClienteEntity findByName(String nome);
      List<ClienteEntity> findAll();
      ClienteEntity save(ClienteEntity cliente);
      ClienteEntity update(ClienteEntity cliente);
