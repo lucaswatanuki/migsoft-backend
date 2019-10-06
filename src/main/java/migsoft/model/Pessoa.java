@@ -25,4 +25,7 @@ public abstract class Pessoa  {
         this.email = email;
         this.endereco = endereco;
     }
+
+    public Pessoa() {
+    }
 }
