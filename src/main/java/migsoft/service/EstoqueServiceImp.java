@@ -25,7 +25,7 @@ public class EstoqueServiceImp implements EstoqueService{
 
     @Override
     public EstoqueEntity findByProduto(ProdutoEntity produto) {
-        EstoqueEntity estoqueProd = new EstoqueEntity();
+    /*    EstoqueEntity estoqueProd = new EstoqueEntity();
         for (EstoqueEntity estoque : estoqueRepository.findAll()){
             if (estoque == null){
                 System.out.println("estoque vazio");
@@ -33,8 +33,8 @@ public class EstoqueServiceImp implements EstoqueService{
             else if(estoque.getIdProduto().equals(produto.getId())){
                 estoqueProd = estoque;
             }
-        }
-        return estoqueProd;
+        }*/
+        return null;
     }
 
     @Override

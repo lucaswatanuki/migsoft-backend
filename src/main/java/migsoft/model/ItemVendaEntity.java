@@ -14,5 +14,5 @@ public class ItemVendaEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int quantidade;
-    private ProdutoEntity idProduto;
+   // private ProdutoEntity idProduto;
 }
