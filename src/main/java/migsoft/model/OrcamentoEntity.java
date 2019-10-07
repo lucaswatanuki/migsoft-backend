@@ -13,6 +13,6 @@ public class OrcamentoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String desc;
-    private Double valor;
+    private String descricao;
+    private Double total;
 }
