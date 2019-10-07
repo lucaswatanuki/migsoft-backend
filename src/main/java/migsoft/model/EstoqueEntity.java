@@ -12,6 +12,7 @@ import javax.persistence.Id;
 public class EstoqueEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
     //private ProdutoEntity idProduto;
     private int quantidade;
 }
