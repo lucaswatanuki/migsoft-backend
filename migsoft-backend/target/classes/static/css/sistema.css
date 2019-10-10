@@ -1,0 +1,16 @@
+.alinhar-centro {
+
+	display: inline-flex;
+  	vertical-align: middle;
+  	align-items: center;
+}
+
+.erro-msg {
+	color: red;
+
+}
+
+.sucesso-msg {
+	color: blue;
+
+}
