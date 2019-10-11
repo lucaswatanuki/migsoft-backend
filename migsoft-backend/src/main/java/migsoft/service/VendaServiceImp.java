@@ -36,9 +36,4 @@ public class VendaServiceImp implements VendaService {
     public VendaEntity update(VendaEntity venda) {
         return null;
     }
-
-    @Override
-    public void deleteById(int id) {
-        vendaRepository.delete(vendaRepository.findById(id));
-    }
 }

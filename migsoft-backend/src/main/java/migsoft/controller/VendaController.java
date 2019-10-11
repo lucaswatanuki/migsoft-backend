@@ -51,11 +51,6 @@ public class VendaController {
 
     //Implementar PUT mapping para fazer o update!
 
-    @DeleteMapping(value = "/{id}")
-    public void deleteVendaById(@PathVariable int id) {
-        vendaService.deleteById(id);
-    }
-
     @DeleteMapping(value = "itemvenda/{id}")
     public void deleteItemById(@PathVariable int id) {
         itemVendaService.deleteById(id);

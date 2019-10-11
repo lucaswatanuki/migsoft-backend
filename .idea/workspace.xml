@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1d7ca1c0-6129-4729-89f6-8e762a4cdcca" name="Default Changelist" comment="Relationships OK + add PedidoEntity/Service/Controller">
+      <change afterPath="$PROJECT_DIR$/.idea/$PRODUCT_WORKSPACE_FILE$" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/migsoft.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/migsoft-backend/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/src/main/java/migsoft/ApplicationMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/migsoft-backend/src/main/java/migsoft/ApplicationMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/src/main/java/migsoft/controller/VendaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/migsoft-backend/src/main/java/migsoft/controller/VendaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/src/main/java/migsoft/model/ClienteEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/migsoft-backend/src/main/java/migsoft/model/ClienteEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/src/main/java/migsoft/model/CotacaoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/migsoft-backend/src/main/java/migsoft/model/CotacaoEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/src/main/java/migsoft/model/EstoqueEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/migsoft-backend/src/main/java/migsoft/model/EstoqueEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/src/main/java/migsoft/model/FornecedorEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/migsoft-backend/src/main/java/migsoft/model/FornecedorEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/src/main/java/migsoft/model/ItemVendaEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/migsoft-backend/src/main/java/migsoft/model/ItemVendaEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/src/main/java/migsoft/model/LocalizacaoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/migsoft-backend/src/main/java/migsoft/model/LocalizacaoEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/src/main/java/migsoft/model/OrcamentoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/migsoft-backend/src/main/java/migsoft/model/OrcamentoEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/src/main/java/migsoft/model/ProdutoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/migsoft-backend/src/main/java/migsoft/model/ProdutoEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/src/main/java/migsoft/model/UsuarioEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/migsoft-backend/src/main/java/migsoft/model/UsuarioEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/src/main/java/migsoft/model/VendaEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/migsoft-backend/src/main/java/migsoft/model/VendaEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/src/main/java/migsoft/repository/VendaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/migsoft-backend/src/main/java/migsoft/repository/VendaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/src/main/java/migsoft/service/VendaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/migsoft-backend/src/main/java/migsoft/service/VendaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/src/main/java/migsoft/service/VendaServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/migsoft-backend/src/main/java/migsoft/service/VendaServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/target/classes/META-INF/migsoft.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/target/classes/migsoft/ApplicationMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/migsoft-backend/target/classes/migsoft/ApplicationMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/target/classes/migsoft/model/ClienteEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/migsoft-backend/target/classes/migsoft/model/ClienteEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/target/classes/migsoft/model/CotacaoEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/migsoft-backend/target/classes/migsoft/model/CotacaoEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/target/classes/migsoft/model/EstoqueEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/migsoft-backend/target/classes/migsoft/model/EstoqueEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/target/classes/migsoft/model/FornecedorEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/migsoft-backend/target/classes/migsoft/model/FornecedorEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/target/classes/migsoft/model/ItemVendaEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/migsoft-backend/target/classes/migsoft/model/ItemVendaEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/target/classes/migsoft/model/LocalizacaoEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/migsoft-backend/target/classes/migsoft/model/LocalizacaoEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/target/classes/migsoft/model/OrcamentoEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/migsoft-backend/target/classes/migsoft/model/OrcamentoEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/target/classes/migsoft/model/ProdutoEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/migsoft-backend/target/classes/migsoft/model/ProdutoEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/target/classes/migsoft/model/UsuarioEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/migsoft-backend/target/classes/migsoft/model/UsuarioEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/target/classes/migsoft/model/VendaEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/migsoft-backend/target/classes/migsoft/model/VendaEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/target/classes/static/css/material.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/target/classes/static/css/sistema.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/target/classes/static/js/material.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/target/classes/static/mdl.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend/target/classes/templates/index.html" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1S3nW916ATgdESLM2kWs13R3DQ8" />
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1d7ca1c0-6129-4729-89f6-8e762a4cdcca" name="Default Changelist" comment="" />
+      <created>1570801175290</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1570801175290</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Relationships OK + add PedidoEntity/Service/Controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Relationships OK + add PedidoEntity/Service/Controller" />
+  </component>
+</project>

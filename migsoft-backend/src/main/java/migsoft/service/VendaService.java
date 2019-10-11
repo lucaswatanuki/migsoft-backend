@@ -9,5 +9,4 @@ public interface VendaService {
      List<VendaEntity> findAll();
      VendaEntity save(VendaEntity venda);
      VendaEntity update(VendaEntity venda);
-     void deleteById(int id);
 }
