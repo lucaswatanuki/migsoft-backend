@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d408ca64-1097-4231-abad-1f4eb47c169f" name="Default Changelist" comment="PostgreSQL connection + controllers structure">
-      <change afterPath="$PROJECT_DIR$/../.idea/$PRODUCT_WORKSPACE_FILE$" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/migsoft.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="d408ca64-1097-4231-abad-1f4eb47c169f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570475305061</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Relationships working">
+      <created>1570802320418</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1570802320418</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -181,10 +181,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
     <MESSAGE value="Add POM.xml + MVC structure files and packages" />
     <MESSAGE value="Update entities + Add Services, repositories and service methods implementations" />
     <MESSAGE value="Add h2 database driver + other fixes" />
     <MESSAGE value="PostgreSQL connection + controllers structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="PostgreSQL connection + controllers structure" />
+    <MESSAGE value="Relationships working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Relationships working" />
   </component>
 </project>
