@@ -1,13 +1,14 @@
 package migsoft.model;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.*;
 import java.util.Scanner;
+import java.util.Set;
 
+
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity(name = "fornecedor")
 @Data
 @PrimaryKeyJoinColumn(name = "id")
@@ -15,16 +16,9 @@ public class FornecedorEntity extends Pessoa {
     private String cnpj;
     private String nomeFantasia;
 
-    public FornecedorEntity(int id, String nome, String cpf, String telefone, String email, String endereco, String cnpj, String nomeFantasia) {
-        super(id, nome, cpf, telefone, email, endereco);
-        this.cnpj = cnpj;
-        this.nomeFantasia = nomeFantasia;
-    }
+    @OneToMany(mappedBy = "fornecedor", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<CotacaoEntity> cotacao;
 
-    public FornecedorEntity(int id, String nome, String cpf, String telefone, String email, String endereco) {
-        super(id, nome, cpf, telefone, email, endereco);
-    }
-
-    public FornecedorEntity() {
-    }
+    @OneToMany(mappedBy = "fornecedor", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<PedidoEntity> pedido;
 }
