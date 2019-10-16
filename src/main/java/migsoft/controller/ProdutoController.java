@@ -15,8 +15,8 @@ public class ProdutoController {
     ProdutoService produtoService;
 
     @PostMapping("")
-    public ProdutoEntity post(@RequestBody ProdutoEntity estoque) {
-        return produtoService.save(estoque);
+    public ProdutoEntity post(@RequestBody ProdutoEntity produtoEntity) {
+        return produtoService.save(produtoEntity);
     }
 
     @GetMapping("/all")

@@ -19,9 +19,6 @@ public class PedidoEntity {
     private String data;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private UsuarioEntity user;
-
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private ProdutoEntity produto;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
