@@ -2,56 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d408ca64-1097-4231-abad-1f4eb47c169f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_0_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_postgresql_postgresql_42_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_1_9_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_1_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_1_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_1_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/AuthRestAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/migsoft/model/LoginForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/migsoft/model/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/migsoft/model/RoleName.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/migsoft/model/SignUpForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/migsoft/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/migsoft/model/response/JwtResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/migsoft/model/response/ResponseMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/migsoft/repository/RoleRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/migsoft/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/migsoft/security/WebSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/migsoft/security/jwt/JwtAuthEntryPoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/migsoft/security/jwt/JwtAuthTokenFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/migsoft/security/jwt/JwtProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/migsoft/security/service/UserDetailsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/migsoft/security/service/UserPrinciple.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/ProdutoEntityTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/migsoft-backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/migsoft-backend.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/ApplicationMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/ApplicationMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/controller/LoginController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/controller/ProdutoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/ProdutoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/model/PedidoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/model/PedidoEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/model/UsuarioEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/repository/UsuarioRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/UsuarioService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/UsuarioServiceImp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/ApplicationMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/ApplicationMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/VendaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/VendaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/PedidoEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/model/PedidoEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/ProdutoEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/model/ProdutoEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/UsuarioEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/repository/UsuarioRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/repository/VendaRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/repository/VendaRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/UsuarioService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/UsuarioServiceImp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/VendaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/VendaService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/VendaServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/VendaServiceImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/ProdutoEntityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/ProdutoEntityTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/ProdutoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/ProdutoController.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -111,11 +66,11 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../IdeaProjects/SpringCRUD" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../spring-crud" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -134,19 +89,99 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="ApplicationMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="migsoft.ApplicationMain" />
+  <component name="RunManager" selected="JUnit.ProdutoEntityTest.testGetterProdutoPreco_Falha">
+    <configuration name="ProdutoEntityTest.testGetterProdutoId_Sucesso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="migsoft-backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.ProdutoEntityTest" />
+      <option name="METHOD_NAME" value="testGetterProdutoId_Sucesso" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProdutoEntityTest.testGetterProdutoNome_Falha" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="migsoft-backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.ProdutoEntityTest" />
+      <option name="METHOD_NAME" value="testGetterProdutoNome_Falha" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProdutoEntityTest.testGetterProdutoNome_Sucesso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="migsoft-backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.ProdutoEntityTest" />
+      <option name="METHOD_NAME" value="testGetterProdutoNome_Sucesso" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProdutoEntityTest.testGetterProdutoPreco_Falha" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="migsoft-backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.ProdutoEntityTest" />
+      <option name="METHOD_NAME" value="testGetterProdutoPreco_Falha" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProdutoEntityTest.testGetterProdutoPreco_Sucesso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="migsoft-backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="MAIN_CLASS_NAME" value="model.ProdutoEntityTest" />
+      <option name="METHOD_NAME" value="testGetterProdutoPreco_Sucesso" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ApplicationMain" />
+        <item itemvalue="JUnit.ProdutoEntityTest.testGetterProdutoPreco_Falha" />
+        <item itemvalue="JUnit.ProdutoEntityTest.testGetterProdutoPreco_Sucesso" />
+        <item itemvalue="JUnit.ProdutoEntityTest.testGetterProdutoNome_Falha" />
+        <item itemvalue="JUnit.ProdutoEntityTest.testGetterProdutoNome_Sucesso" />
+        <item itemvalue="JUnit.ProdutoEntityTest.testGetterProdutoId_Sucesso" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -212,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570802488720</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Relationships working + PedidoEntity/Service/Controller impl">
+      <created>1571271847065</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1571271847065</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
