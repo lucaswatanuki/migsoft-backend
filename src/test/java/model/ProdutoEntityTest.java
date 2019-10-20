@@ -10,7 +10,7 @@ public class ProdutoEntityTest {
     private ProdutoEntity produtoEntity;
 
     @Before
-    public void setUp() { produtoEntity = new ProdutoEntity();}
+    public void setUp() { produtoEntity = new ProdutoEntity(); }
 
     @Test
     public void testGetterProdutoId_Sucesso(){

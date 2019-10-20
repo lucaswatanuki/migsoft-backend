@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d408ca64-1097-4231-abad-1f4eb47c169f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/model/ClienteEntityTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migsoft-backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/migsoft-backend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/model/ProdutoEntityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/ProdutoEntityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/ProdutoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/ProdutoController.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -89,8 +87,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ProdutoEntityTest.testGetterProdutoPreco_Falha">
-    <configuration name="ProdutoEntityTest.testGetterProdutoId_Sucesso" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ClienteEntityTest">
+    <configuration name="ClienteEntityTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="migsoft-backend" />
       <extension name="coverage">
         <pattern>
@@ -99,9 +97,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.ProdutoEntityTest" />
-      <option name="METHOD_NAME" value="testGetterProdutoId_Sucesso" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="model.ClienteEntityTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -172,11 +169,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ClienteEntityTest" />
         <item itemvalue="JUnit.ProdutoEntityTest.testGetterProdutoPreco_Falha" />
         <item itemvalue="JUnit.ProdutoEntityTest.testGetterProdutoPreco_Sucesso" />
         <item itemvalue="JUnit.ProdutoEntityTest.testGetterProdutoNome_Falha" />
         <item itemvalue="JUnit.ProdutoEntityTest.testGetterProdutoNome_Sucesso" />
-        <item itemvalue="JUnit.ProdutoEntityTest.testGetterProdutoId_Sucesso" />
       </list>
     </recent_temporary>
   </component>
@@ -254,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571271847065</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="ProdutoEntityTest.java - First tests + pom.xml dependencies (JUnit)">
+      <created>1571594925653</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1571594925653</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -291,6 +295,7 @@
     <MESSAGE value="PostgreSQL connection + controllers structure" />
     <MESSAGE value="Relationships working" />
     <MESSAGE value="Relationships working + PedidoEntity/Service/Controller impl" />
-    <option name="LAST_COMMIT_MESSAGE" value="Relationships working + PedidoEntity/Service/Controller impl" />
+    <MESSAGE value="ProdutoEntityTest.java - First tests + pom.xml dependencies (JUnit)" />
+    <option name="LAST_COMMIT_MESSAGE" value="ProdutoEntityTest.java - First tests + pom.xml dependencies (JUnit)" />
   </component>
 </project>
