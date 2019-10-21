@@ -5,11 +5,15 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 public class ClienteEntityTest {
     private ClienteEntity clienteEntity;
 
     @Before
-    public void setUo(){ clienteEntity = new ClienteEntity(); }
+    public void setUp(){
+        clienteEntity = new ClienteEntity();
+    }
 
     @Test
     public void testGetterClienteId_Sucesso(){
