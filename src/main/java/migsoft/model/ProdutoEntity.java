@@ -33,4 +33,10 @@ public class ProdutoEntity {
 
     @OneToMany(mappedBy = "produto", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<PedidoEntity> pedido;
+
+    public ProdutoEntity(int id, String nome, double preco) {
+        this.id = id;
+        this.nome = nome;
+        this.preco = preco;
+    }
 }

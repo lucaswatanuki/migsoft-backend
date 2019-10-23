@@ -1,17 +1,32 @@
 package model;
 
+import migsoft.model.CotacaoEntity;
 import migsoft.model.FornecedorEntity;
+import migsoft.model.PedidoEntity;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 public class FornecedorEntityTest {
 
-    FornecedorEntity fornecedorEntity;
+    private FornecedorEntity fornecedorEntity;
+    private List<CotacaoEntity> cotacoesExpected;
+    private List<PedidoEntity> pedidosExpected;
 
     @Before
     public void setUp(){
         fornecedorEntity = new FornecedorEntity();
+
+        cotacoesExpected = new ArrayList<>();
+        cotacoesExpected.add(new CotacaoEntity(1,10.00,null,null,"01-10-2019"));
+
+        pedidosExpected = new ArrayList<>();
+        pedidosExpected.add(new PedidoEntity(1,"01-10-2019",null,null,10));
     }
 
     @Test
@@ -108,6 +123,58 @@ public class FornecedorEntityTest {
     public void testGetterNomeFantasia_Falha(){
         fornecedorEntity.setNomeFantasia("teste");
         Assert.assertFalse(fornecedorEntity.getNomeFantasia() == " ");
+    }
+
+    @Test
+    public void testGetterCotacaoFornecedor_Sucesso(){
+        List<CotacaoEntity> cotacaoTeste = new ArrayList<>();
+        cotacaoTeste.add(new CotacaoEntity(1,10.00,null,null, "01-10-2019"));
+        cotacaoTeste.forEach(cotacaoEntity -> {
+            int i = 0;
+            Assert.assertEquals(cotacaoTeste.get(i).getId(),    cotacoesExpected.get(i).getId());
+            Assert.assertEquals(cotacaoTeste.get(i).getPreco(), cotacoesExpected.get(i).getPreco(),0.0);
+            Assert.assertEquals(cotacaoTeste.get(i).getData(),  cotacoesExpected.get(i).getData());
+            i++;
+        });
+    }
+
+    @Test
+    public void testGetterCotacaoFornecedor_Falha(){
+        List<CotacaoEntity> cotacaoTeste = new ArrayList<>();
+        cotacaoTeste.add(new CotacaoEntity(2,15.00,null,null,"10-10-2019"));
+        cotacaoTeste.forEach(cotacaoEntity -> {
+            int i = 0;
+            Assert.assertNotEquals(cotacaoTeste.get(i).getId(),    cotacoesExpected.get(i).getId());
+            Assert.assertNotEquals(cotacaoTeste.get(i).getPreco(), cotacoesExpected.get(i).getPreco(),0.0);
+            Assert.assertNotEquals(cotacaoTeste.get(i).getData(),  cotacoesExpected.get(i).getData());
+            i++;
+        });
+    }
+
+    @Test
+    public void testGetterPedidoFornecedor_Sucesso(){
+        List<PedidoEntity> pedidoTeste = new ArrayList<>();
+        pedidoTeste.add(new PedidoEntity(1,"01-10-2019",null,null,10));
+        pedidoTeste.forEach(pedidoEntity -> {
+            int i = 0;
+            Assert.assertEquals(pedidoTeste.get(i).getId(), pedidosExpected.get(i).getId());
+            Assert.assertEquals(pedidoTeste.get(i).getData(), pedidosExpected.get(i).getData());
+            Assert.assertEquals(pedidoTeste.get(i).getTotal(), pedidosExpected.get(i).getTotal(),0.0);
+            i++;
+        });
+    }
+
+    @Test
+    public void testGetterPedidoFornecedor_Falha(){
+        List<PedidoEntity> pedidoTeste = new ArrayList<>();
+        pedidoTeste.add(new PedidoEntity(2,"10-10-2019",null,null,20));
+        pedidoTeste.forEach(pedidoEntity -> {
+            int i = 0;
+            Assert.assertNotEquals(pedidoTeste.get(i).getId(), pedidosExpected.get(i).getId());
+            Assert.assertNotEquals(pedidoTeste.get(i).getData(), pedidosExpected.get(i).getData());
+            Assert.assertNotEquals(pedidoTeste.get(i).getTotal(), pedidosExpected.get(i).getTotal(),0.0);
+            i++;
+        });
     }
 
 }

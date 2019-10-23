@@ -21,4 +21,9 @@ public class FornecedorEntity extends Pessoa {
 
     @OneToMany(mappedBy = "fornecedor", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<PedidoEntity> pedido;
+
+    public FornecedorEntity(String cnpj, String nomeFantasia) {
+        this.cnpj = cnpj;
+        this.nomeFantasia = nomeFantasia;
+    }
 }

@@ -89,13 +89,13 @@ public class ClienteEntityTest {
 
     @Test
     public void testGetterTipo_Sucesso(){
-        clienteEntity.setTipo("test type");
-        Assert.assertTrue(clienteEntity.getTipo() == "test type");
+        clienteEntity.setTipo("admin");
+        Assert.assertTrue(clienteEntity.getTipo() == "admin");
     }
 
     @Test
     public void testGetterTipo_Falha(){
-        clienteEntity.setTipo("test type");
-        Assert.assertFalse(clienteEntity.getTipo() == "no type");
+        clienteEntity.setTipo("admin");
+        Assert.assertFalse(clienteEntity.getTipo() == "user");
     }
 }

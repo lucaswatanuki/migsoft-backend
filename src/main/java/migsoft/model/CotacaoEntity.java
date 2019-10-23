@@ -25,4 +25,5 @@ public class CotacaoEntity {
     private FornecedorEntity fornecedor;
 
     private String data;
+
 }
