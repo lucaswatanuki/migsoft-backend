@@ -17,8 +17,16 @@ public class EstoqueEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    private String rua;
+
+    private int numero;
+
+    private String cidade;
+
+    private String estado;
+
+    private String cep;
+
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<ProdutoEntity> produto;
-
-    private int quantidade;
 }

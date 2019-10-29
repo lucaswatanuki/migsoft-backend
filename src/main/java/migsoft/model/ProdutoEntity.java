@@ -10,17 +10,18 @@ import java.util.Set;
 
 
 @NoArgsConstructor
-@AllArgsConstructor
 @Entity(name = "produto")
 @Data
 public class ProdutoEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int id;
 
     private String nome;
 
     private double preco;
+
+    private int quantidade;
 
     @OneToMany(mappedBy = "produto", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<ItemVendaEntity> listItemVenda;
@@ -33,4 +34,9 @@ public class ProdutoEntity {
 
     @OneToMany(mappedBy = "produto", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<PedidoEntity> pedido;
+
+    public ProdutoEntity(int id, String nome) {
+        this.id = id;
+        this.nome = nome;
+    }
 }
