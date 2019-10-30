@@ -34,7 +34,7 @@ public class CotacaoServiceImp implements CotacaoService {
 
     @Override
     public CotacaoEntity update(CotacaoEntity cotacao) {
-        return null;
+        return cotacaoRepository.save(cotacao);
     }
 
     @Override

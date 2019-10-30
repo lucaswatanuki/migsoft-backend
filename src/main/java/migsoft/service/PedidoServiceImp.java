@@ -33,8 +33,8 @@ public class PedidoServiceImp implements PedidoService{
     }
 
     @Override
-    public PedidoEntity update(PedidoEntity produto) {
-        return null;
+    public PedidoEntity update(PedidoEntity pedido) {
+        return pedidoRepository.save(pedido);
     }
 
     @Override

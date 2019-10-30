@@ -48,7 +48,7 @@ public class ProdutoServiceImp implements ProdutoService{
 
     @Override
     public ProdutoEntity update(ProdutoEntity produto) {
-        return null;
+        return produtoRepository.save(produto);
     }
 
     @Override

@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Set;
 
 
 @NoArgsConstructor
@@ -23,6 +24,9 @@ public class CotacaoEntity {
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private FornecedorEntity fornecedor;
+
+    @OneToMany(mappedBy = "idCotacao")
+    private Set<PedidoEntity> pedido;
 
     private String data;
 }

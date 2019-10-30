@@ -62,7 +62,7 @@ public class FornecedorServiceImp implements FornecedorService {
 
     @Override
     public FornecedorEntity update(FornecedorEntity fornecedor) {
-        return null;
+        return fornecedorRepository.save(fornecedor);
     }
 
     @Override

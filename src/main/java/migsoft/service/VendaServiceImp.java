@@ -34,6 +34,6 @@ public class VendaServiceImp implements VendaService {
 
     @Override
     public VendaEntity update(VendaEntity venda) {
-        return null;
+        return vendaRepository.save(venda);
     }
 }

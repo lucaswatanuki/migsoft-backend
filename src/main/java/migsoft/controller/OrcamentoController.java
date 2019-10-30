@@ -3,34 +3,53 @@ package migsoft.controller;
 import migsoft.model.OrcamentoEntity;
 import migsoft.service.OrcamentoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/orcamento")
 public class OrcamentoController {
 
+    private final OrcamentoService orcamentoService;
+
     @Autowired
-    OrcamentoService orcamentoService;
+    public OrcamentoController(OrcamentoService orcamentoService) {
+        this.orcamentoService = orcamentoService;
+    }
 
     @PostMapping("")
-    public OrcamentoEntity post(@RequestBody OrcamentoEntity orcamentoEntity) {
-        return orcamentoService.save(orcamentoEntity);
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+    public ResponseEntity<OrcamentoEntity> post(@RequestBody OrcamentoEntity orcamentoEntity) {
+        return ResponseEntity.ok(orcamentoService.save(orcamentoEntity));
     }
 
     @GetMapping("/all")
-    public List<OrcamentoEntity> getAll() {
-        return orcamentoService.findAll();
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+    public ResponseEntity<List<OrcamentoEntity>> getAll() {
+        return ResponseEntity.ok(orcamentoService.findAll());
     }
 
     @GetMapping("/{id}")
-    public OrcamentoEntity getOrcamentoById(@PathVariable int id) {
-        return orcamentoService.findById(id);
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+    public ResponseEntity<OrcamentoEntity> getOrcamentoById(@PathVariable("id") int id) {
+        return ResponseEntity.ok(orcamentoService.findById(id));
+    }
+
+    @PutMapping("/{id}")
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+    public ResponseEntity<OrcamentoEntity> update(@PathVariable("id") int id, @RequestBody OrcamentoEntity orcamento) {
+        orcamento.setId(id);
+        return ResponseEntity.ok(orcamentoService.update(orcamento));
     }
 
     @DeleteMapping("/{id}")
-    public void deleteOrcamentoById(@PathVariable int id) {
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+    public ResponseEntity<Object> deleteOrcamentoById(@PathVariable int id) {
         orcamentoService.deleteById(id);
+        return ResponseEntity.ok("Orçamento excluido");
     }
 }

@@ -41,12 +41,13 @@ public class ProdutoController {
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public ResponseEntity<ProdutoEntity> updateProduto(@PathVariable("id") int id, @RequestBody ProdutoEntity produto){
         produto.setId(id);
-        return ResponseEntity.ok(produtoService.save(produto));
+        return ResponseEntity.ok(produtoService.update(produto));
     }
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public void deleteProdutoById(@PathVariable int id) {
+    public ResponseEntity<Object> deleteProdutoById(@PathVariable int id) {
         produtoService.deleteById(id);
+        return ResponseEntity.ok("Produto excluído");
     }
 }

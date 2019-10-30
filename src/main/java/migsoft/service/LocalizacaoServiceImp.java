@@ -34,7 +34,7 @@ public class LocalizacaoServiceImp implements LocalizacaoService{
 
     @Override
     public LocalizacaoEntity update(LocalizacaoEntity local) {
-        return null;
+        return localizacaoRepository.save(local);
     }
 
     @Override

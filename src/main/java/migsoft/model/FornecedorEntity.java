@@ -15,6 +15,7 @@ import java.util.Set;
 public class FornecedorEntity extends Pessoa {
     private String cnpj;
     private String nomeFantasia;
+    private boolean atividade;
 
     @OneToMany(mappedBy = "fornecedor", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<CotacaoEntity> cotacao;

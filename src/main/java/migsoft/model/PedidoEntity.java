@@ -24,5 +24,10 @@ public class PedidoEntity {
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private FornecedorEntity fornecedor;
 
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private CotacaoEntity idCotacao;
+
+    private Integer quantidade;
+
     private double total;
 }

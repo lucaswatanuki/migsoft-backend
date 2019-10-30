@@ -34,7 +34,7 @@ public class OrcamentoServiceImp implements OrcamentoService {
 
     @Override
     public OrcamentoEntity update(OrcamentoEntity orcamento) {
-        return null;
+        return orcamentoRepository.save(orcamento);
     }
 
     @Override

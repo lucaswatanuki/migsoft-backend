@@ -49,7 +49,7 @@ public class EstoqueServiceImp implements EstoqueService{
 
     @Override
     public EstoqueEntity update(EstoqueEntity estoque) {
-        return null;
+        return estoqueRepository.save(estoque);
     }
 
     @Override
