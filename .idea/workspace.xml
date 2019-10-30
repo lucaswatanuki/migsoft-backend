@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d408ca64-1097-4231-abad-1f4eb47c169f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/ItemVendaEntityTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/LocalizacaoEntityTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/LoginFormTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/OrcamentoEntityTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/PedidoEntityTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/model/VendaEntityTest.java" afterDir="false" />
+    <list default="true" id="d408ca64-1097-4231-abad-1f4eb47c169f" name="Default Changelist" comment="Add ClienteControllerTest">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_assertj_assertj_core_3_11_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_all_1_10_19.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/controller/ClientesControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/model/CotacaoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/model/CotacaoEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/model/FornecedorEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/model/FornecedorEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/model/ProdutoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/model/ProdutoEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/ClienteEntityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/ClienteEntityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/CotacaoEntityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/CotacaoEntityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/EstoqueEntityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/EstoqueEntityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/FornecedorEntityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/FornecedorEntityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/ProdutoEntityTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/ProdutoEntityTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/FornecedorEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/model/FornecedorEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/ProdutoEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/model/ProdutoEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migsoft-backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/migsoft-backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/model/ClienteEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/model/ClienteEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/ClienteEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/model/ClienteEntity.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -101,64 +95,64 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.VendaEntityTest">
-    <configuration name="OrcamentoEntityTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ClientesControllerTest.testDeleteClienteSuccess">
+    <configuration name="ApplicationMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="migsoft.ApplicationMain" />
       <module name="migsoft-backend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="model.*" />
+          <option name="PATTERN" value="migsoft.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.OrcamentoEntityTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrcamentoEntityTest.testGetterDescricaoOrcamento_Falha" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ClientesControllerTest.testAddClienteSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="migsoft-backend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="model.*" />
+          <option name="PATTERN" value="controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.OrcamentoEntityTest" />
-      <option name="METHOD_NAME" value="testGetterDescricaoOrcamento_Falha" />
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.ClientesControllerTest" />
+      <option name="METHOD_NAME" value="testAddClienteSuccess" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PedidoEntityTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ClientesControllerTest.testDeleteClienteSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="migsoft-backend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="model.*" />
+          <option name="PATTERN" value="controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.PedidoEntityTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.ClientesControllerTest" />
+      <option name="METHOD_NAME" value="testDeleteClienteSuccess" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProdutoEntityTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ClientesControllerTest.testUpdateClienteSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="migsoft-backend" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="model.*" />
+          <option name="PATTERN" value="controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="model" />
-      <option name="MAIN_CLASS_NAME" value="model.ProdutoEntityTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.ClientesControllerTest" />
+      <option name="METHOD_NAME" value="testUpdateClienteSuccess" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -180,11 +174,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ClientesControllerTest.testDeleteClienteSuccess" />
+        <item itemvalue="JUnit.ClientesControllerTest.testUpdateClienteSuccess" />
+        <item itemvalue="Application.ApplicationMain" />
+        <item itemvalue="JUnit.ClientesControllerTest.testAddClienteSuccess" />
         <item itemvalue="JUnit.VendaEntityTest" />
-        <item itemvalue="JUnit.ProdutoEntityTest" />
-        <item itemvalue="JUnit.PedidoEntityTest" />
-        <item itemvalue="JUnit.OrcamentoEntityTest" />
-        <item itemvalue="JUnit.OrcamentoEntityTest.testGetterDescricaoOrcamento_Falha" />
       </list>
     </recent_temporary>
   </component>
@@ -283,7 +277,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571683730553</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Finished all entity tests.&#10;- Add some constructors in entities to simplify unit test classes.">
+      <created>1571868411274</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1571868411274</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -323,6 +324,8 @@
     <MESSAGE value="ProdutoEntityTest.java - First tests + pom.xml dependencies (JUnit)" />
     <MESSAGE value="First tests + pom.xml dependencies (JUnit)&#10;- ProdutoEntityTest.java&#10;- ClienteEntityTest.java" />
     <MESSAGE value="More tests + pom.xml dependencies (JUnit)&#10;- CotacaoEntityTest.java&#10;- EstoqueEntityTest.java&#10;- FornecedorEntityTest.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="More tests + pom.xml dependencies (JUnit)&#10;- CotacaoEntityTest.java&#10;- EstoqueEntityTest.java&#10;- FornecedorEntityTest.java" />
+    <MESSAGE value="Finished all entity tests.&#10;- Add some constructors in entities to simplify unit test classes." />
+    <MESSAGE value="Add ClienteControllerTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add ClienteControllerTest" />
   </component>
 </project>
