@@ -1,11 +1,9 @@
 package migsoft.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.Set;
 
 
@@ -21,10 +19,10 @@ public class ProdutoEntity {
 
     private double preco;
 
-    private int quantidade;
+    private int qtdEstoque;
 
     @OneToMany(mappedBy = "produto", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Set<ItemVendaEntity> listItemVenda;
+    private Set<ItemProduto> listItemVenda;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private EstoqueEntity estoque;

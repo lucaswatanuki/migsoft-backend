@@ -1,13 +1,13 @@
 package migsoft.service;
 
-import migsoft.model.ItemVendaEntity;
+import migsoft.model.ItemProduto;
 
 import java.util.List;
 
 public interface ItemVendaService {
-     ItemVendaEntity findById(int id);
-     List<ItemVendaEntity> findAll();
-     ItemVendaEntity save(ItemVendaEntity item);
-     ItemVendaEntity update(ItemVendaEntity item);
+     ItemProduto findById(int id);
+     List<ItemProduto> findAll();
+     ItemProduto save(ItemProduto item);
+     ItemProduto update(ItemProduto item);
      void deleteById(int id);
 }

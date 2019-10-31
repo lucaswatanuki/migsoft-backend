@@ -46,8 +46,7 @@ public class ProdutoController {
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<Object> deleteProdutoById(@PathVariable int id) {
+    public void deleteProdutoById(@PathVariable("id") int id) {
         produtoService.deleteById(id);
-        return ResponseEntity.ok("Produto excluído");
     }
 }

@@ -1,6 +1,6 @@
 package migsoft.controller;
 
-import migsoft.model.ItemVendaEntity;
+import migsoft.model.ItemProduto;
 import migsoft.model.VendaEntity;
 import migsoft.service.ItemVendaService;
 import migsoft.service.VendaService;
@@ -33,7 +33,7 @@ public class VendaController {
 
     @PostMapping(value = "/itemvenda")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<ItemVendaEntity> postItemVenda(@RequestBody ItemVendaEntity item) {
+    public ResponseEntity<ItemProduto> postItemVenda(@RequestBody ItemProduto item) {
         return ResponseEntity.ok(itemVendaService.save(item));
     }
 
@@ -51,13 +51,13 @@ public class VendaController {
 
     @GetMapping(value = "/itemvenda")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<List<ItemVendaEntity>> getAllItems() {
+    public ResponseEntity<List<ItemProduto>> getAllItems() {
         return ResponseEntity.ok(itemVendaService.findAll());
     }
 
     @GetMapping(value = "/itemvenda/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<ItemVendaEntity> update(@PathVariable("id") int id, @RequestBody ItemVendaEntity item) {
+    public ResponseEntity<ItemProduto> update(@PathVariable("id") int id, @RequestBody ItemProduto item) {
         item.setId(id);
         return ResponseEntity.ok(itemVendaService.update(item));
     }

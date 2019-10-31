@@ -1,6 +1,6 @@
 package migsoft.service;
 
-import migsoft.model.ItemVendaEntity;
+import migsoft.model.ItemProduto;
 import migsoft.repository.ItemVendaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,22 +18,22 @@ public class ItemVendaServiceImp implements ItemVendaService {
     }
 
     @Override
-    public ItemVendaEntity findById(int id) {
+    public ItemProduto findById(int id) {
         return itemVendaRepository.findById(id);
     }
 
     @Override
-    public List<ItemVendaEntity> findAll() {
+    public List<ItemProduto> findAll() {
         return itemVendaRepository.findAll();
     }
 
     @Override
-    public ItemVendaEntity save(ItemVendaEntity item) {
+    public ItemProduto save(ItemProduto item) {
         return itemVendaRepository.save(item);
     }
 
     @Override
-    public ItemVendaEntity update(ItemVendaEntity item) {
+    public ItemProduto update(ItemProduto item) {
         return itemVendaRepository.save(item);
     }
 

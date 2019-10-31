@@ -23,7 +23,7 @@ public class VendaEntity {
     private ClienteEntity cliente;
 
     @OneToMany(mappedBy = "venda", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<ItemVendaEntity> itemvenda;
+    private List<ItemProduto> itemvenda;
 
     private double total;
 }
