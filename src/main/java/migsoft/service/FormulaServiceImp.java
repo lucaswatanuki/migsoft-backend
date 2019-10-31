@@ -23,11 +23,6 @@ public class FormulaServiceImp implements FormulaService {
     }
 
     @Override
-    public FormulaProdutoEntity findByIdMaterial(int idMaterial) {
-        return formulaRepository.findByIdMaterial(idMaterial);
-    }
-
-    @Override
     public List<FormulaProdutoEntity> findAll() {
         return formulaRepository.findAll();
     }

@@ -9,7 +9,6 @@ import java.util.List;
 @Repository
 public interface FormulaRepository extends JpaRepository<FormulaProdutoEntity, Integer> {
     FormulaProdutoEntity findById(int id);
-    FormulaProdutoEntity findByIdMaterial(int id);
     List<FormulaProdutoEntity> findAll();
     void delete(FormulaProdutoEntity formula);
 }
