@@ -14,6 +14,5 @@ import javax.persistence.PrimaryKeyJoinColumn;
 @Data
 @PrimaryKeyJoinColumn(name = "id")
 public class ClienteEntity extends Pessoa {
-
     private String tipo;
 }

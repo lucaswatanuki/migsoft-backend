@@ -15,9 +15,9 @@ import java.util.Set;
 public class CotacaoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
-    private double preco;
+    private Double preco;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private ProdutoEntity produto;

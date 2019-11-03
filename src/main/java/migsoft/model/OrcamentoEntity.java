@@ -17,7 +17,7 @@ import javax.persistence.Id;
 public class OrcamentoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String descricao;
     private Double total;
 }

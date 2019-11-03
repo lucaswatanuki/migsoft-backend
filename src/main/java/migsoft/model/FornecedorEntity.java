@@ -1,5 +1,6 @@
 package migsoft.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 import javax.persistence.*;
@@ -11,15 +12,20 @@ import java.util.Set;
 @AllArgsConstructor
 @Entity(name = "fornecedor")
 @Data
-@PrimaryKeyJoinColumn(name = "id")
-public class FornecedorEntity extends Pessoa {
+public class FornecedorEntity{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
     private String cnpj;
+
     private String nomeFantasia;
+
     private boolean atividade;
 
-    @OneToMany(mappedBy = "fornecedor", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "fornecedor", fetch = FetchType.LAZY)
     private Set<CotacaoEntity> cotacao;
 
-    @OneToMany(mappedBy = "fornecedor", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "fornecedor", fetch = FetchType.LAZY)
     private Set<PedidoEntity> pedido;
 }

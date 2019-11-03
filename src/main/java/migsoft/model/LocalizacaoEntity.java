@@ -17,6 +17,6 @@ import javax.persistence.Id;
 public class LocalizacaoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String endereco;
 }

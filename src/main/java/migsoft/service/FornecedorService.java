@@ -1,15 +1,16 @@
 package migsoft.service;
 
 import migsoft.model.FornecedorEntity;
+import migsoft.model.response.FornecedorResponse;
 
 import java.util.List;
 
 public interface FornecedorService {
-     FornecedorEntity findById(int id);
+     FornecedorResponse findById(Integer id);
      FornecedorEntity findByNomeFantasia(String nomeFantasia);
      FornecedorEntity findByCnpj(String cnpj);
-     List<FornecedorEntity> findAll();
-     FornecedorEntity save(FornecedorEntity fornecedor);
-     FornecedorEntity update(FornecedorEntity fornecedor);
-     void deleteById(int id);
+     List<FornecedorResponse> findAll();
+     FornecedorResponse save(FornecedorEntity fornecedor);
+     FornecedorResponse update(FornecedorEntity fornecedor);
+     void deleteById(Integer id);
 }

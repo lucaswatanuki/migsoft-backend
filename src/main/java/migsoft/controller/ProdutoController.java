@@ -1,6 +1,7 @@
 package migsoft.controller;
 
 import migsoft.model.ProdutoEntity;
+import migsoft.model.response.ProdutoResponse;
 import migsoft.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,32 +22,32 @@ public class ProdutoController {
 
     @PostMapping("")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<ProdutoEntity> post(@RequestBody ProdutoEntity produtoEntity) {
-        return ResponseEntity.ok(produtoService.save(produtoEntity));
+    public ProdutoResponse post(@RequestBody ProdutoEntity produtoEntity) {
+        return produtoService.save(produtoEntity);
     }
 
     @GetMapping("/all")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<List<ProdutoEntity>>  getAll() {
-        return ResponseEntity.ok(produtoService.findAll());
+    public List<ProdutoResponse>  getAll() {
+        return produtoService.findAll();
     }
 
     @GetMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<ProdutoEntity> getProdutoById(@PathVariable("id") int id) {
-        return ResponseEntity.ok(produtoService.findById(id));
+    public ProdutoResponse getProdutoById(@PathVariable("id") Integer id) {
+        return produtoService.findById(id);
     }
 
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<ProdutoEntity> updateProduto(@PathVariable("id") int id, @RequestBody ProdutoEntity produto){
+    public ProdutoResponse updateProduto(@PathVariable("id") Integer id, @RequestBody ProdutoEntity produto){
         produto.setId(id);
-        return ResponseEntity.ok(produtoService.update(produto));
+        return produtoService.update(produto);
     }
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public void deleteProdutoById(@PathVariable("id") int id) {
+    public void deleteProdutoById(@PathVariable("id") Integer id) {
         produtoService.deleteById(id);
     }
 }

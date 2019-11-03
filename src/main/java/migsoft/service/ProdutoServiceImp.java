@@ -1,10 +1,13 @@
 package migsoft.service;
 
 import migsoft.model.ProdutoEntity;
+import migsoft.model.response.PedidoResponse;
+import migsoft.model.response.ProdutoResponse;
 import migsoft.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -18,8 +21,8 @@ public class ProdutoServiceImp implements ProdutoService{
     }
 
     @Override
-    public ProdutoEntity findById(int id) {
-        return produtoRepository.findById(id);
+    public ProdutoResponse findById(Integer id) {
+        return entitytoResponseConverter(produtoRepository.findById(id).orElse(null));
     }
 
     @Override
@@ -37,22 +40,39 @@ public class ProdutoServiceImp implements ProdutoService{
     }
 
     @Override
-    public List<ProdutoEntity> findAll() {
-        return produtoRepository.findAll();
+    public List<ProdutoResponse> findAll() {
+        ArrayList<ProdutoResponse> produtoResponses = new ArrayList<>();
+        for (ProdutoEntity produtoEntity: produtoRepository.findAll()){
+            ProdutoResponse produtoResponse = new ProdutoResponse();
+            produtoResponse = entitytoResponseConverter(produtoEntity);
+            produtoResponses.add(produtoResponse);
+        }
+        return produtoResponses;
     }
 
     @Override
-    public ProdutoEntity save(ProdutoEntity produto) {
-        return produtoRepository.save(produto);
+    public ProdutoResponse save(ProdutoEntity produto) {
+        ProdutoResponse produtoResponse = entitytoResponseConverter(produtoRepository.save(produto));
+        return produtoResponse;
     }
 
     @Override
-    public ProdutoEntity update(ProdutoEntity produto) {
-        return produtoRepository.save(produto);
+    public ProdutoResponse update(ProdutoEntity produto) {
+        ProdutoResponse produtoResponse = entitytoResponseConverter(produtoRepository.save(produto));
+        return produtoResponse;
     }
 
     @Override
-    public void deleteById(int id) {
-        produtoRepository.delete(produtoRepository.findById(id));
+    public void deleteById(Integer id) {
+        produtoRepository.deleteById(id);
+    }
+
+    public ProdutoResponse entitytoResponseConverter(ProdutoEntity produtoEntity){
+        ProdutoResponse produtoResponse = new ProdutoResponse();
+        produtoResponse.setId(produtoEntity.getId());
+        produtoResponse.setNome(produtoEntity.getNome());
+        produtoResponse.setPreco(produtoEntity.getPreco());
+        produtoResponse.setQtdEstoque(produtoEntity.getQtdEstoque());
+        return produtoResponse;
     }
 }

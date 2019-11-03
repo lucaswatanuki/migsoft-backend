@@ -1,6 +1,7 @@
 package migsoft.controller;
 
 import migsoft.model.ClienteEntity;
+import migsoft.model.response.ClienteResponse;
 import migsoft.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,33 +25,32 @@ public class ClienteController {
 
     @RequestMapping(method = RequestMethod.POST)
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<ClienteEntity> post(@RequestBody ClienteEntity cliente) {
-        return ResponseEntity.ok(clienteService.save(cliente));
+    public ClienteResponse post(@RequestBody ClienteEntity cliente) {
+        return clienteService.save(cliente);
     }
 
     @GetMapping(value = "/all")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<List<ClienteEntity>> getAll() {
-        return ResponseEntity.ok(clienteService.findAll());
+    public List<ClienteResponse> getAll() {
+        return clienteService.findAll();
     }
 
     @GetMapping(value = "/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<ClienteEntity> getClienteById(@PathVariable("id") int id) {
-        return ResponseEntity.ok(clienteService.findById(id));
+    public ClienteResponse getClienteById(@PathVariable("id") Integer id) {
+        return clienteService.findById(id);
     }
 
     @PutMapping(value = "/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<ClienteEntity> update(@PathVariable("id") int id, @RequestBody ClienteEntity cliente){
+    public ClienteResponse update(@PathVariable("id") Integer id, @RequestBody ClienteEntity cliente){
         cliente.setId(id);
-        return ResponseEntity.ok(clienteService.update(cliente));
+        return clienteService.update(cliente);
     }
 
     @DeleteMapping(value = "/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<Object> deleteClienteById(@PathVariable int id) {
+    public void deleteClienteById(@PathVariable int id) {
         clienteService.deleteById(id);
-        return ResponseEntity.ok("Cliente deletado com sucesso");
     }
 }

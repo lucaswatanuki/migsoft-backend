@@ -7,8 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ItemVendaRepository extends JpaRepository<ItemProduto, Integer> {
-    ItemProduto findById(int id);
-    List<ItemProduto> findAll();
-    void delete(ItemProduto item);
+public interface ItemProdutoRepository extends JpaRepository<ItemProduto, Integer> {
+
 }

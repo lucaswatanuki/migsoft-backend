@@ -14,7 +14,7 @@ public class FormulaProdutoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private ProdutoEntity idProduto;
@@ -23,6 +23,6 @@ public class FormulaProdutoEntity {
 
     private String descricao;
 
-    private int quantidade;
+    private Integer quantidade;
 
 }

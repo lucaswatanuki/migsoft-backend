@@ -14,16 +14,19 @@ import javax.persistence.*;
 public class ItemProduto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
-    private int quantidade;
+    private Integer quantidade;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "produto")
     private ProdutoEntity produto;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "venda")
     private VendaEntity venda;
-
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private PedidoEntity pedido;
+/*
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "pedido")
+    private PedidoEntity pedido; */
 }

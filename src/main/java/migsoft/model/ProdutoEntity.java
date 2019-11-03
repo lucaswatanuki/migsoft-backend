@@ -12,32 +12,24 @@ import java.util.Set;
 @Data
 public class ProdutoEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     private String nome;
 
-    private double preco;
+    private Double preco;
 
-    private int qtdEstoque;
+    private Integer qtdEstoque;
 
-    @OneToMany(mappedBy = "produto", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "produto", fetch = FetchType.LAZY)
     private Set<ItemProduto> listItemVenda;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private EstoqueEntity estoque;
-
-    @OneToMany(mappedBy = "produto", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "produto", fetch = FetchType.LAZY)
     private Set<CotacaoEntity> listCotacao;
 
-    @OneToMany(mappedBy = "produto", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "produto", fetch = FetchType.LAZY)
     private Set<PedidoEntity> pedido;
 
-    @ManyToMany(mappedBy = "idProduto", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "idProduto", fetch = FetchType.LAZY)
     private Set<FormulaProdutoEntity> idFormula;
-
-    public ProdutoEntity(int id, String nome) {
-        this.id = id;
-        this.nome = nome;
-    }
 }

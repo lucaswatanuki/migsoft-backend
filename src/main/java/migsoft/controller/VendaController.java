@@ -2,7 +2,9 @@ package migsoft.controller;
 
 import migsoft.model.ItemProduto;
 import migsoft.model.VendaEntity;
-import migsoft.service.ItemVendaService;
+import migsoft.model.response.ItemProdutoResponse;
+import migsoft.model.response.VendaResponse;
+import migsoft.service.ItemProdutoService;
 import migsoft.service.VendaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,55 +19,54 @@ import java.util.List;
 public class VendaController {
 
     private final VendaService vendaService;
-    private final ItemVendaService itemVendaService;
+    private final ItemProdutoService itemProdutoService;
 
     @Autowired
-    public VendaController(VendaService vendaService, ItemVendaService itemVendaService) {
+    public VendaController(VendaService vendaService, ItemProdutoService itemProdutoService) {
         this.vendaService = vendaService;
-        this.itemVendaService = itemVendaService;
+        this.itemProdutoService = itemProdutoService;
     }
 
     @PostMapping(value = "")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<VendaEntity> postVenda(@RequestBody VendaEntity venda) {
-        return ResponseEntity.ok(vendaService.save(venda));
+    public VendaResponse postVenda(@RequestBody VendaEntity venda) {
+        return vendaService.save(venda);
     }
 
-    @PostMapping(value = "/itemvenda")
+    @PostMapping(value = "/itemproduto")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<ItemProduto> postItemVenda(@RequestBody ItemProduto item) {
-        return ResponseEntity.ok(itemVendaService.save(item));
+    public ItemProdutoResponse postItemVenda(@RequestBody ItemProduto item) {
+        return itemProdutoService.save(item);
     }
 
     @GetMapping(value = "/all")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<List<VendaEntity>> getAllVendas() {
-        return ResponseEntity.ok(vendaService.findAll());
+    public List<VendaResponse> getAllVendas() {
+        return vendaService.findAll();
     }
 
     @GetMapping(value = "/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public VendaEntity getVendaById(@PathVariable int id) {
+    public VendaResponse getVendaById(@PathVariable Integer id) {
         return vendaService.findById(id);
     }
 
     @GetMapping(value = "/itemvenda")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<List<ItemProduto>> getAllItems() {
-        return ResponseEntity.ok(itemVendaService.findAll());
+    public List<ItemProdutoResponse> getAllItems() {
+        return itemProdutoService.findAll();
     }
 
     @GetMapping(value = "/itemvenda/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<ItemProduto> update(@PathVariable("id") int id, @RequestBody ItemProduto item) {
+    public ItemProdutoResponse update(@PathVariable("id") Integer id, @RequestBody ItemProduto item) {
         item.setId(id);
-        return ResponseEntity.ok(itemVendaService.update(item));
+        return itemProdutoService.update(item);
     }
 
     @DeleteMapping(value = "/itemvenda/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<Object> deleteItemById(@PathVariable int id) {
-        itemVendaService.deleteById(id);
-        return ResponseEntity.ok("Item excluido");
+    public void deleteItemById(@PathVariable Integer id) {
+        itemProdutoService.deleteById(id);
     }
 }

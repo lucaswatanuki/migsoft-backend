@@ -1,10 +1,12 @@
 package migsoft.service;
 
 import migsoft.model.ClienteEntity;
+import migsoft.model.response.ClienteResponse;
 import migsoft.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -18,28 +20,45 @@ public class ClienteServiceImp implements ClienteService{
     }
 
     @Override
-    public ClienteEntity findById(int id) {
-        return clienteRepository.findById(id);
+    public ClienteResponse findById(Integer id) {
+        return entitytoResponseConverter(clienteRepository.findById(id).orElse(null));
     }
 
     @Override
-    public List<ClienteEntity> findAll() {
-        return clienteRepository.findAll();
+    public List<ClienteResponse> findAll() {
+        List<ClienteResponse> clienteResponses = new ArrayList<>();
+        for (ClienteEntity clienteEntity : clienteRepository.findAll()){
+            ClienteResponse clienteResponse = new ClienteResponse();
+            clienteResponse = entitytoResponseConverter(clienteEntity);
+            clienteResponses.add(clienteResponse);
+        }
+        return clienteResponses;
     }
 
     @Override
-    public ClienteEntity save(ClienteEntity cliente) {
-        return clienteRepository.save(cliente);
+    public ClienteResponse save(ClienteEntity cliente) {
+        ClienteResponse clienteResponse = entitytoResponseConverter(clienteRepository.save(cliente));
+        return clienteResponse;
     }
 
     @Override
-    public ClienteEntity update(ClienteEntity cliente) {
-        return clienteRepository.save(cliente);
-        //Implementar o response
+    public ClienteResponse update(ClienteEntity cliente) {
+        ClienteResponse clienteResponse = entitytoResponseConverter(clienteRepository.save(cliente));
+        return clienteResponse;
     }
 
     @Override
-    public void deleteById(int id) {
-        clienteRepository.delete(clienteRepository.findById(id));
+    public void deleteById(Integer id) {
+        clienteRepository.deleteById(id);
+    }
+
+    public ClienteResponse entitytoResponseConverter(ClienteEntity clienteEntity){
+        ClienteResponse clienteResponse = new ClienteResponse();
+        clienteResponse.setId(clienteEntity.getId());
+        clienteResponse.setTipo(clienteEntity.getTipo());
+        clienteResponse.setCpf(clienteEntity.getCpf());
+        clienteResponse.setNome(clienteEntity.getNome());
+        clienteResponse.setEmail(clienteEntity.getEmail());
+        return clienteResponse;
     }
 }

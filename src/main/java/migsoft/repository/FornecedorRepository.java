@@ -8,7 +8,4 @@ import java.util.List;
 
 @Repository
 public interface FornecedorRepository extends JpaRepository<FornecedorEntity, Integer> {
-    FornecedorEntity findById(int id);
-    List<FornecedorEntity> findAll();
-    void delete(FornecedorEntity fornecedor);
 }

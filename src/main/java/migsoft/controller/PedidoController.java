@@ -1,7 +1,11 @@
 package migsoft.controller;
 
+import migsoft.model.ItemProduto;
 import migsoft.model.PedidoEntity;
 import migsoft.model.ProdutoEntity;
+import migsoft.model.response.ItemProdutoResponse;
+import migsoft.model.response.PedidoResponse;
+import migsoft.service.ItemProdutoService;
 import migsoft.service.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +16,7 @@ import java.util.List;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/pedido")
 public class PedidoController {
 
     private PedidoService pedidoService;
@@ -24,33 +28,32 @@ public class PedidoController {
 
     @PostMapping("")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<PedidoEntity> post(@RequestBody PedidoEntity pedido) {
-        return ResponseEntity.ok(pedidoService.save(pedido));
+    public PedidoResponse post(@RequestBody PedidoEntity pedido) {
+        return pedidoService.save(pedido);
     }
 
     @GetMapping("/all")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public List<PedidoEntity> getAll() {
+    public List<PedidoResponse> getAll() {
         return pedidoService.findAll();
     }
 
     @GetMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<PedidoEntity> getPedidoById(@PathVariable("id") int id) {
-        return ResponseEntity.ok(pedidoService.findById(id));
+    public PedidoResponse getPedidoById(@PathVariable("id") Integer id) {
+        return pedidoService.findById(id);
     }
 
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<PedidoEntity> save(@PathVariable("id") int id, @RequestBody PedidoEntity pedido) {
+    public PedidoResponse save(@PathVariable("id") Integer id, @RequestBody PedidoEntity pedido) {
         pedido.setId(id);
-        return ResponseEntity.ok(pedidoService.update(pedido));
+        return pedidoService.update(pedido);
     }
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<Object> deletePedidoById(@PathVariable int id) {
+    public void deletePedidoById(@PathVariable Integer id) {
         pedidoService.deleteById(id);
-        return ResponseEntity.ok("Pedido excluido");
     }
 }

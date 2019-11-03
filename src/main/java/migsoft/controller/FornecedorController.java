@@ -1,6 +1,7 @@
 package migsoft.controller;
 
 import migsoft.model.FornecedorEntity;
+import migsoft.model.response.FornecedorResponse;
 import migsoft.service.FornecedorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -23,27 +24,27 @@ public class FornecedorController {
 
     @PostMapping("")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<FornecedorEntity> post(@RequestBody FornecedorEntity fornecedor) {
-        return ResponseEntity.ok(fornecedorService.save(fornecedor));
+    public FornecedorResponse post(@RequestBody FornecedorEntity fornecedor) {
+        return fornecedorService.save(fornecedor);
     }
 
     @GetMapping("/all")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<List<FornecedorEntity>> getAll() {
-        return ResponseEntity.ok(fornecedorService.findAll());
+    public List<FornecedorResponse> getAll() {
+        return fornecedorService.findAll();
     }
 
     @GetMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<FornecedorEntity> getFornecedorById(@PathVariable("id") int id) {
-        return ResponseEntity.ok(fornecedorService.findById(id));
+    public FornecedorResponse getFornecedorById(@PathVariable("id") Integer id) {
+        return fornecedorService.findById(id);
     }
 
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<FornecedorEntity> update(@PathVariable("id") int id, @RequestBody FornecedorEntity fornecedor) {
+    public FornecedorResponse update(@PathVariable("id") Integer id, @RequestBody FornecedorEntity fornecedor) {
         fornecedor.setId(id);
-        return ResponseEntity.ok(fornecedorService.update(fornecedor));
+        return fornecedorService.update(fornecedor);
     }
 
     @DeleteMapping("/{id}")

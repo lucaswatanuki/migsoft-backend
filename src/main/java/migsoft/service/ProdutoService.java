@@ -1,14 +1,15 @@
 package migsoft.service;
 
 import migsoft.model.ProdutoEntity;
+import migsoft.model.response.ProdutoResponse;
 
 import java.util.List;
 
 public interface ProdutoService {
-     ProdutoEntity findById(int id);
+     ProdutoResponse findById(Integer id);
      ProdutoEntity findByName(String nome);
-     List<ProdutoEntity> findAll();
-     ProdutoEntity save(ProdutoEntity produto);
-     ProdutoEntity update(ProdutoEntity produto);
-     void deleteById(int id);
+     List<ProdutoResponse> findAll();
+     ProdutoResponse save(ProdutoEntity produto);
+     ProdutoResponse update(ProdutoEntity produto);
+     void deleteById(Integer id);
 }

@@ -15,11 +15,11 @@ import java.util.List;
 public class EstoqueEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Integer id;
 
     private String rua;
 
-    private int numero;
+    private Integer numero;
 
     private String cidade;
 

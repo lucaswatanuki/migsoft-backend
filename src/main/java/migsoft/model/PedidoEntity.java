@@ -19,17 +19,19 @@ public class PedidoEntity {
 
     private String data;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "produto")
     private ProdutoEntity produto;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "fornecedor")
     private FornecedorEntity fornecedor;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "idCotacao")
     private CotacaoEntity idCotacao;
 
-    @OneToMany(mappedBy = "pedido", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private Set<ItemProduto> itemProdutos;
+      private double total;
 
-    private double total;
+      private Integer quantidade;
 }

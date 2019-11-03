@@ -8,7 +8,5 @@ import java.util.List;
 
 @Repository
 public interface PedidoRepository extends JpaRepository<PedidoEntity, Integer> {
-    PedidoEntity findById(int id);
-    List<PedidoEntity> findAll();
-    void delete(PedidoEntity pedido);
+
 }

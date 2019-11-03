@@ -28,13 +28,5 @@ public class ProdutoServiceTest {
         produtoService = new ProdutoServiceImp(produtoRepository);
     }
 
-    @Test
-    public void findByIdSucesso(){
-        ProdutoEntity produto = new ProdutoEntity(1, "mouse");
-        when(produtoRepository.findById(anyInt())).thenReturn(produto);
-        ProdutoEntity produtoTeste = produtoService.findById(produto.getId());
-        Assertions.assertThat(produto).isEqualToComparingFieldByField(produtoTeste);
-    }
-
 
 }

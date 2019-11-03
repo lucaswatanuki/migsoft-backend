@@ -15,7 +15,7 @@ import java.util.List;
 public class VendaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     private String data;
 
@@ -25,5 +25,5 @@ public class VendaEntity {
     @OneToMany(mappedBy = "venda", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<ItemProduto> itemvenda;
 
-    private double total;
+    private Double total;
 }

@@ -8,7 +8,5 @@ import java.util.List;
 
 @Repository
 public interface ClienteRepository extends JpaRepository<ClienteEntity, Integer> {
-    ClienteEntity findById(int id);
-    List<ClienteEntity> findAll();
-    void delete(ClienteEntity clienteEntity);
+
 }
