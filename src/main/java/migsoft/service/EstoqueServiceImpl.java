@@ -38,12 +38,21 @@ public class EstoqueServiceImpl implements EstoqueService {
             System.out.println("produto nao existe");
         }
         Integer qtdEstoque = produto.getQtdEstoque() + quantidade;
+        if (qtdEstoque > 0){
+            //implementar exception
+            System.out.println("estoque insuficiente");
+        }
         produto.setQtdEstoque(qtdEstoque);
     }
 
     @Override
     @Transactional(propagation = Propagation.REQUIRES_NEW)
-    public void addPedidoEstoque(Integer toProdutoId, Integer quantidade) {
-        updateProdutoEstoque(toProdutoId, quantidade);
+    public void addPedidoEstoque(Integer produtoId, Integer quantidade) {
+        updateProdutoEstoque(produtoId, quantidade);
+    }
+
+    @Override
+    public void subVendaEstoque(Integer produtoId, Integer quantidade) {
+        updateProdutoEstoque(produtoId, -quantidade);
     }
 }

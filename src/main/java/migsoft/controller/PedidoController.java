@@ -32,8 +32,9 @@ public class PedidoController {
     @PostMapping("")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public PedidoResponse post(@RequestBody PedidoEntity pedido) {
+        PedidoResponse response = pedidoService.save(pedido);
         estoqueService.addPedidoEstoque(pedido.getProduto().getId(), pedido.getQuantidade());
-        return pedidoService.save(pedido);
+        return response;
     }
 
     @GetMapping("/all")

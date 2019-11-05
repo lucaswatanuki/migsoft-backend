@@ -9,5 +9,6 @@ import migsoft.model.response.ProdutoResponse;
 public interface EstoqueService {
     ProdutoEntity findProdutoById(Integer id);
     void updateProdutoEstoque(Integer id, Integer qtdPedido);
-    void addPedidoEstoque(Integer toProdutoId, Integer quantidade);
+    void addPedidoEstoque(Integer produtoId, Integer quantidade);
+    void subVendaEstoque(Integer produtoId, Integer quantidade);
 }

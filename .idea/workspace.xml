@@ -2,20 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6cec366-161e-41bb-ad9b-c1fbe9e6c91f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/EstoqueService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/EstoqueServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/controller/PedidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/PedidoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/controller/ProdutoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/ProdutoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/repository/ProdutoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/repository/ProdutoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/PedidoServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/PedidoServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/ProdutoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/ProdutoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/ProdutoServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/ProdutoServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/ProdutoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/ProdutoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/repository/ProdutoRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/repository/ProdutoRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/PedidoServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/PedidoServiceImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/ProdutoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/ProdutoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/ProdutoServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/ProdutoServiceImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/EstoqueService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/EstoqueService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/EstoqueServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/EstoqueServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/PedidoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/PedidoController.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -96,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572801703470</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Qtd estoque update with @Transaction">
+      <created>1572974071637</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1572974071638</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -116,6 +114,7 @@
     <MESSAGE value="Bug fix - IdMaterial" />
     <MESSAGE value="ItemProduto refactor" />
     <MESSAGE value="CODE REFACTOR + ADD RESPONSE CLASSES AND SERVICE RULES" />
-    <option name="LAST_COMMIT_MESSAGE" value="CODE REFACTOR + ADD RESPONSE CLASSES AND SERVICE RULES" />
+    <MESSAGE value="Qtd estoque update with @Transaction" />
+    <option name="LAST_COMMIT_MESSAGE" value="Qtd estoque update with @Transaction" />
   </component>
 </project>
