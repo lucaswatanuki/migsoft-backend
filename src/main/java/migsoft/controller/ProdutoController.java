@@ -38,6 +38,12 @@ public class ProdutoController {
         return produtoService.findById(id);
     }
 
+    @GetMapping("/nome/{nome}")
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+    public ProdutoResponse getProdutoByName(@PathVariable("nome") String nome) {
+        return produtoService.findByNome(nome);
+    }
+
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public ProdutoResponse updateProduto(@PathVariable("id") Integer id, @RequestBody ProdutoEntity produto){

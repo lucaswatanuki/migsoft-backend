@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ProdutoService {
      ProdutoResponse findById(Integer id);
-     ProdutoEntity findByName(String nome);
+     ProdutoResponse findByNome(String nome);
      List<ProdutoResponse> findAll();
      ProdutoResponse save(ProdutoEntity produto);
      ProdutoResponse update(ProdutoEntity produto);

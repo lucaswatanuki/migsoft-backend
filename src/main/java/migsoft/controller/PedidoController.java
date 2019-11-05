@@ -5,6 +5,7 @@ import migsoft.model.PedidoEntity;
 import migsoft.model.ProdutoEntity;
 import migsoft.model.response.ItemProdutoResponse;
 import migsoft.model.response.PedidoResponse;
+import migsoft.service.EstoqueService;
 import migsoft.service.ItemProdutoService;
 import migsoft.service.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,15 +21,18 @@ import java.util.List;
 public class PedidoController {
 
     private PedidoService pedidoService;
+    private EstoqueService estoqueService;
 
     @Autowired
-    public PedidoController(PedidoService pedidoService) {
+    public PedidoController(PedidoService pedidoService, EstoqueService estoqueService) {
         this.pedidoService = pedidoService;
+        this.estoqueService = estoqueService;
     }
 
     @PostMapping("")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public PedidoResponse post(@RequestBody PedidoEntity pedido) {
+        estoqueService.addPedidoEstoque(pedido.getProduto().getId(), pedido.getQuantidade());
         return pedidoService.save(pedido);
     }
 

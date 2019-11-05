@@ -4,9 +4,12 @@ import migsoft.model.ItemProduto;
 import migsoft.model.PedidoEntity;
 import migsoft.model.response.ItemProdutoResponse;
 import migsoft.model.response.PedidoResponse;
+import migsoft.model.response.ProdutoResponse;
 import migsoft.repository.PedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -44,6 +47,12 @@ public class PedidoServiceImp implements PedidoService{
         return pedidoResponse;
     }
 
+    @Transactional(propagation = Propagation.MANDATORY)
+    public void atualizarEstoque(Integer id, Integer qtdPedido) {
+        PedidoResponse pedidoResponse = this.findById(id);
+        pedidoResponse.getQuantidade();
+    }
+
     @Override
     public PedidoResponse update(PedidoEntity pedido) {
         PedidoResponse pedidoResponse = entitytoResponseConverter(pedidoRepository.save(pedido));
@@ -62,19 +71,15 @@ public class PedidoServiceImp implements PedidoService{
         pedidoResponse.setFornecedor(pedidoEntity.getFornecedor().getNomeFantasia());
         pedidoResponse.setProduto(pedidoEntity.getProduto().getNome());
         pedidoResponse.setQuantidade(pedidoEntity.getQuantidade());
-
-/*
-        ArrayList<ItemProdutoResponse> itemProdutoList = new ArrayList<>();
-        for (ItemProduto itemProduto : pedidoEntity.getItemProdutos()){
-            ItemProdutoResponse itemProdutoResponse = new ItemProdutoResponse();
-            itemProdutoResponse.setId(itemProduto.getId());
-            itemProdutoResponse.setProduto(itemProduto.getProduto().getNome());
-            itemProdutoResponse.setQuantidade(itemProduto.getQuantidade());
-            itemProdutoList.add(itemProdutoResponse);
-        }
-
-        pedidoResponse.setItemProduto(itemProdutoList);*/
-
         return pedidoResponse;
+    }
+
+
+    public PedidoEntity entitytoResponseConverter(PedidoResponse pedidoResponse){
+        PedidoEntity pedidoEntity = new PedidoEntity();
+        pedidoEntity.setId(pedidoResponse.getId());
+        pedidoEntity.setData(pedidoResponse.getData());
+        pedidoEntity.setQuantidade(pedidoResponse.getQuantidade());
+        return pedidoEntity;
     }
 }

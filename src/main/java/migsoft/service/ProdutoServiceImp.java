@@ -26,17 +26,8 @@ public class ProdutoServiceImp implements ProdutoService{
     }
 
     @Override
-    public ProdutoEntity findByName(String nome) {
-        ProdutoEntity filtered = new ProdutoEntity();
-        for (ProdutoEntity produto: produtoRepository.findAll()){
-            if (produto == null){
-                System.out.println("produto nao cadastrado");
-            }
-            else if(produto.getNome().equals(nome)){
-                filtered = produto;
-            }
-        }
-        return filtered;
+    public ProdutoResponse findByNome(String nome) {
+        return entitytoResponseConverter(produtoRepository.findByNome(nome));
     }
 
     @Override

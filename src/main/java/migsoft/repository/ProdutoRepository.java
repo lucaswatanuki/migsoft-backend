@@ -8,4 +8,5 @@ import java.util.List;
 
 @Repository
 public interface ProdutoRepository extends JpaRepository<ProdutoEntity, Integer> {
+    ProdutoEntity findByNome(String nome);
 }
