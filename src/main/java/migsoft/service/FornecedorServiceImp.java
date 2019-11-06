@@ -25,34 +25,6 @@ public class FornecedorServiceImp implements FornecedorService {
     }
 
     @Override
-    public FornecedorEntity findByNomeFantasia(String nomeFantasia) {
-        FornecedorEntity filtered = new FornecedorEntity();
-        for (FornecedorEntity fornecedor: fornecedorRepository.findAll()){
-            if (fornecedor == null){
-                System.out.println("Fornecedor nao cadastrado");
-            }
-            else if (fornecedor.getNomeFantasia().equals(nomeFantasia)){
-                filtered = fornecedor;
-            }
-        }
-        return filtered;
-    }
-
-    @Override
-    public FornecedorEntity findByCnpj(String cnpj) {
-        FornecedorEntity filtered = new FornecedorEntity();
-        for (FornecedorEntity fornecedor: fornecedorRepository.findAll()){
-            if (fornecedor == null){
-                System.out.println("Fornecedor nao cadastrado");
-            }
-            else if (fornecedor.getCnpj().equals(cnpj)){
-                filtered = fornecedor;
-            }
-        }
-        return filtered;
-    }
-
-    @Override
     public List<FornecedorResponse> findAll() {
         ArrayList<FornecedorResponse> fornecedorResponses = new ArrayList<>();
         for (FornecedorEntity fornecedorEntity : fornecedorRepository.findAll()){

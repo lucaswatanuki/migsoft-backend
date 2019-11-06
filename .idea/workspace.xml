@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="d6cec366-161e-41bb-ad9b-c1fbe9e6c91f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/model/FornecedorEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/model/FornecedorEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/FornecedorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/FornecedorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/FornecedorServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/FornecedorServiceImp.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
