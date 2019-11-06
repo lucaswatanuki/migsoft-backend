@@ -2,6 +2,7 @@ package migsoft.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.Scanner;
@@ -14,7 +15,8 @@ import java.util.Set;
 @Data
 public class FornecedorEntity{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name = "increment", strategy = "increment")
     private Integer id;
 
     private String cnpj;
