@@ -39,12 +39,14 @@ public class VendaServiceImp implements VendaService {
 
     @Override
     public VendaResponse save(VendaEntity venda) {
+        venda.setTotal(venda.getQuantidade() * venda.getProduto().getPreco());
         VendaResponse vendaResponse = entitytoResponseConverter(vendaRepository.save(venda));
         return vendaResponse;
     }
 
     @Override
     public VendaResponse update(VendaEntity venda) {
+        venda.setTotal(venda.getQuantidade() * venda.getProduto().getPreco());
         VendaResponse vendaResponse = entitytoResponseConverter(vendaRepository.save(venda));
         return vendaResponse;
     }
@@ -52,18 +54,11 @@ public class VendaServiceImp implements VendaService {
     public VendaResponse entitytoResponseConverter(VendaEntity vendaEntity) {
         VendaResponse vendaResponse = new VendaResponse();
         vendaResponse.setId(vendaEntity.getId());
-        vendaResponse.setCliente(vendaEntity.getCliente().getId());
-
-        ArrayList<ItemProdutoResponse> itemProdutoList = new ArrayList<>();
-        for (ItemProduto itemProduto : vendaEntity.getItemvenda()) {
-            ItemProdutoResponse itemProdutoResponse = new ItemProdutoResponse();
-            itemProdutoResponse.setId(itemProduto.getId());
-            itemProdutoResponse.setQuantidade(itemProduto.getQuantidade());
-            itemProdutoResponse.setProduto(itemProduto.getProduto().getNome());
-            itemProdutoList.add(itemProdutoResponse);
-        }
-        vendaResponse.setItemProdutos(itemProdutoList);
+        vendaResponse.setCliente(vendaEntity.getCliente().getNome());
+        vendaResponse.setQuantidade(vendaEntity.getQuantidade());
         vendaResponse.setTotal(vendaEntity.getTotal());
+        vendaResponse.setProduto(vendaEntity.getProduto().getNome());
+        vendaResponse.setData(vendaEntity.getData());
         return vendaResponse;
     }
 }

@@ -8,6 +8,4 @@ import java.util.List;
 
 @Repository
 public interface VendaRepository extends JpaRepository<VendaEntity, Integer> {
-    VendaEntity findById(int id);
-    List<VendaEntity> findAll();
 }

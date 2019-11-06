@@ -30,6 +30,9 @@ public class ProdutoEntity {
     @OneToMany(mappedBy = "produto", fetch = FetchType.LAZY)
     private Set<PedidoEntity> pedido;
 
+    @OneToMany(mappedBy = "produto", fetch = FetchType.LAZY)
+    private Set<VendaEntity> venda;
+
     @ManyToMany(mappedBy = "idProduto", fetch = FetchType.LAZY)
     private Set<FormulaProdutoEntity> idFormula;
 }

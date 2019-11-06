@@ -43,18 +43,14 @@ public class PedidoServiceImp implements PedidoService{
 
     @Override
     public PedidoResponse save(PedidoEntity pedido) {
+        pedido.setTotal(pedido.getQuantidade() * pedido.getProduto().getPreco());
         PedidoResponse pedidoResponse = entitytoResponseConverter(pedidoRepository.save(pedido));
         return pedidoResponse;
     }
 
-    @Transactional(propagation = Propagation.MANDATORY)
-    public void atualizarEstoque(Integer id, Integer qtdPedido) {
-        PedidoResponse pedidoResponse = this.findById(id);
-        pedidoResponse.getQuantidade();
-    }
-
     @Override
     public PedidoResponse update(PedidoEntity pedido) {
+        pedido.setTotal(pedido.getQuantidade() * pedido.getProduto().getPreco());
         PedidoResponse pedidoResponse = entitytoResponseConverter(pedidoRepository.save(pedido));
         return pedidoResponse;
     }
@@ -71,15 +67,17 @@ public class PedidoServiceImp implements PedidoService{
         pedidoResponse.setFornecedor(pedidoEntity.getFornecedor().getNomeFantasia());
         pedidoResponse.setProduto(pedidoEntity.getProduto().getNome());
         pedidoResponse.setQuantidade(pedidoEntity.getQuantidade());
+        pedidoResponse.setTotal(pedidoEntity.getTotal());
         return pedidoResponse;
     }
 
 
-    public PedidoEntity entitytoResponseConverter(PedidoResponse pedidoResponse){
+    public PedidoEntity responsetoEntityConverter(PedidoResponse pedidoResponse){
         PedidoEntity pedidoEntity = new PedidoEntity();
         pedidoEntity.setId(pedidoResponse.getId());
         pedidoEntity.setData(pedidoResponse.getData());
         pedidoEntity.setQuantidade(pedidoResponse.getQuantidade());
+        pedidoEntity.setTotal(pedidoResponse.getTotal());
         return pedidoEntity;
     }
 }

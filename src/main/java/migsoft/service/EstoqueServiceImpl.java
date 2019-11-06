@@ -52,6 +52,7 @@ public class EstoqueServiceImpl implements EstoqueService {
     }
 
     @Override
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void subVendaEstoque(Integer produtoId, Integer quantidade) {
         updateProdutoEstoque(produtoId, -quantidade);
     }

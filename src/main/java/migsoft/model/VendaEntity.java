@@ -19,11 +19,16 @@ public class VendaEntity {
 
     private String data;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     private ClienteEntity cliente;
 
-    @OneToMany(mappedBy = "venda", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<ItemProduto> itemvenda;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private ProdutoEntity produto;
+
+    private Integer quantidade;
+
+  /*  @OneToMany(mappedBy = "venda", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<ItemProduto> itemvenda;*/
 
     private Double total;
 }

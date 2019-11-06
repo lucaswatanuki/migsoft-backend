@@ -19,4 +19,8 @@ public class ClienteResponse {
     private String email;
     @JsonProperty("tipo")
     private String tipo;
+    @JsonProperty("endereco")
+    private String endereco;
+    @JsonProperty("telefone")
+    private String telefone;
 }

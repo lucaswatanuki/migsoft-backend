@@ -4,6 +4,7 @@ import migsoft.model.ItemProduto;
 import migsoft.model.VendaEntity;
 import migsoft.model.response.ItemProdutoResponse;
 import migsoft.model.response.VendaResponse;
+import migsoft.service.EstoqueService;
 import migsoft.service.ItemProdutoService;
 import migsoft.service.VendaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,17 +21,21 @@ public class VendaController {
 
     private final VendaService vendaService;
     private final ItemProdutoService itemProdutoService;
+    private final EstoqueService estoqueService;
 
     @Autowired
-    public VendaController(VendaService vendaService, ItemProdutoService itemProdutoService) {
+    public VendaController(VendaService vendaService, ItemProdutoService itemProdutoService, EstoqueService estoqueService) {
         this.vendaService = vendaService;
         this.itemProdutoService = itemProdutoService;
+        this.estoqueService = estoqueService;
     }
 
     @PostMapping(value = "")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public VendaResponse postVenda(@RequestBody VendaEntity venda) {
-        return vendaService.save(venda);
+        VendaResponse response = vendaService.save(venda);
+        estoqueService.subVendaEstoque(venda.getProduto().getId(), venda.getQuantidade());
+        return response;
     }
 
     @PostMapping(value = "/itemproduto")

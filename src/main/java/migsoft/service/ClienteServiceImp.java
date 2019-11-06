@@ -59,6 +59,8 @@ public class ClienteServiceImp implements ClienteService{
         clienteResponse.setCpf(clienteEntity.getCpf());
         clienteResponse.setNome(clienteEntity.getNome());
         clienteResponse.setEmail(clienteEntity.getEmail());
+        clienteResponse.setEndereco(clienteEntity.getEndereco());
+        clienteResponse.setTelefone(clienteEntity.getTelefone());
         return clienteResponse;
     }
 }

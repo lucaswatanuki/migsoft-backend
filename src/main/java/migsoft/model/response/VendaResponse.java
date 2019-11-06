@@ -16,10 +16,12 @@ public class VendaResponse {
     private Integer id;
     @JsonProperty("data")
     private String data;
-    @JsonProperty("cliente_id")
-    private Integer cliente;
-    @JsonProperty("itemProduto")
-    private List<ItemProdutoResponse> itemProdutos;
+    @JsonProperty("cliente")
+    private String cliente;
+    @JsonProperty("produto")
+    private String produto;
+    @JsonProperty("quantidade")
+    private Integer quantidade;
     @JsonProperty("total")
     private Double total;
 }
