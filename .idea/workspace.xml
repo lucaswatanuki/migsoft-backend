@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d6cec366-161e-41bb-ad9b-c1fbe9e6c91f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/controller/PedidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/PedidoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/EstoqueService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/EstoqueService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/EstoqueServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/EstoqueServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/PedidoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/PedidoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572974071638</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="venda qtd estoque">
+      <created>1572978241181</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1572978241182</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -115,6 +119,7 @@
     <MESSAGE value="ItemProduto refactor" />
     <MESSAGE value="CODE REFACTOR + ADD RESPONSE CLASSES AND SERVICE RULES" />
     <MESSAGE value="Qtd estoque update with @Transaction" />
-    <option name="LAST_COMMIT_MESSAGE" value="Qtd estoque update with @Transaction" />
+    <MESSAGE value="venda qtd estoque" />
+    <option name="LAST_COMMIT_MESSAGE" value="venda qtd estoque" />
   </component>
 </project>
