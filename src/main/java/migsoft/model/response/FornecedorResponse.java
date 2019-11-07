@@ -17,4 +17,20 @@ public class FornecedorResponse {
 
     @JsonProperty("nomeFantasia")
     private String nomeFantasia;
+
+    @JsonProperty("nome")
+    private String nome;
+
+    @JsonProperty("endereco")
+    private String endereco;
+
+    @JsonProperty("telefone")
+    private String telefone;
+
+    @JsonProperty("email")
+    private String email;
+
+    @JsonProperty("cpf")
+    private String cpf;
+
 }

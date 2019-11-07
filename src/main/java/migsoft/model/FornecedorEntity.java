@@ -12,10 +12,8 @@ import java.util.Set;
 @AllArgsConstructor
 @Entity(name = "fornecedor")
 @Data
-public class FornecedorEntity{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+@PrimaryKeyJoinColumn(name = "id")
+public class FornecedorEntity extends Pessoa{
 
     private String cnpj;
 

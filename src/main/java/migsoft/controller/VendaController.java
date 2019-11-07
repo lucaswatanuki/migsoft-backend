@@ -1,5 +1,6 @@
 package migsoft.controller;
 
+import migsoft.Exceptions.EstoqueException;
 import migsoft.model.ItemProduto;
 import migsoft.model.VendaEntity;
 import migsoft.model.response.ItemProdutoResponse;
@@ -32,10 +33,14 @@ public class VendaController {
 
     @PostMapping(value = "")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public VendaResponse postVenda(@RequestBody VendaEntity venda) {
-        VendaResponse response = vendaService.save(venda);
-        estoqueService.subVendaEstoque(venda.getProduto().getId(), venda.getQuantidade());
-        return response;
+    public ResponseEntity<Object> postVenda(@RequestBody VendaEntity venda) throws IllegalArgumentException {
+        try {
+            estoqueService.subVendaEstoque(venda.getProduto().getId(), venda.getQuantidade());
+            VendaResponse response = vendaService.save(venda);
+            return ResponseEntity.ok(response);
+        } catch (IllegalArgumentException | EstoqueException exception) {
+            return ResponseEntity.badRequest().body("Estoque insuficiente");
+        }
     }
 
     @PostMapping(value = "/itemproduto")

@@ -1,5 +1,6 @@
 package migsoft.controller;
 
+import migsoft.Exceptions.EstoqueException;
 import migsoft.model.ItemProduto;
 import migsoft.model.PedidoEntity;
 import migsoft.model.ProdutoEntity;
@@ -31,7 +32,7 @@ public class PedidoController {
 
     @PostMapping("")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public PedidoResponse post(@RequestBody PedidoEntity pedido) {
+    public PedidoResponse post(@RequestBody PedidoEntity pedido) throws EstoqueException {
         PedidoResponse response = pedidoService.save(pedido);
         estoqueService.addPedidoEstoque(pedido.getProduto().getId(), pedido.getQuantidade());
         return response;

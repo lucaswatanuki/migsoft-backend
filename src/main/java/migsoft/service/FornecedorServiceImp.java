@@ -57,7 +57,11 @@ public class FornecedorServiceImp implements FornecedorService {
         fornecedorResponse.setId(fornecedorEntity.getId());
         fornecedorResponse.setCnpj(fornecedorEntity.getCnpj());
         fornecedorResponse.setNomeFantasia(fornecedorEntity.getNomeFantasia());
-
+        fornecedorResponse.setNome(fornecedorEntity.getNome());
+        fornecedorResponse.setCpf(fornecedorEntity.getCpf());
+        fornecedorResponse.setEmail(fornecedorEntity.getEmail());
+        fornecedorResponse.setEndereco(fornecedorEntity.getEndereco());
+        fornecedorResponse.setTelefone(fornecedorEntity.getTelefone());
         return fornecedorResponse;
     }
 }
