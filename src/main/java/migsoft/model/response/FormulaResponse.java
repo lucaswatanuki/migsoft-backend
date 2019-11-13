@@ -6,19 +6,22 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class VendaResponse {
+@AllArgsConstructor
+public class FormulaResponse {
+
     @JsonProperty("id")
     private Integer id;
-    @JsonProperty("data")
-    private String data;
-    @JsonProperty("cliente")
-    private String cliente;
+
     @JsonProperty("produto")
     private String produto;
+
+    @JsonProperty("material")
+    private String material;
+
+    @JsonProperty("descricao")
+    private String descricao;
+
     @JsonProperty("quantidade")
     private Integer quantidade;
-    @JsonProperty("total")
-    private Double total;
 }

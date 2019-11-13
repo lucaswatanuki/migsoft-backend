@@ -1,13 +1,17 @@
 package migsoft.controller;
 
 import migsoft.model.CotacaoEntity;
+import migsoft.model.response.CotacaoResponse;
 import migsoft.service.CotacaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.util.ReflectionUtils;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Field;
 import java.util.List;
+import java.util.Map;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -23,33 +27,46 @@ public class CotacaoController {
 
     @PostMapping("")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<CotacaoEntity> post(@RequestBody CotacaoEntity cotacao) {
-        return ResponseEntity.ok(cotacaoService.save(cotacao));
+    public CotacaoResponse post(@RequestBody CotacaoEntity cotacao) {
+        return cotacaoService.save(cotacao);
     }
 
     @GetMapping("/all")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<List<CotacaoEntity>> getAll() {
+    public ResponseEntity<List<CotacaoResponse>> getAll() {
         return ResponseEntity.ok(cotacaoService.findAll());
     }
 
+    @GetMapping("/all/entity")
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+    public ResponseEntity<List<CotacaoEntity>> getCotacao() {
+        return ResponseEntity.ok(cotacaoService.listaPedido());}
+
     @GetMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<CotacaoEntity> getCotacaoById(@PathVariable("id") int id) {
+    public ResponseEntity<CotacaoResponse> getCotacaoById(@PathVariable("id") int id) {
         return ResponseEntity.ok(cotacaoService.findById(id));
     }
 
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<CotacaoEntity> update(@PathVariable("id") int id, @RequestBody CotacaoEntity cotacao) {
+    public CotacaoResponse update(@PathVariable("id") Integer id, @RequestBody CotacaoEntity cotacao) {
         cotacao.setId(id);
-        return ResponseEntity.ok(cotacaoService.update(cotacao));
+        return cotacaoService.update(cotacao);
     }
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<Object> deleteCotacaoById(@PathVariable int id) {
+    public void deleteCotacaoById(@PathVariable("id") Integer id) {
         cotacaoService.deleteById(id);
-        return ResponseEntity.ok("Cotação excluida com sucesso");
     }
+
+    @PatchMapping("/{id}")
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+    public CotacaoResponse aprove(@PathVariable("id") Integer id) {
+        return cotacaoService.updateStatus(id);
+    }
+
+
+
 }

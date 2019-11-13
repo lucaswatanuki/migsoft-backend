@@ -1,5 +1,6 @@
 package migsoft.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -7,6 +8,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 
+@AllArgsConstructor
 @NoArgsConstructor
 @Entity(name = "produto")
 @Data
@@ -21,18 +23,12 @@ public class ProdutoEntity {
 
     private Integer qtdEstoque;
 
-    @OneToMany(mappedBy = "produto", fetch = FetchType.LAZY)
-    private Set<ItemProduto> listItemVenda;
-
-    @OneToMany(mappedBy = "produto", fetch = FetchType.LAZY)
-    private Set<CotacaoEntity> listCotacao;
-
-    @OneToMany(mappedBy = "produto", fetch = FetchType.LAZY)
-    private Set<PedidoEntity> pedido;
+    @ManyToMany(mappedBy = "produto", fetch = FetchType.LAZY)
+    private Set<CotacaoEntity> cotacao;
 
     @OneToMany(mappedBy = "produto", fetch = FetchType.LAZY)
     private Set<VendaEntity> venda;
 
-    @ManyToMany(mappedBy = "idProduto", fetch = FetchType.LAZY)
-    private Set<FormulaProdutoEntity> idFormula;
+    @ManyToMany(mappedBy = "produto", fetch = FetchType.LAZY)
+    private Set<FormulaProdutoEntity> formula;
 }

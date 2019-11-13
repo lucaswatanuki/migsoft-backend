@@ -1,28 +1,28 @@
 package migsoft.service;
 
-import migsoft.model.ItemProduto;
+import migsoft.model.CotacaoEntity;
 import migsoft.model.PedidoEntity;
-import migsoft.model.response.ItemProdutoResponse;
+import migsoft.model.request.PedidoRequest;
+import migsoft.model.response.CotacaoResponse;
 import migsoft.model.response.PedidoResponse;
-import migsoft.model.response.ProdutoResponse;
+import migsoft.repository.CotacaoRepository;
 import migsoft.repository.PedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class PedidoServiceImp implements PedidoService{
 
-    private PedidoRepository pedidoRepository;
+    private final PedidoRepository pedidoRepository;
+    private final CotacaoRepository cotacaoRepository;
 
     @Autowired
-    public PedidoServiceImp(PedidoRepository pedidoRepository) {
+    public PedidoServiceImp(PedidoRepository pedidoRepository, CotacaoRepository cotacaoRepository) {
         this.pedidoRepository = pedidoRepository;
+        this.cotacaoRepository = cotacaoRepository;
     }
 
     @Override
@@ -42,15 +42,16 @@ public class PedidoServiceImp implements PedidoService{
     }
 
     @Override
-    public PedidoResponse save(PedidoEntity pedido) {
-        pedido.setTotal(pedido.getQuantidade() * pedido.getProduto().getPreco());
-        PedidoResponse pedidoResponse = entitytoResponseConverter(pedidoRepository.save(pedido));
+    public PedidoResponse save(PedidoRequest pedido) {
+        PedidoEntity pedidoEntity = requestToEntityConverter(pedido);
+        pedidoEntity.setTotal(pedido.getCotacaoResponse().getQuantidade() * pedidoEntity.getCotacao().getProduto().getPreco());
+        PedidoResponse pedidoResponse = entitytoResponseConverter(pedidoRepository.save(pedidoEntity));
         return pedidoResponse;
     }
 
     @Override
     public PedidoResponse update(PedidoEntity pedido) {
-        pedido.setTotal(pedido.getQuantidade() * pedido.getProduto().getPreco());
+        pedido.setTotal(pedido.getQuantidade() * pedido.getCotacao().getProduto().getPreco());
         PedidoResponse pedidoResponse = entitytoResponseConverter(pedidoRepository.save(pedido));
         return pedidoResponse;
     }
@@ -64,20 +65,20 @@ public class PedidoServiceImp implements PedidoService{
         PedidoResponse pedidoResponse = new PedidoResponse();
         pedidoResponse.setId(pedidoEntity.getId());
         pedidoResponse.setData(pedidoEntity.getData());
-        pedidoResponse.setFornecedor(pedidoEntity.getFornecedor().getNomeFantasia());
-        pedidoResponse.setProduto(pedidoEntity.getProduto().getNome());
-        pedidoResponse.setQuantidade(pedidoEntity.getQuantidade());
+        pedidoResponse.setCotacao(pedidoEntity.getCotacao().getId());
+        pedidoResponse.setFornecedor(pedidoEntity.getCotacao().getFornecedor().getNomeFantasia());
+        pedidoResponse.setProduto(pedidoEntity.getCotacao().getProduto().getNome());
+        pedidoResponse.setProduto_id(pedidoEntity.getCotacao().getProduto().getId());
+        pedidoResponse.setQuantidade(pedidoEntity.getCotacao().getQuantidade());
         pedidoResponse.setTotal(pedidoEntity.getTotal());
         return pedidoResponse;
     }
 
-
-    public PedidoEntity responsetoEntityConverter(PedidoResponse pedidoResponse){
+    public PedidoEntity requestToEntityConverter(PedidoRequest pedidoRequest){
         PedidoEntity pedidoEntity = new PedidoEntity();
-        pedidoEntity.setId(pedidoResponse.getId());
-        pedidoEntity.setData(pedidoResponse.getData());
-        pedidoEntity.setQuantidade(pedidoResponse.getQuantidade());
-        pedidoEntity.setTotal(pedidoResponse.getTotal());
+        pedidoEntity.setData(pedidoRequest.getData());
+        pedidoEntity.setCotacao(cotacaoRepository.findById(pedidoRequest.getCotacaoResponse().getId()).orElse(null));
         return pedidoEntity;
     }
+
 }

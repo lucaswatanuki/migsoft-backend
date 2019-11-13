@@ -19,11 +19,9 @@ public class FornecedorEntity extends Pessoa{
 
     private String nomeFantasia;
 
-    private boolean atividade;
+    private String atividade;
 
     @OneToMany(mappedBy = "fornecedor", fetch = FetchType.LAZY)
     private Set<CotacaoEntity> cotacao;
 
-    @OneToMany(mappedBy = "fornecedor", fetch = FetchType.LAZY)
-    private Set<PedidoEntity> pedido;
 }

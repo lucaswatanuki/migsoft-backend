@@ -4,27 +4,36 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import migsoft.model.ProdutoEntity;
 
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-public class PedidoResponse {
+public class CotacaoResponse {
+
     @JsonProperty("id")
     private Integer id;
+
     @JsonProperty("data")
     private String data;
-    @JsonProperty("cotacao")
-    private Integer cotacao;
-    @JsonProperty("fornecedor")
-    private String fornecedor;
+
+    @JsonProperty("data_resposta")
+    private String data_resposta;
+
     @JsonProperty("produto")
     private String produto;
-    @JsonProperty("produto_id")
-    private Integer produto_id;
+
+    @JsonProperty("fornecedor")
+    private String fornecedor;
+
     @JsonProperty("quantidade")
     private Integer quantidade;
- /*   @JsonProperty("itemProduto")
-    private List<ItemProdutoResponse> itemProduto; */
+
     @JsonProperty("total")
     private Double total;
+
+    @JsonProperty("status")
+    private String status;
+
+
 }

@@ -33,4 +33,7 @@ public class FornecedorResponse {
     @JsonProperty("cpf")
     private String cpf;
 
+    @JsonProperty("atividade")
+    private String atividade;
+
 }

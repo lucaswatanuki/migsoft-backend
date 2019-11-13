@@ -7,31 +7,35 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.util.Set;
 
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity(name = "pedido")
 @Data
 public class PedidoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     private String data;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "produto")
-    private ProdutoEntity produto;
+    private String status;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "fornecedor")
-    private FornecedorEntity fornecedor;
+    @JoinColumn(name = "cotacao")
+    private CotacaoEntity cotacao;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "idCotacao")
-    private CotacaoEntity idCotacao;
+    private Integer quantidade;
 
-      private double total;
+    private Double total;
 
-      private Integer quantidade;
+    public PedidoEntity() {
+    }
+
+    public PedidoEntity(Integer id, String data, String status, CotacaoEntity cotacao, Integer quantidade, Double total) {
+        this.id = id;
+        this.data = data;
+        this.status = status;
+        this.cotacao = cotacao;
+        this.quantidade = quantidade;
+        this.total = total;
+    }
 }

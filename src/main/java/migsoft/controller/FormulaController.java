@@ -1,6 +1,7 @@
 package migsoft.controller;
 
 import migsoft.model.FormulaProdutoEntity;
+import migsoft.model.response.FormulaResponse;
 import migsoft.service.FormulaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,32 +20,32 @@ public class FormulaController {
 
     @PostMapping("")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<FormulaProdutoEntity> post(@RequestBody FormulaProdutoEntity formula) {
+    public ResponseEntity<FormulaResponse> post(@RequestBody FormulaProdutoEntity formula) {
         return ResponseEntity.ok(formulaService.save(formula));
     }
 
     @GetMapping("/all")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<List<FormulaProdutoEntity>>  getAll() {
+    public ResponseEntity<List<FormulaResponse>>  getAll() {
         return ResponseEntity.ok(formulaService.findAll());
     }
 
     @GetMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<FormulaProdutoEntity> getProdutoById(@PathVariable("id") int id) {
+    public ResponseEntity<FormulaResponse> getProdutoById(@PathVariable("id") int id) {
         return ResponseEntity.ok(formulaService.findById(id));
     }
 
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<FormulaProdutoEntity> updateProduto(@PathVariable("id") int id, @RequestBody FormulaProdutoEntity formula){
+    public ResponseEntity<FormulaResponse> updateProduto(@PathVariable("id") int id, @RequestBody FormulaProdutoEntity formula){
         formula.setId(id);
         return ResponseEntity.ok(formulaService.update(formula));
     }
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public void deleteProdutoById(@PathVariable int id) {
+    public void deleteProdutoById(@PathVariable Integer id) {
         formulaService.deleteById(id);
     }
 

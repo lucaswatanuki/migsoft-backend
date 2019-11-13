@@ -1,8 +1,6 @@
 package migsoft.service;
 
-import migsoft.model.ItemProduto;
 import migsoft.model.VendaEntity;
-import migsoft.model.response.ItemProdutoResponse;
 import migsoft.model.response.VendaResponse;
 import migsoft.repository.VendaRepository;
 import org.springframework.beans.factory.annotation.Autowired;

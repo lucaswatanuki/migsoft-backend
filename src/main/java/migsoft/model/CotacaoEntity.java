@@ -19,14 +19,24 @@ public class CotacaoEntity {
 
     private Double preco;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "produto")
     private ProdutoEntity produto;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "fornecedor")
     private FornecedorEntity fornecedor;
 
-    @OneToMany(mappedBy = "idCotacao")
+    @OneToMany(mappedBy = "cotacao", fetch = FetchType.LAZY)
     private Set<PedidoEntity> pedido;
 
     private String data;
+
+    private String data_resposta;
+
+    private Integer quantidade;
+
+    private Double total;
+
+    private String status;
 }

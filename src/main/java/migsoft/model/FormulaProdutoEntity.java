@@ -16,10 +16,10 @@ public class FormulaProdutoEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private ProdutoEntity idProduto;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private ProdutoEntity produto;
 
-    private int IdMaterial;
+    private String material;
 
     private String descricao;
 

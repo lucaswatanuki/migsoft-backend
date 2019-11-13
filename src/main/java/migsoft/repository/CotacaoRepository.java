@@ -8,7 +8,5 @@ import java.util.List;
 
 @Repository
 public interface CotacaoRepository extends JpaRepository<CotacaoEntity, Integer> {
-    CotacaoEntity findById(int id);
-    List<CotacaoEntity> findAll();
-    void delete(CotacaoEntity cotacao);
+
 }

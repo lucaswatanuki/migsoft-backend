@@ -1,16 +1,12 @@
 package migsoft.controller;
 
 import migsoft.Exceptions.EstoqueException;
-import migsoft.model.ItemProduto;
 import migsoft.model.PedidoEntity;
-import migsoft.model.ProdutoEntity;
-import migsoft.model.response.ItemProdutoResponse;
+import migsoft.model.request.PedidoRequest;
 import migsoft.model.response.PedidoResponse;
 import migsoft.service.EstoqueService;
-import migsoft.service.ItemProdutoService;
 import migsoft.service.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,8 +17,8 @@ import java.util.List;
 @RequestMapping("/api/pedido")
 public class PedidoController {
 
-    private PedidoService pedidoService;
-    private EstoqueService estoqueService;
+    private final PedidoService pedidoService;
+    private final EstoqueService estoqueService;
 
     @Autowired
     public PedidoController(PedidoService pedidoService, EstoqueService estoqueService) {
@@ -30,11 +26,12 @@ public class PedidoController {
         this.estoqueService = estoqueService;
     }
 
+
     @PostMapping("")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public PedidoResponse post(@RequestBody PedidoEntity pedido) throws EstoqueException {
+    public PedidoResponse post(@RequestBody PedidoRequest pedido) throws EstoqueException {
         PedidoResponse response = pedidoService.save(pedido);
-        estoqueService.addPedidoEstoque(pedido.getProduto().getId(), pedido.getQuantidade());
+        estoqueService.addPedidoEstoque(response.getProduto_id(), response.getQuantidade());
         return response;
     }
 

@@ -1,13 +1,14 @@
 package migsoft.service;
 
 import migsoft.model.FormulaProdutoEntity;
+import migsoft.model.response.FormulaResponse;
 
 import java.util.List;
 
 public interface FormulaService {
-    FormulaProdutoEntity findById(int id);
-    List<FormulaProdutoEntity> findAll();
-    FormulaProdutoEntity save(FormulaProdutoEntity formula);
-    FormulaProdutoEntity update(FormulaProdutoEntity formula);
-    void deleteById(int id);
+    FormulaResponse findById(Integer id);
+    List<FormulaResponse> findAll();
+    FormulaResponse save(FormulaProdutoEntity formula);
+    FormulaResponse update(FormulaProdutoEntity formula);
+    void deleteById(Integer id);
 }
