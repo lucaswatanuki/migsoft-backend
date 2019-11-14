@@ -11,10 +11,16 @@ public abstract class Pessoa  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String nome;
+
+    @Column(unique = true)
     private String cpf;
+
     private String telefone;
+
     private String email;
+
     private String endereco;
 
     public Pessoa(int id, String nome, String cpf, String telefone, String email, String endereco) {

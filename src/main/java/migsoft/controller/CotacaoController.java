@@ -37,11 +37,6 @@ public class CotacaoController {
         return ResponseEntity.ok(cotacaoService.findAll());
     }
 
-    @GetMapping("/all/entity")
-    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<List<CotacaoEntity>> getCotacao() {
-        return ResponseEntity.ok(cotacaoService.listaPedido());}
-
     @GetMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public ResponseEntity<CotacaoResponse> getCotacaoById(@PathVariable("id") int id) {

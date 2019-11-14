@@ -9,7 +9,6 @@ public interface CotacaoService {
      CotacaoResponse updateStatus(Integer id);
      CotacaoResponse findById(Integer id);
      CotacaoEntity getId(Integer id);
-     List<CotacaoEntity> listaPedido();
      List<CotacaoResponse> findAll();
      CotacaoResponse save(CotacaoEntity cotacao);
      CotacaoResponse update(CotacaoEntity cotacao);

@@ -46,15 +46,6 @@ public class CotacaoServiceImp implements CotacaoService {
     }
 
     @Override
-    public List<CotacaoEntity> listaPedido() {
-        PedidoResponse pedidoResponse = new PedidoResponse();
-        FornecedorResponse fornecedorResponse = new FornecedorResponse();
-
-
-        return cotacaoRepository.findAll();
-    }
-
-    @Override
     public List<CotacaoResponse> findAll() {
         ArrayList<CotacaoResponse> cotacaoResponses = new ArrayList<>();
         for (CotacaoEntity cotacaoEntity : cotacaoRepository.findAll()) {
