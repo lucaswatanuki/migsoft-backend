@@ -11,6 +11,6 @@ public interface PedidoService {
     PedidoResponse findById(Integer id);
     List<PedidoResponse> findAll();
     PedidoResponse save(PedidoRequest pedido);
-    PedidoResponse update(PedidoEntity pedido);
+    PedidoResponse update(Integer id, PedidoRequest pedido);
     void deleteById(Integer id);
 }

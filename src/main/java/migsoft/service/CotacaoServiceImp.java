@@ -10,8 +10,11 @@ import migsoft.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 @Service
 public class CotacaoServiceImp implements CotacaoService {
@@ -41,6 +44,14 @@ public class CotacaoServiceImp implements CotacaoService {
     }
 
     @Override
+    public CotacaoResponse aprove(Integer id) {
+        CotacaoEntity cotacaoEntity = cotacaoRepository.findById(id).orElse(null);
+        cotacaoEntity.setStatus("Aprovado");
+        CotacaoResponse cotacaoResponse = entitytoResponseConverter(cotacaoRepository.save(cotacaoEntity));
+        return cotacaoResponse;
+    }
+
+    @Override
     public CotacaoEntity getId(Integer id) {
         return cotacaoRepository.findById(id).orElse(null);
     }
@@ -57,9 +68,23 @@ public class CotacaoServiceImp implements CotacaoService {
     }
 
     @Override
+    public List<CotacaoResponse> findOnlyApproved() {
+        ArrayList<CotacaoResponse> cotacaoResponses = new ArrayList<>();
+        for (CotacaoEntity cotacaoEntity : cotacaoRepository.findAll()) {
+            if (cotacaoEntity.getStatus().contains("Aprovado")){
+                CotacaoResponse cotacaoResponse = new CotacaoResponse();
+                cotacaoResponse = entitytoResponseConverter(cotacaoEntity);
+                cotacaoResponses.add(cotacaoResponse);
+            }
+        }
+        return cotacaoResponses;
+    }
+
+    @Override
     public CotacaoResponse save(CotacaoEntity cotacao) {
         cotacao.setTotal(cotacao.getQuantidade() * cotacao.getProduto().getPreco());
-        cotacao.setStatus("Aguardando");
+        cotacao.setStatus("Pendente");
+        dateConverter(cotacao);
         CotacaoResponse cotacaoResponse = entitytoResponseConverter(cotacaoRepository.save(cotacao));
         return cotacaoResponse;
     }
@@ -67,6 +92,7 @@ public class CotacaoServiceImp implements CotacaoService {
     @Override
     public CotacaoResponse update(CotacaoEntity cotacao) {
         cotacao.setTotal(cotacao.getQuantidade() * cotacao.getProduto().getPreco());
+        dateConverter(cotacao);
         CotacaoResponse cotacaoResponse = entitytoResponseConverter(cotacaoRepository.save(cotacao));
         return cotacaoResponse;
     }
@@ -87,5 +113,13 @@ public class CotacaoServiceImp implements CotacaoService {
         cotacaoResponse.setTotal(cotacaoEntity.getTotal());
         cotacaoResponse.setStatus(cotacaoEntity.getStatus());
         return cotacaoResponse;
+    }
+
+    public void dateConverter(CotacaoEntity cotacao){
+        DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH);
+        DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("dd-MM-yyy", Locale.ENGLISH);
+        LocalDate date = LocalDate.parse(cotacao.getData(), inputFormatter);
+        String formattedDate = outputFormatter.format(date);
+        cotacao.setData(formattedDate);
     }
 }

@@ -6,8 +6,11 @@ import migsoft.repository.VendaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 @Service
 public class VendaServiceImp implements VendaService {
@@ -38,6 +41,7 @@ public class VendaServiceImp implements VendaService {
     @Override
     public VendaResponse save(VendaEntity venda) {
         venda.setTotal(venda.getQuantidade() * venda.getProduto().getPreco());
+        dateConverter(venda);
         VendaResponse vendaResponse = entitytoResponseConverter(vendaRepository.save(venda));
         return vendaResponse;
     }
@@ -58,5 +62,13 @@ public class VendaServiceImp implements VendaService {
         vendaResponse.setProduto(vendaEntity.getProduto().getNome());
         vendaResponse.setData(vendaEntity.getData());
         return vendaResponse;
+    }
+
+    public void dateConverter(VendaEntity venda){
+        DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH);
+        DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("dd-MM-yyy", Locale.ENGLISH);
+        LocalDate date = LocalDate.parse(venda.getData(), inputFormatter);
+        String formattedDate = outputFormatter.format(date);
+        venda.setData(formattedDate);
     }
 }

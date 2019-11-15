@@ -49,9 +49,8 @@ public class PedidoController {
 
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public PedidoResponse save(@PathVariable("id") Integer id, @RequestBody PedidoEntity pedido) {
-        pedido.setId(id);
-        return pedidoService.update(pedido);
+    public PedidoResponse save(@PathVariable("id") Integer id, @RequestBody PedidoRequest pedido) {
+        return pedidoService.update(id, pedido);
     }
 
     @DeleteMapping("/{id}")

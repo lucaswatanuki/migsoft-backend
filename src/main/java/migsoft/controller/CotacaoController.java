@@ -37,6 +37,12 @@ public class CotacaoController {
         return ResponseEntity.ok(cotacaoService.findAll());
     }
 
+    @GetMapping("/all/approved")
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+    public ResponseEntity<List<CotacaoResponse>> getApproved() {
+        return ResponseEntity.ok(cotacaoService.findOnlyApproved());
+    }
+
     @GetMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public ResponseEntity<CotacaoResponse> getCotacaoById(@PathVariable("id") int id) {
@@ -48,6 +54,12 @@ public class CotacaoController {
     public CotacaoResponse update(@PathVariable("id") Integer id, @RequestBody CotacaoEntity cotacao) {
         cotacao.setId(id);
         return cotacaoService.update(cotacao);
+    }
+
+    @PutMapping("/status/{id}")
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+    public CotacaoResponse setStatus(@PathVariable("id") Integer id) {
+        return cotacaoService.aprove(id);
     }
 
     @DeleteMapping("/{id}")

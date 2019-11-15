@@ -10,8 +10,11 @@ import migsoft.repository.PedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 @Service
 public class PedidoServiceImp implements PedidoService{
@@ -43,6 +46,7 @@ public class PedidoServiceImp implements PedidoService{
 
     @Override
     public PedidoResponse save(PedidoRequest pedido) {
+        dateConverter(pedido);
         PedidoEntity pedidoEntity = requestToEntityConverter(pedido);
         pedidoEntity.setTotal(pedido.getCotacaoResponse().getQuantidade() * pedidoEntity.getCotacao().getProduto().getPreco());
         PedidoResponse pedidoResponse = entitytoResponseConverter(pedidoRepository.save(pedidoEntity));
@@ -50,9 +54,12 @@ public class PedidoServiceImp implements PedidoService{
     }
 
     @Override
-    public PedidoResponse update(PedidoEntity pedido) {
-        pedido.setTotal(pedido.getQuantidade() * pedido.getCotacao().getProduto().getPreco());
-        PedidoResponse pedidoResponse = entitytoResponseConverter(pedidoRepository.save(pedido));
+    public PedidoResponse update(Integer id, PedidoRequest pedidoRequest) {
+        PedidoEntity pedidoEntity = pedidoRepository.findById(id).orElse(null);
+        pedidoEntity.setId(id);
+        dateConverter(pedidoRequest);
+        pedidoEntity.setData(pedidoRequest.getData());
+        PedidoResponse pedidoResponse = entitytoResponseConverter(pedidoRepository.save(pedidoEntity));
         return pedidoResponse;
     }
 
@@ -79,6 +86,14 @@ public class PedidoServiceImp implements PedidoService{
         pedidoEntity.setData(pedidoRequest.getData());
         pedidoEntity.setCotacao(cotacaoRepository.findById(pedidoRequest.getCotacaoResponse().getId()).orElse(null));
         return pedidoEntity;
+    }
+
+    public void dateConverter(PedidoRequest pedido){
+        DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH);
+        DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("dd-MM-yyy", Locale.ENGLISH);
+        LocalDate date = LocalDate.parse(pedido.getData(), inputFormatter);
+        String formattedDate = outputFormatter.format(date);
+        pedido.setData(formattedDate);
     }
 
 }
