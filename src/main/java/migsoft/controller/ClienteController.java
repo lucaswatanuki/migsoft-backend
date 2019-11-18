@@ -35,6 +35,12 @@ public class ClienteController {
         return clienteService.findAll();
     }
 
+    @GetMapping(value = "/nome/{nome}")
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+    public ClienteResponse getNome(@PathVariable("nome") String nome) {
+        return clienteService.findByNome(nome);
+    }
+
     @GetMapping(value = "/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public ClienteResponse getClienteById(@PathVariable("id") Integer id) {

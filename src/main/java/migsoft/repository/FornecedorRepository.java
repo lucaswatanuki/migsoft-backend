@@ -8,4 +8,5 @@ import java.util.List;
 
 @Repository
 public interface FornecedorRepository extends JpaRepository<FornecedorEntity, Integer> {
+    FornecedorEntity findByNomeFantasia(String nome);
 }

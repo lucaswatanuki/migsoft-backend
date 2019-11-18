@@ -1,6 +1,7 @@
 package migsoft.service;
 
 import migsoft.model.CotacaoEntity;
+import migsoft.model.request.CotacaoRequest;
 import migsoft.model.response.CotacaoResponse;
 import migsoft.model.response.FornecedorResponse;
 import migsoft.model.response.PedidoResponse;
@@ -90,10 +91,11 @@ public class CotacaoServiceImp implements CotacaoService {
     }
 
     @Override
-    public CotacaoResponse update(CotacaoEntity cotacao) {
-        cotacao.setTotal(cotacao.getQuantidade() * cotacao.getProduto().getPreco());
-        dateConverter(cotacao);
-        CotacaoResponse cotacaoResponse = entitytoResponseConverter(cotacaoRepository.save(cotacao));
+    public CotacaoResponse update(CotacaoRequest cotacao, Integer id) {
+        CotacaoEntity cotacaoEntity = requestToEntityConverter(cotacao);
+        cotacaoEntity.setTotal(cotacao.getQuantidade() * cotacaoEntity.getProduto().getPreco());
+        dateConverter(cotacaoEntity);
+        CotacaoResponse cotacaoResponse = entitytoResponseConverter(cotacaoRepository.save(cotacaoEntity));
         return cotacaoResponse;
     }
 
@@ -113,6 +115,16 @@ public class CotacaoServiceImp implements CotacaoService {
         cotacaoResponse.setTotal(cotacaoEntity.getTotal());
         cotacaoResponse.setStatus(cotacaoEntity.getStatus());
         return cotacaoResponse;
+    }
+
+    public CotacaoEntity requestToEntityConverter(CotacaoRequest cotacaoRequest){
+        CotacaoEntity cotacaoEntity = new CotacaoEntity();
+        cotacaoEntity.setProduto(produtoRepository.findByNome(cotacaoRequest.getProduto()));
+        cotacaoEntity.setFornecedor(fornecedorRepository.findByNomeFantasia(cotacaoRequest.getFornecedor()));
+        cotacaoEntity.setData(cotacaoRequest.getData());
+        cotacaoEntity.setStatus(cotacaoRequest.getStatus());
+        cotacaoEntity.setQuantidade(cotacaoRequest.getQuantidade());
+        return cotacaoEntity;
     }
 
     public void dateConverter(CotacaoEntity cotacao){

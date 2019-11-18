@@ -1,6 +1,7 @@
 package migsoft.controller;
 
 import migsoft.model.CotacaoEntity;
+import migsoft.model.request.CotacaoRequest;
 import migsoft.model.response.CotacaoResponse;
 import migsoft.service.CotacaoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,9 +52,8 @@ public class CotacaoController {
 
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public CotacaoResponse update(@PathVariable("id") Integer id, @RequestBody CotacaoEntity cotacao) {
-        cotacao.setId(id);
-        return cotacaoService.update(cotacao);
+    public CotacaoResponse update(@PathVariable("id") Integer id, @RequestBody CotacaoRequest cotacao) {
+        return cotacaoService.update(cotacao, id);
     }
 
     @PutMapping("/status/{id}")

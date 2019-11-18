@@ -34,6 +34,13 @@ public class FornecedorController {
         return fornecedorService.findAll();
     }
 
+    @GetMapping("/all/active")
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+    public List<FornecedorResponse> getAllActive() {
+        return fornecedorService.findAllActive();
+    }
+
+
     @GetMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public FornecedorResponse getFornecedorById(@PathVariable("id") Integer id) {

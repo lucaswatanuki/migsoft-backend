@@ -25,12 +25,30 @@ public class FornecedorServiceImp implements FornecedorService {
     }
 
     @Override
+    public FornecedorResponse findByNomeFantasia(String nome) {
+        return entitytoResponseConverter(fornecedorRepository.findByNomeFantasia(nome));
+    }
+
+    @Override
     public List<FornecedorResponse> findAll() {
         ArrayList<FornecedorResponse> fornecedorResponses = new ArrayList<>();
         for (FornecedorEntity fornecedorEntity : fornecedorRepository.findAll()){
             FornecedorResponse fornecedorResponse = new FornecedorResponse();
             fornecedorResponse = entitytoResponseConverter(fornecedorEntity);
             fornecedorResponses.add(fornecedorResponse);
+        }
+        return fornecedorResponses;
+    }
+
+    @Override
+    public List<FornecedorResponse> findAllActive() {
+        ArrayList<FornecedorResponse> fornecedorResponses = new ArrayList<>();
+        for (FornecedorEntity fornecedorEntity : fornecedorRepository.findAll()) {
+            if (fornecedorEntity.getAtividade().contains("Ativo")) {
+                FornecedorResponse fornecedorResponse = new FornecedorResponse();
+                fornecedorResponse = entitytoResponseConverter(fornecedorEntity);
+                fornecedorResponses.add(fornecedorResponse);
+            }
         }
         return fornecedorResponses;
     }
@@ -58,6 +76,11 @@ public class FornecedorServiceImp implements FornecedorService {
         fornecedorResponse.setCnpj(fornecedorEntity.getCnpj());
         fornecedorResponse.setNomeFantasia(fornecedorEntity.getNomeFantasia());
         fornecedorResponse.setAtividade(fornecedorEntity.getAtividade());
+        fornecedorResponse.setTelefone(fornecedorEntity.getTelefone());
+        fornecedorResponse.setNome(fornecedorEntity.getNome());
+        fornecedorResponse.setEmail(fornecedorEntity.getEmail());
+        fornecedorResponse.setCpf(fornecedorEntity.getCpf());
+        fornecedorResponse.setEndereco(fornecedorEntity.getEndereco());
         return fornecedorResponse;
     }
 }

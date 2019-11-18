@@ -25,6 +25,11 @@ public class ClienteServiceImp implements ClienteService{
     }
 
     @Override
+    public ClienteResponse findByNome(String nome) {
+        return entitytoResponseConverter(clienteRepository.findByNome(nome));
+    }
+
+    @Override
     public List<ClienteResponse> findAll() {
         List<ClienteResponse> clienteResponses = new ArrayList<>();
         for (ClienteEntity clienteEntity : clienteRepository.findAll()){

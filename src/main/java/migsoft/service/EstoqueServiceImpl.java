@@ -35,8 +35,8 @@ public class EstoqueServiceImpl implements EstoqueService {
     public void updateProdutoEstoque(Integer id, Integer quantidade) throws IllegalArgumentException {
         ProdutoEntity produto = this.findProdutoById(id);
         if (produto == null) {
-            //Implementar exception customizada
-            System.out.println("produto nao existe");
+            throw new IllegalArgumentException("Produto não cadastrado");
+
         }
         Integer qtdEstoque = produto.getQtdEstoque() + quantidade;
         if (qtdEstoque < 0) {

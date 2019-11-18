@@ -2,17 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6cec366-161e-41bb-ad9b-c1fbe9e6c91f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/migsoft/model/request/CotacaoRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/migsoft/model/request/VendaRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/ClienteController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/controller/CotacaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/CotacaoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/controller/PedidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/PedidoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/model/CotacaoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/model/CotacaoEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/controller/FornecedorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/FornecedorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/controller/VendaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/VendaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/repository/ClienteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/repository/ClienteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/repository/FornecedorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/repository/FornecedorRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/ClienteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/ClienteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/ClienteServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/ClienteServiceImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/CotacaoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/CotacaoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/CotacaoServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/CotacaoServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/PedidoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/PedidoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/PedidoServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/PedidoServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/EstoqueServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/EstoqueServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/FornecedorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/FornecedorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/FornecedorServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/FornecedorServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/VendaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/VendaService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/VendaServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/VendaServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/Pessoa.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/model/Pessoa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/response/ProdutoResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/model/response/ProdutoResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/ClienteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/ClienteController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/FornecedorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/FornecedorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/VendaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/VendaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/repository/ClienteRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/repository/ClienteRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/ClienteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/ClienteService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/ClienteServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/ClienteServiceImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/EstoqueServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/EstoqueServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/FornecedorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/FornecedorService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/FornecedorServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/FornecedorServiceImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/VendaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/VendaService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/VendaServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/VendaServiceImp.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -128,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573705923453</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Date format + Cotação approve fix">
+      <created>1573785049491</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1573785049491</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -153,6 +178,7 @@
     <MESSAGE value="Estoque transaction fixed with exception log" />
     <MESSAGE value="Update services rules + entities and responses" />
     <MESSAGE value="Constraints fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Constraints fixes" />
+    <MESSAGE value="Date format + Cotação approve fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Date format + Cotação approve fix" />
   </component>
 </project>

@@ -1,6 +1,7 @@
 package migsoft.service;
 
 import migsoft.model.CotacaoEntity;
+import migsoft.model.request.CotacaoRequest;
 import migsoft.model.response.CotacaoResponse;
 
 import java.util.List;
@@ -13,6 +14,6 @@ public interface CotacaoService {
      List<CotacaoResponse> findAll();
      List<CotacaoResponse> findOnlyApproved();
      CotacaoResponse save(CotacaoEntity cotacao);
-     CotacaoResponse update(CotacaoEntity cotacao);
+     CotacaoResponse update(CotacaoRequest cotacao, Integer id);
      void deleteById(Integer id);
 }

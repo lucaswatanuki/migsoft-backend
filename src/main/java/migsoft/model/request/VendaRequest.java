@@ -1,0 +1,27 @@
+package migsoft.model.request;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import migsoft.model.response.ClienteResponse;
+import migsoft.model.response.ProdutoResponse;
+import migsoft.model.response.VendaResponse;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+public class VendaRequest {
+
+    @JsonProperty("cliente")
+    private String cliente;
+
+    @JsonProperty("produto")
+    private String produto;
+
+    @JsonProperty("data")
+    private String data;
+
+    @JsonProperty("quantidade")
+    private Integer quantidade;
+}
