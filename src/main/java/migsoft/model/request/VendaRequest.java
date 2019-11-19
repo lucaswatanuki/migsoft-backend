@@ -8,6 +8,10 @@ import migsoft.model.response.ClienteResponse;
 import migsoft.model.response.ProdutoResponse;
 import migsoft.model.response.VendaResponse;
 
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import java.util.Date;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -20,7 +24,8 @@ public class VendaRequest {
     private String produto;
 
     @JsonProperty("data")
-    private String data;
+    @Temporal(TemporalType.DATE)
+    private Date data;
 
     @JsonProperty("quantidade")
     private Integer quantidade;

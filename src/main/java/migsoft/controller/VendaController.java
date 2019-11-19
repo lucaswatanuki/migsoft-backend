@@ -3,9 +3,11 @@ package migsoft.controller;
 import migsoft.Exceptions.EstoqueException;
 import migsoft.model.ProdutoEntity;
 import migsoft.model.VendaEntity;
+import migsoft.model.request.RelatorioRequest;
 import migsoft.model.request.VendaRequest;
 import migsoft.model.response.ItemProdutoResponse;
 import migsoft.model.response.ProdutoResponse;
+import migsoft.model.response.RelatorioProdutos;
 import migsoft.model.response.VendaResponse;
 import migsoft.service.EstoqueService;
 import migsoft.service.ProdutoService;
@@ -65,6 +67,8 @@ public class VendaController {
     public List<VendaResponse> getAllVendas() {
         return vendaService.findAll();
     }
+
+
 
     @GetMapping(value = "/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")

@@ -15,6 +15,7 @@ import java.util.Set;
 public class ProdutoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Integer id;
 
     @Column(unique = true)
