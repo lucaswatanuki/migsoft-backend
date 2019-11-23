@@ -1,5 +1,6 @@
 package migsoft.service;
 
+import migsoft.Exceptions.ProdutoInexistenteException;
 import migsoft.model.ProdutoEntity;
 import migsoft.model.response.PedidoResponse;
 import migsoft.model.response.ProdutoResponse;
@@ -27,7 +28,11 @@ public class ProdutoServiceImp implements ProdutoService{
 
     @Override
     public ProdutoResponse findByNome(String nome) {
-        return entitytoResponseConverter(produtoRepository.findByNome(nome));
+        if (produtoRepository.findByNome(nome) == null){
+            throw new ProdutoInexistenteException("Produto não cadastrado");
+        }
+        ProdutoResponse response = entitytoResponseConverter(produtoRepository.findByNome(nome));
+        return response;
     }
 
     @Override

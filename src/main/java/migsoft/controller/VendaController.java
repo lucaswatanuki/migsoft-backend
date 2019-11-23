@@ -1,6 +1,7 @@
 package migsoft.controller;
 
 import migsoft.Exceptions.EstoqueException;
+import migsoft.Exceptions.Resposta;
 import migsoft.model.ProdutoEntity;
 import migsoft.model.VendaEntity;
 import migsoft.model.request.RelatorioRequest;
@@ -38,13 +39,13 @@ public class VendaController {
 
     @PostMapping(value = "")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<Object> postVenda(@RequestBody VendaEntity venda) throws IllegalArgumentException {
+    public ResponseEntity<Object> postVenda(@RequestBody VendaRequest venda) throws IllegalArgumentException {
         try {
-            estoqueService.subVendaEstoque(venda.getProduto().getId(), venda.getQuantidade());
+            estoqueService.subEstoque(estoqueService.findProdutoByNome(venda.getProduto()).getId(), venda.getQuantidade());
             VendaResponse response = vendaService.save(venda);
             return ResponseEntity.ok(response);
-        } catch (IllegalArgumentException | EstoqueException exception) {
-            return ResponseEntity.badRequest().body("Estoque insuficiente");
+        } catch (EstoqueException e) {
+            return ResponseEntity.badRequest().body(new Resposta(e.getCode(), e.getLocalizedMessage(), null));
         }
     }
 
@@ -54,12 +55,19 @@ public class VendaController {
         ProdutoResponse produtoResponse = produtoService.findByNome(venda.getProduto());
         VendaResponse vendaResponse = vendaService.findById(id);
         try {
-            estoqueService.subVendaEstoque(produtoResponse.getId(), venda.getQuantidade() - vendaResponse.getQuantidade());
+            estoqueService.subEstoque(produtoResponse.getId(), venda.getQuantidade() - vendaResponse.getQuantidade());
             VendaResponse response = vendaService.update(venda, id);
             return ResponseEntity.ok(response);
         } catch (IllegalArgumentException | EstoqueException exception) {
             return ResponseEntity.badRequest().body("Estoque insuficiente");
         }
+    }
+
+    @PutMapping("/status/{id}")
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+    public VendaResponse setStatus(@PathVariable("id") Integer id) {
+        estoqueService.addEstoque(produtoService.findByNome(vendaService.findById(id).getProduto()).getId(), vendaService.findById(id).getQuantidade());
+        return vendaService.cancel(id);
     }
 
     @GetMapping(value = "/all")

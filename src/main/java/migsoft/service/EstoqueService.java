@@ -9,7 +9,8 @@ import migsoft.model.response.ProdutoResponse;
 
 public interface EstoqueService {
     ProdutoEntity findProdutoById(Integer id);
+    ProdutoEntity findProdutoByNome(String nome);
     void updateProdutoEstoque(Integer id, Integer qtdPedido) throws EstoqueException;
-    void addPedidoEstoque(Integer produtoId, Integer quantidade) throws EstoqueException;
-    void subVendaEstoque(Integer produtoId, Integer quantidade) throws EstoqueException;
+    void addEstoque(Integer produtoId, Integer quantidade) throws EstoqueException;
+    void subEstoque(Integer produtoId, Integer quantidade) throws EstoqueException;
 }

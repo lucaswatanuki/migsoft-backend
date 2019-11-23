@@ -17,6 +17,9 @@ import java.util.Date;
 @Data
 public class VendaRequest {
 
+    @JsonProperty("id")
+    private Integer id;
+
     @JsonProperty("cliente")
     private String cliente;
 

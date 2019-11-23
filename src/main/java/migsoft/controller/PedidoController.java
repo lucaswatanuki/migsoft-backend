@@ -31,7 +31,7 @@ public class PedidoController {
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public PedidoResponse post(@RequestBody PedidoRequest pedido) throws EstoqueException {
         PedidoResponse response = pedidoService.save(pedido);
-        estoqueService.addPedidoEstoque(response.getProduto_id(), response.getQuantidade());
+        estoqueService.addEstoque(response.getProduto_id(), response.getQuantidade());
         return response;
     }
 

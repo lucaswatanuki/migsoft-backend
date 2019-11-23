@@ -49,4 +49,6 @@ public class VendaEntity {
     private List<ItemProduto> itemvenda;*/
 
     private Double total;
+
+    private String status;
 }

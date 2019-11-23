@@ -21,4 +21,7 @@ public class RelatorioRequest {
     @JsonProperty("dataFinal")
     @Temporal(TemporalType.DATE)
     private Date dataFinal;
+
+    @JsonProperty("status")
+    private String status;
 }

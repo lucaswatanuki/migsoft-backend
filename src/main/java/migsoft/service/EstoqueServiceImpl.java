@@ -29,6 +29,11 @@ public class EstoqueServiceImpl implements EstoqueService {
         return produtoRepository.findById(id).orElse(null);
     }
 
+    @Override
+    public ProdutoEntity findProdutoByNome(String nome) {
+        return produtoRepository.findByNome(nome);
+    }
+
 
     @Override
     @Transactional(propagation = Propagation.MANDATORY, rollbackFor = IllegalArgumentException.class)
@@ -48,13 +53,13 @@ public class EstoqueServiceImpl implements EstoqueService {
 
     @Override
     @Transactional(propagation = Propagation.REQUIRES_NEW)
-    public void addPedidoEstoque(Integer produtoId, Integer quantidade) throws IllegalArgumentException {
+    public void addEstoque(Integer produtoId, Integer quantidade) throws IllegalArgumentException {
         updateProdutoEstoque(produtoId, quantidade);
     }
 
     @Override
     @Transactional(propagation = Propagation.REQUIRES_NEW)
-    public void subVendaEstoque(Integer produtoId, Integer quantidade) throws IllegalArgumentException{
+    public void subEstoque(Integer produtoId, Integer quantidade) throws IllegalArgumentException{
         updateProdutoEstoque(produtoId, -quantidade);
     }
 }

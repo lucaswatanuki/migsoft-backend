@@ -26,4 +26,6 @@ public class VendaResponse {
     private Integer quantidade;
     @JsonProperty("total")
     private Double total;
+    @JsonProperty("status")
+    private String status;
 }

@@ -31,6 +31,6 @@ public class RelatorioController {
     @PostMapping(value = "/vendaprodutos")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public List<RelatorioProdutos> getAllVendasBetweenData(@RequestBody RelatorioRequest relatorioRequest) {
-        return relatorioService.getRelatorioProdutos(relatorioRequest.getDataInicial(), relatorioRequest.getDataFinal());
+        return relatorioService.getRelatorioProdutos(relatorioRequest.getDataInicial(), relatorioRequest.getDataFinal(), relatorioRequest.getStatus());
     }
 }

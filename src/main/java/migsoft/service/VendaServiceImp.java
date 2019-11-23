@@ -1,9 +1,10 @@
 package migsoft.service;
 
+import migsoft.Exceptions.ClienteInexistenteException;
 import migsoft.Exceptions.EstoqueException;
+import migsoft.Exceptions.ProdutoInexistenteException;
 import migsoft.model.VendaEntity;
 import migsoft.model.request.VendaRequest;
-import migsoft.model.response.RelatorioProdutos;
 import migsoft.model.response.VendaResponse;
 import migsoft.repository.ClienteRepository;
 import migsoft.repository.ProdutoRepository;
@@ -55,12 +56,30 @@ public class VendaServiceImp implements VendaService {
         return vendaResponses;
     }
 
+    @Override
+    public VendaResponse cancel(Integer id) {
+        VendaEntity vendaEntity = vendaRepository.findById(id).orElse(null);
+        vendaEntity.setStatus("Cancelado");
+        vendaEntity.setTotal(0.0);
+        VendaResponse vendaResponse = entitytoResponseConverter(vendaRepository.save(vendaEntity));
+        return vendaResponse;
+    }
 
     @Override
-    public VendaResponse save(VendaEntity venda) {
-        venda.setTotal(venda.getQuantidade() * venda.getProduto().getPreco());
-      //  dateConverter(venda);
-        VendaResponse vendaResponse = entitytoResponseConverter(vendaRepository.save(venda));
+    public VendaResponse save(VendaRequest venda) {
+        VendaEntity vendaEntity = requestToEntityConverter(venda);
+        if (venda.getQuantidade() > vendaEntity.getProduto().getQtdEstoque()){
+            throw new EstoqueException("Estoque insuficiente");
+        }
+        if (produtoRepository.findByNome(vendaEntity.getProduto().getNome()) == null){
+            throw new ProdutoInexistenteException("Produto não cadastrado");
+        }
+        if (clienteRepository.findByNome(vendaEntity.getCliente().getNome()) == null){
+            throw new ClienteInexistenteException("Cliente não cadastrado");
+        }
+        vendaEntity.setTotal(venda.getQuantidade() * vendaEntity.getProduto().getPreco());
+        vendaEntity.setStatus("OK");
+        VendaResponse vendaResponse = entitytoResponseConverter(vendaRepository.save(vendaEntity));
         return vendaResponse;
     }
 
@@ -68,6 +87,12 @@ public class VendaServiceImp implements VendaService {
 
     @Override
     public VendaResponse update(VendaRequest venda, Integer id) throws EstoqueException {
+        if (produtoRepository.findByNome(venda.getProduto()) == null){
+            throw new ProdutoInexistenteException("Produto não cadastrado");
+        }
+        if (clienteRepository.findByNome(venda.getCliente()) == null){
+            throw new ClienteInexistenteException("Cliente não cadastrado");
+        }
         VendaEntity vendaEntity = requestToEntityConverter(venda);
         vendaEntity.setId(id);
         vendaEntity.setTotal(vendaEntity.getQuantidade() * vendaEntity.getProduto().getPreco());
@@ -83,6 +108,7 @@ public class VendaServiceImp implements VendaService {
         vendaResponse.setTotal(vendaEntity.getTotal());
         vendaResponse.setProduto(vendaEntity.getProduto().getNome());
         vendaResponse.setData(vendaEntity.getData());
+        vendaResponse.setStatus(vendaEntity.getStatus());
         return vendaResponse;
     }
 

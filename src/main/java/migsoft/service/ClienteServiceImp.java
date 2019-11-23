@@ -1,5 +1,6 @@
 package migsoft.service;
 
+import migsoft.Exceptions.ClienteInexistenteException;
 import migsoft.model.ClienteEntity;
 import migsoft.model.response.ClienteResponse;
 import migsoft.repository.ClienteRepository;
@@ -26,7 +27,11 @@ public class ClienteServiceImp implements ClienteService{
 
     @Override
     public ClienteResponse findByNome(String nome) {
-        return entitytoResponseConverter(clienteRepository.findByNome(nome));
+        if (clienteRepository.findByNome(nome) == null){
+            throw new ClienteInexistenteException("Cliente não cadastrado");
+        }
+        ClienteResponse response = entitytoResponseConverter(clienteRepository.findByNome(nome));
+        return response;
     }
 
     @Override

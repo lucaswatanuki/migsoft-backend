@@ -30,13 +30,14 @@ public class RelatorioServiceImpl implements RelatorioService{
     }
 
     @Override
-    public List<RelatorioProdutos> getRelatorioProdutos(Date dataInicial, Date dataFinal) {
+    public List<RelatorioProdutos> getRelatorioProdutos(Date dataInicial, Date dataFinal, String status) {
         Query query = em.createNativeQuery("SELECT produto.nome, sum(v.quantidade) as quantidadeTotal, sum(v.total) as vendasTotal " +
                 "FROM venda v INNER JOIN produto " +
                 "ON v.produto_id = produto.id " +
-                "WHERE v.data BETWEEN :dataInicial AND :dataFinal " +
+                "WHERE v.status = :status AND v.data BETWEEN :dataInicial AND :dataFinal " +
                 "GROUP BY produto.nome " +
                 "ORDER BY vendasTotal DESC", "VendaProdutos");
+        query.setParameter("status", status);
         query.setParameter("dataInicial", dataInicial);
         query.setParameter("dataFinal", dataFinal);
         List<RelatorioProdutos> relatorioProdutos = query.getResultList();

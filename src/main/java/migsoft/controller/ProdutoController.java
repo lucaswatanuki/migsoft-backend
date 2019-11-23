@@ -1,5 +1,7 @@
 package migsoft.controller;
 
+import migsoft.Exceptions.ProdutoInexistenteException;
+import migsoft.Exceptions.Resposta;
 import migsoft.model.ProdutoEntity;
 import migsoft.model.response.ProdutoResponse;
 import migsoft.service.ProdutoService;
@@ -28,7 +30,7 @@ public class ProdutoController {
 
     @GetMapping("/all")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public List<ProdutoResponse>  getAll() {
+    public List<ProdutoResponse> getAll() {
         return produtoService.findAll();
     }
 
@@ -40,13 +42,17 @@ public class ProdutoController {
 
     @GetMapping("/nome/{nome}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ProdutoResponse getProdutoByName(@PathVariable("nome") String nome) {
-        return produtoService.findByNome(nome);
+    public ResponseEntity<Object> getProdutoByName(@PathVariable("nome") String nome) {
+        try {
+            return ResponseEntity.ok(produtoService.findByNome(nome));
+        } catch (ProdutoInexistenteException e) {
+            return ResponseEntity.badRequest().body(new Resposta(e.getCode(), e.getLocalizedMessage(), null));
+        }
     }
 
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ProdutoResponse updateProduto(@PathVariable("id") Integer id, @RequestBody ProdutoEntity produto){
+    public ProdutoResponse updateProduto(@PathVariable("id") Integer id, @RequestBody ProdutoEntity produto) {
         produto.setId(id);
         return produtoService.update(produto);
     }

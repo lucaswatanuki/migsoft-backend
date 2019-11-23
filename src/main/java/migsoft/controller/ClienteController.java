@@ -1,5 +1,7 @@
 package migsoft.controller;
 
+import migsoft.Exceptions.ClienteInexistenteException;
+import migsoft.Exceptions.Resposta;
 import migsoft.model.ClienteEntity;
 import migsoft.model.response.ClienteResponse;
 import migsoft.service.ClienteService;
@@ -37,8 +39,12 @@ public class ClienteController {
 
     @GetMapping(value = "/nome/{nome}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ClienteResponse getNome(@PathVariable("nome") String nome) {
-        return clienteService.findByNome(nome);
+    public ResponseEntity<Object> getNome(@PathVariable("nome") String nome) {
+        try {
+            return ResponseEntity.ok(clienteService.findByNome(nome));
+        } catch (ClienteInexistenteException e) {
+            return ResponseEntity.badRequest().body(new Resposta(e.getCode(), e.getLocalizedMessage(), null));
+        }
     }
 
     @GetMapping(value = "/{id}")
@@ -49,7 +55,7 @@ public class ClienteController {
 
     @PutMapping(value = "/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ClienteResponse update(@PathVariable("id") Integer id, @RequestBody ClienteEntity cliente){
+    public ClienteResponse update(@PathVariable("id") Integer id, @RequestBody ClienteEntity cliente) {
         cliente.setId(id);
         return clienteService.update(cliente);
     }

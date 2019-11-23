@@ -4,12 +4,16 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-public class EstoqueException extends Exception {
 
-    private String texto;
+public class EstoqueException extends RuntimeException {
 
-    public EstoqueException(String texto) {
-        this.texto = texto;
+    private Integer code = 3;
+
+    public EstoqueException(String message) {
+        super(message);
+    }
+
+    public Integer getCode() {
+        return code;
     }
 }
