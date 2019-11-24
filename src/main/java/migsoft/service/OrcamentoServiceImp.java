@@ -67,7 +67,8 @@ public class OrcamentoServiceImp implements OrcamentoService {
         orcamentoResponse.setData(orcamentoEntity.getData());
         orcamentoResponse.setCliente(orcamentoEntity.getCliente().getNome());
         orcamentoResponse.setProduto(orcamentoEntity.getProduto().getNome());
-        orcamentoResponse.setTotal(orcamentoResponse.getTotal());
+        orcamentoResponse.setQuantidade(orcamentoEntity.getQuantidade());
+        orcamentoResponse.setTotal(orcamentoEntity.getTotal());
         return orcamentoResponse;
     }
 
