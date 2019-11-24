@@ -60,7 +60,6 @@ public class VendaServiceImp implements VendaService {
     public VendaResponse cancel(Integer id) {
         VendaEntity vendaEntity = vendaRepository.findById(id).orElse(null);
         vendaEntity.setStatus("Cancelado");
-        vendaEntity.setTotal(0.0);
         VendaResponse vendaResponse = entitytoResponseConverter(vendaRepository.save(vendaEntity));
         return vendaResponse;
     }

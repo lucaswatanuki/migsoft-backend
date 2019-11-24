@@ -16,7 +16,7 @@ import java.util.Date;
 import java.util.List;
 
 @Service
-public class RelatorioServiceImpl implements RelatorioService{
+public class RelatorioServiceImpl implements RelatorioService {
 
     private final VendaRepository vendaRepository;
     private final PedidoRepository pedidoRepository;
@@ -41,23 +41,25 @@ public class RelatorioServiceImpl implements RelatorioService{
         query.setParameter("dataInicial", dataInicial);
         query.setParameter("dataFinal", dataFinal);
         List<RelatorioProdutos> relatorioProdutos = query.getResultList();
-        return  relatorioProdutos;
+        return relatorioProdutos;
     }
 
     @Override
-    public RelatorioFinanceiroResponse extrairRelatorioFinanceiro(){
-        Double receita = 0.0, despesa =0.0;
-        for (PedidoEntity pedidoEntity : pedidoRepository.findAll()){
+    public RelatorioFinanceiroResponse extrairRelatorioFinanceiro() {
+        Double receita = 0.0, despesa = 0.0;
+        for (PedidoEntity pedidoEntity : pedidoRepository.findAll()) {
             despesa = despesa + pedidoEntity.getTotal();
         }
-        for (VendaEntity vendaEntity : vendaRepository.findAll()){
-            receita = receita + vendaEntity.getTotal();
+        for (VendaEntity vendaEntity : vendaRepository.findAll()) {
+            if (vendaEntity.getStatus().contains("OK")) {
+                receita = receita + vendaEntity.getTotal();
+            }
         }
         RelatorioFinanceiroResponse relatorio = new RelatorioFinanceiroResponse();
         relatorio.setDespesa(despesa);
         relatorio.setReceita(receita);
         relatorio.setLucro(receita - despesa);
-        if (relatorio.getLucro() < 0){
+        if (relatorio.getLucro() < 0) {
             relatorio.setPrejuizo(receita - despesa);
             relatorio.setLucro(0.0);
         } else relatorio.setPrejuizo(0.0);

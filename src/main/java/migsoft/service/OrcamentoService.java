@@ -1,13 +1,15 @@
 package migsoft.service;
 
 import migsoft.model.OrcamentoEntity;
+import migsoft.model.request.OrcamentoRequest;
+import migsoft.model.response.OrcamentoResponse;
 
 import java.util.List;
 
 public interface OrcamentoService {
-     OrcamentoEntity findById(int id);
-     List<OrcamentoEntity> findAll();
-     OrcamentoEntity save(OrcamentoEntity orcamento);
-     OrcamentoEntity update(OrcamentoEntity orcamento);
-     void deleteById(int id);
+     OrcamentoResponse findById(Integer id);
+     List<OrcamentoResponse> findAll();
+     OrcamentoResponse save(OrcamentoRequest orcamento);
+     OrcamentoResponse update(OrcamentoRequest orcamento);
+     void deleteById(Integer id);
 }

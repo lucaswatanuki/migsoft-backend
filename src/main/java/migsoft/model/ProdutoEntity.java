@@ -28,6 +28,9 @@ public class ProdutoEntity {
     @ManyToMany(mappedBy = "produto", fetch = FetchType.LAZY)
     private Set<CotacaoEntity> cotacao;
 
+    @ManyToMany(mappedBy = "produto", fetch = FetchType.LAZY)
+    private Set<OrcamentoEntity> orcamento;
+
     @OneToMany(mappedBy = "produto", fetch = FetchType.LAZY)
     private Set<VendaEntity> venda;
 

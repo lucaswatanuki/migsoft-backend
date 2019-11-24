@@ -1,6 +1,8 @@
 package migsoft.controller;
 
 import migsoft.model.OrcamentoEntity;
+import migsoft.model.request.OrcamentoRequest;
+import migsoft.model.response.OrcamentoResponse;
 import migsoft.service.OrcamentoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -23,32 +25,32 @@ public class OrcamentoController {
 
     @PostMapping("")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<OrcamentoEntity> post(@RequestBody OrcamentoEntity orcamentoEntity) {
-        return ResponseEntity.ok(orcamentoService.save(orcamentoEntity));
+    public ResponseEntity<OrcamentoResponse> post(@RequestBody OrcamentoRequest orcamentoRequest) {
+        return ResponseEntity.ok(orcamentoService.save(orcamentoRequest));
     }
 
     @GetMapping("/all")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<List<OrcamentoEntity>> getAll() {
+    public ResponseEntity<List<OrcamentoResponse>> getAll() {
         return ResponseEntity.ok(orcamentoService.findAll());
     }
 
     @GetMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<OrcamentoEntity> getOrcamentoById(@PathVariable("id") int id) {
+    public ResponseEntity<OrcamentoResponse> getOrcamentoById(@PathVariable("id") Integer id) {
         return ResponseEntity.ok(orcamentoService.findById(id));
     }
 
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<OrcamentoEntity> update(@PathVariable("id") int id, @RequestBody OrcamentoEntity orcamento) {
+    public ResponseEntity<OrcamentoResponse> update(@PathVariable("id") Integer id, @RequestBody OrcamentoRequest orcamento) {
         orcamento.setId(id);
         return ResponseEntity.ok(orcamentoService.update(orcamento));
     }
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<Object> deleteOrcamentoById(@PathVariable int id) {
+    public ResponseEntity<Object> deleteOrcamentoById(@PathVariable Integer id) {
         orcamentoService.deleteById(id);
         return ResponseEntity.ok("Orçamento excluido");
     }
