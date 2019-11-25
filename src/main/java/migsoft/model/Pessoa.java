@@ -12,9 +12,10 @@ public abstract class Pessoa  {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @Column(nullable = false)
     private String nome;
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String cpf;
 
     private String telefone;

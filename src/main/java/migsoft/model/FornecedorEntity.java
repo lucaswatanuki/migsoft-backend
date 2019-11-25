@@ -15,9 +15,9 @@ import java.util.Set;
 @PrimaryKeyJoinColumn(name = "id")
 public class FornecedorEntity extends Pessoa{
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String cnpj;
-
+    @Column(nullable = false)
     private String nomeFantasia;
 
     private String atividade;

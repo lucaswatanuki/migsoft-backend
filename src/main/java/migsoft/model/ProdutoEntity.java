@@ -18,11 +18,13 @@ public class ProdutoEntity {
     @Column(name = "id")
     private Integer id;
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private String nome;
 
+    @Column(nullable = false)
     private Double preco;
 
+    @Column(nullable = false)
     private Integer qtdEstoque;
 
     @ManyToMany(mappedBy = "produto", fetch = FetchType.LAZY)

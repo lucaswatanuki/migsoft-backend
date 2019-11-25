@@ -3,12 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="d6cec366-161e-41bb-ad9b-c1fbe9e6c91f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/OrcamentoServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/OrcamentoServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/OrcamentoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/OrcamentoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/ClienteEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/model/ClienteEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/model/FornecedorEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/model/FornecedorEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/model/OrcamentoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/model/OrcamentoEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/model/Pessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/model/Pessoa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/model/ProdutoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/model/ProdutoEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/FornecedorEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/model/FornecedorEntity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/OrcamentoEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/model/OrcamentoEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/Pessoa.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/model/Pessoa.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/ProdutoEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/model/ProdutoEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/OrcamentoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/OrcamentoService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/OrcamentoServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/OrcamentoServiceImp.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,7 +34,7 @@
   </component>
   <component name="ProjectId" id="1SwhOrE29OIRbvTZzmFBKywWxon" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Downloads/BTP-CLOUD-SYSTEM-crud_user/BTP-CLOUD-SYSTEM-crud_user/btp-cs-system-back" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -160,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574630642529</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="orcamento response fix">
+      <created>1574639579628</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1574639579628</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -190,6 +201,7 @@
     <MESSAGE value="Reports" />
     <MESSAGE value="Venda status" />
     <MESSAGE value="Orcamento service, controller and entity mod" />
-    <option name="LAST_COMMIT_MESSAGE" value="Orcamento service, controller and entity mod" />
+    <MESSAGE value="orcamento response fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="orcamento response fix" />
   </component>
 </project>

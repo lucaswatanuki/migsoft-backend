@@ -29,5 +29,7 @@ public class OrcamentoEntity {
 
     private Integer quantidade;
 
+    @Temporal(TemporalType.DATE)
+    @Column(name = "data")
     private Date data;
 }
