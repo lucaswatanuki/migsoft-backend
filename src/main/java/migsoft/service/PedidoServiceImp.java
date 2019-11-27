@@ -76,7 +76,7 @@ public class PedidoServiceImp implements PedidoService{
     @Override
     public PedidoResponse cancel(Integer id) {
         PedidoEntity pedidoEntity = pedidoRepository.findById(id).orElse(null);
-        pedidoEntity.setStatus("cancelado");
+        pedidoEntity.setStatus("Cancelado");
         PedidoResponse pedidoResponse = entitytoResponseConverter(pedidoRepository.save(pedidoEntity));
         return pedidoResponse;
     }

@@ -1,8 +1,10 @@
 package migsoft.service;
 
 import migsoft.model.FormulaProdutoEntity;
+import migsoft.model.request.FormulaRequest;
 import migsoft.model.response.FormulaResponse;
 import migsoft.repository.FormulaRepository;
+import migsoft.repository.ProdutoRepository;
 import org.hibernate.mapping.Formula;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,10 +16,12 @@ import java.util.List;
 public class FormulaServiceImp implements FormulaService {
 
     private final FormulaRepository formulaRepository;
+    private final ProdutoRepository produtoRepository;
 
     @Autowired
-    public FormulaServiceImp(FormulaRepository formulaRepository) {
+    public FormulaServiceImp(FormulaRepository formulaRepository, ProdutoRepository produtoRepository) {
         this.formulaRepository = formulaRepository;
+        this.produtoRepository = produtoRepository;
     }
 
     @Override
@@ -37,14 +41,17 @@ public class FormulaServiceImp implements FormulaService {
     }
 
     @Override
-    public FormulaResponse save(FormulaProdutoEntity formula) {
-        FormulaResponse formulaResponse = entitytoResponseConverter(formulaRepository.save(formula));
+    public FormulaResponse save(FormulaRequest formula) {
+        FormulaProdutoEntity formulaProdutoEntity = requestToEntityConverter(formula);
+        FormulaResponse formulaResponse = entitytoResponseConverter(formulaRepository.save(formulaProdutoEntity));
         return formulaResponse;
     }
 
     @Override
-    public FormulaResponse update(FormulaProdutoEntity formula) {
-        FormulaResponse formulaResponse = entitytoResponseConverter(formulaRepository.save(formula));
+    public FormulaResponse update(FormulaRequest formula, Integer id) {
+        FormulaProdutoEntity formulaProdutoEntity = requestToEntityConverter(formula);
+        formulaProdutoEntity.setId(id);
+        FormulaResponse formulaResponse = entitytoResponseConverter(formulaRepository.save(formulaProdutoEntity));
         return formulaResponse;
     }
 
@@ -61,5 +68,14 @@ public class FormulaServiceImp implements FormulaService {
         formulaResponse.setQuantidade(formulaProdutoEntity.getQuantidade());
         formulaResponse.setMaterial(formulaProdutoEntity.getMaterial());
         return formulaResponse;
+    }
+
+    public FormulaProdutoEntity requestToEntityConverter(FormulaRequest formulaRequest){
+        FormulaProdutoEntity formulaProdutoEntity = new FormulaProdutoEntity();
+        formulaProdutoEntity.setDescricao(formulaRequest.getDescricao());
+        formulaProdutoEntity.setMaterial(formulaRequest.getMaterial());
+        formulaProdutoEntity.setQuantidade(formulaRequest.getQuantidade());
+        formulaProdutoEntity.setProduto(produtoRepository.findByNome(formulaRequest.getProduto()));
+        return formulaProdutoEntity;
     }
 }

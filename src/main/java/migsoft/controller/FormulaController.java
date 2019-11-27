@@ -1,6 +1,7 @@
 package migsoft.controller;
 
 import migsoft.model.FormulaProdutoEntity;
+import migsoft.model.request.FormulaRequest;
 import migsoft.model.response.FormulaResponse;
 import migsoft.service.FormulaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,7 @@ public class FormulaController {
 
     @PostMapping("")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<FormulaResponse> post(@RequestBody FormulaProdutoEntity formula) {
+    public ResponseEntity<FormulaResponse> post(@RequestBody FormulaRequest formula) {
         return ResponseEntity.ok(formulaService.save(formula));
     }
 
@@ -38,9 +39,8 @@ public class FormulaController {
 
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<FormulaResponse> updateProduto(@PathVariable("id") int id, @RequestBody FormulaProdutoEntity formula){
-        formula.setId(id);
-        return ResponseEntity.ok(formulaService.update(formula));
+    public ResponseEntity<FormulaResponse> updateProduto(@PathVariable("id") int id, @RequestBody FormulaRequest formula){
+        return ResponseEntity.ok(formulaService.update(formula, id));
     }
 
     @DeleteMapping("/{id}")

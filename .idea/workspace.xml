@@ -2,27 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6cec366-161e-41bb-ad9b-c1fbe9e6c91f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/JsonExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/migsoft/model/request/FormulaRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/Exceptions/EstoqueException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/Exceptions/EstoqueException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/Exceptions/Resposta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/Exceptions/Resposta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/ClienteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/controller/CotacaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/CotacaoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/controller/PedidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/PedidoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/controller/ProdutoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/ProdutoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/controller/VendaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/VendaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/model/Pessoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/model/Pessoa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/model/response/PedidoResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/model/response/PedidoResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/CotacaoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/CotacaoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/CotacaoServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/CotacaoServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/PedidoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/PedidoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/controller/FormulaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/FormulaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/FormulaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/FormulaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/FormulaServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/FormulaServiceImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/PedidoServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/PedidoServiceImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/RelatorioServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/RelatorioServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/CotacaoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/CotacaoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/Pessoa.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/model/Pessoa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/response/PedidoResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/model/response/PedidoResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/CotacaoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/CotacaoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/CotacaoServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/CotacaoServiceImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/ClienteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/ClienteController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/PedidoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/PedidoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/ProdutoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/ProdutoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/VendaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/VendaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/PedidoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/PedidoService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/PedidoServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/PedidoServiceImp.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -188,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574713961555</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Pedido service update + exceptions + other fixes">
+      <created>1574827391230</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1574827391230</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -220,6 +218,7 @@
     <MESSAGE value="Orcamento service, controller and entity mod" />
     <MESSAGE value="orcamento response fix" />
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="Pedido service update + exceptions + other fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pedido service update + exceptions + other fixes" />
   </component>
 </project>

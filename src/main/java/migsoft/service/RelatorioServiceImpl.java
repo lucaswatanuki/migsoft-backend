@@ -36,7 +36,7 @@ public class RelatorioServiceImpl implements RelatorioService {
                 "ON v.produto_id = produto.id " +
                 "WHERE v.status = :status AND v.data BETWEEN :dataInicial AND :dataFinal " +
                 "GROUP BY produto.nome " +
-                "ORDER BY vendasTotal DESC", "VendaProdutos");
+                "ORDER BY quantidadeTotal DESC", "VendaProdutos");
         query.setParameter("status", status);
         query.setParameter("dataInicial", dataInicial);
         query.setParameter("dataFinal", dataFinal);
