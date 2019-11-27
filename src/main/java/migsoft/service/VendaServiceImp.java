@@ -67,9 +67,6 @@ public class VendaServiceImp implements VendaService {
     @Override
     public VendaResponse save(VendaRequest venda) {
         VendaEntity vendaEntity = requestToEntityConverter(venda);
-        if (venda.getQuantidade() > vendaEntity.getProduto().getQtdEstoque()){
-            throw new EstoqueException("Estoque insuficiente");
-        }
         if (produtoRepository.findByNome(vendaEntity.getProduto().getNome()) == null){
             throw new ProdutoInexistenteException("Produto não cadastrado");
         }

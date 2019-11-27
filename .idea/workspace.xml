@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6cec366-161e-41bb-ad9b-c1fbe9e6c91f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/migsoft/model/request/FormulaRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/controller/FormulaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/FormulaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/FormulaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/FormulaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/FormulaServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/FormulaServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/PedidoServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/PedidoServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/RelatorioServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/RelatorioServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/ClienteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/ClienteController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/PedidoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/PedidoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/ProdutoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/ProdutoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/VendaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/VendaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/PedidoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/PedidoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/PedidoServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/PedidoServiceImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/controller/JsonExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/VendaServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/VendaServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/FormulaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/FormulaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/FormulaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/FormulaService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/FormulaServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/FormulaServiceImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/VendaServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/VendaServiceImp.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -186,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574827391230</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Formula produto + SQL Join fix">
+      <created>1574875227203</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1574875227203</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -219,6 +220,7 @@
     <MESSAGE value="orcamento response fix" />
     <MESSAGE value="update" />
     <MESSAGE value="Pedido service update + exceptions + other fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pedido service update + exceptions + other fixes" />
+    <MESSAGE value="Formula produto + SQL Join fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Formula produto + SQL Join fix" />
   </component>
 </project>
