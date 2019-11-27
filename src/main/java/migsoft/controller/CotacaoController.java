@@ -28,7 +28,7 @@ public class CotacaoController {
 
     @PostMapping("")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public CotacaoResponse post(@RequestBody CotacaoEntity cotacao) {
+    public CotacaoResponse post(@RequestBody CotacaoRequest cotacao) {
         return cotacaoService.save(cotacao);
     }
 

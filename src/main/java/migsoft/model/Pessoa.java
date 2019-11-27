@@ -18,8 +18,10 @@ public abstract class Pessoa  {
     @Column(unique = true, nullable = false)
     private String cpf;
 
+    @Column(unique = true, nullable = false)
     private String telefone;
 
+    @Column(unique = true, nullable = false)
     private String email;
 
     private String endereco;

@@ -48,6 +48,7 @@ public class PedidoServiceImp implements PedidoService{
     public PedidoResponse save(PedidoRequest pedido) {
         dateConverter(pedido);
         PedidoEntity pedidoEntity = requestToEntityConverter(pedido);
+        pedidoEntity.setStatus("Aguardando transportadora");
         pedidoEntity.setTotal(pedido.getCotacaoResponse().getQuantidade() * pedidoEntity.getCotacao().getProduto().getPreco());
         PedidoResponse pedidoResponse = entitytoResponseConverter(pedidoRepository.save(pedidoEntity));
         return pedidoResponse;
@@ -60,6 +61,22 @@ public class PedidoServiceImp implements PedidoService{
         dateConverter(pedidoRequest);
         pedidoEntity.setData(pedidoRequest.getData());
         pedidoEntity.setCotacao(cotacaoRepository.findById(pedidoRequest.getCotacaoResponse().getId()).orElse(null));
+        PedidoResponse pedidoResponse = entitytoResponseConverter(pedidoRepository.save(pedidoEntity));
+        return pedidoResponse;
+    }
+
+    @Override
+    public PedidoResponse updateStatus(Integer id) {
+        PedidoEntity pedidoEntity = pedidoRepository.findById(id).orElse(null);
+        pedidoEntity.setStatus("Entregue");
+        PedidoResponse pedidoResponse = entitytoResponseConverter(pedidoRepository.save(pedidoEntity));
+        return pedidoResponse;
+    }
+
+    @Override
+    public PedidoResponse cancel(Integer id) {
+        PedidoEntity pedidoEntity = pedidoRepository.findById(id).orElse(null);
+        pedidoEntity.setStatus("cancelado");
         PedidoResponse pedidoResponse = entitytoResponseConverter(pedidoRepository.save(pedidoEntity));
         return pedidoResponse;
     }
@@ -79,6 +96,7 @@ public class PedidoServiceImp implements PedidoService{
         pedidoResponse.setProduto_id(pedidoEntity.getCotacao().getProduto().getId());
         pedidoResponse.setQuantidade(pedidoEntity.getCotacao().getQuantidade());
         pedidoResponse.setTotal(pedidoEntity.getTotal());
+        pedidoResponse.setStatus(pedidoEntity.getStatus());
         return pedidoResponse;
     }
 

@@ -13,7 +13,7 @@ public interface CotacaoService {
      CotacaoEntity getId(Integer id);
      List<CotacaoResponse> findAll();
      List<CotacaoResponse> findOnlyApproved();
-     CotacaoResponse save(CotacaoEntity cotacao);
+     CotacaoResponse save(CotacaoRequest cotacao);
      CotacaoResponse update(CotacaoRequest cotacao, Integer id);
      void deleteById(Integer id);
 }

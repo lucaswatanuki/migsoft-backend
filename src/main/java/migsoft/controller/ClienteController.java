@@ -43,7 +43,7 @@ public class ClienteController {
         try {
             return ResponseEntity.ok(clienteService.findByNome(nome));
         } catch (ClienteInexistenteException e) {
-            return ResponseEntity.badRequest().body(new Resposta(e.getCode(), e.getLocalizedMessage(), null));
+            return ResponseEntity.badRequest().body(new Resposta(e.getLocalizedMessage()));
         }
     }
 

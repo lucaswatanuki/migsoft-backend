@@ -14,6 +14,8 @@ import migsoft.service.EstoqueService;
 import migsoft.service.ProdutoService;
 import migsoft.service.VendaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -39,13 +41,13 @@ public class VendaController {
 
     @PostMapping(value = "")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<Object> postVenda(@RequestBody VendaRequest venda) throws IllegalArgumentException {
+    public ResponseEntity<Object> postVenda(@RequestBody VendaRequest venda) throws EstoqueException {
         try {
             estoqueService.subEstoque(estoqueService.findProdutoByNome(venda.getProduto()).getId(), venda.getQuantidade());
             VendaResponse response = vendaService.save(venda);
             return ResponseEntity.ok(response);
         } catch (EstoqueException e) {
-            return ResponseEntity.badRequest().body(new Resposta(e.getCode(), e.getLocalizedMessage(), null));
+            return new ResponseEntity<Object>(new Resposta(e.getMessage()), new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 

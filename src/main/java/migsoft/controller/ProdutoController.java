@@ -46,7 +46,7 @@ public class ProdutoController {
         try {
             return ResponseEntity.ok(produtoService.findByNome(nome));
         } catch (ProdutoInexistenteException e) {
-            return ResponseEntity.badRequest().body(new Resposta(e.getCode(), e.getLocalizedMessage(), null));
+            return ResponseEntity.badRequest().body(new Resposta(e.getLocalizedMessage()));
         }
     }
 

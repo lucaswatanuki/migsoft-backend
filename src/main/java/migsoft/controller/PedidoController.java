@@ -53,6 +53,18 @@ public class PedidoController {
         return pedidoService.update(id, pedido);
     }
 
+    @PutMapping("/status/update/{id}")
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+    public PedidoResponse setStatus(@PathVariable("id") Integer id) {
+        return pedidoService.updateStatus(id);
+    }
+
+    @PutMapping("/status/cancel/{id}")
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+    public PedidoResponse cancel(@PathVariable("id") Integer id) {
+        return pedidoService.cancel(id);
+    }
+
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public void deletePedidoById(@PathVariable Integer id) {

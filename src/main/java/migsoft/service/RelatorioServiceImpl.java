@@ -48,7 +48,9 @@ public class RelatorioServiceImpl implements RelatorioService {
     public RelatorioFinanceiroResponse extrairRelatorioFinanceiro() {
         Double receita = 0.0, despesa = 0.0;
         for (PedidoEntity pedidoEntity : pedidoRepository.findAll()) {
-            despesa = despesa + pedidoEntity.getTotal();
+            if (pedidoEntity.getStatus().contains("Entregue")) {
+                despesa = despesa + pedidoEntity.getTotal();
+            }
         }
         for (VendaEntity vendaEntity : vendaRepository.findAll()) {
             if (vendaEntity.getStatus().contains("OK")) {

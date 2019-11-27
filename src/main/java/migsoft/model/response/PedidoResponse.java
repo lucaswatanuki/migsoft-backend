@@ -23,8 +23,8 @@ public class PedidoResponse {
     private Integer produto_id;
     @JsonProperty("quantidade")
     private Integer quantidade;
- /*   @JsonProperty("itemProduto")
-    private List<ItemProdutoResponse> itemProduto; */
     @JsonProperty("total")
     private Double total;
+    @JsonProperty("status")
+    private String status;
 }

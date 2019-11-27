@@ -82,17 +82,19 @@ public class CotacaoServiceImp implements CotacaoService {
     }
 
     @Override
-    public CotacaoResponse save(CotacaoEntity cotacao) {
-        cotacao.setTotal(cotacao.getQuantidade() * cotacao.getProduto().getPreco());
-        cotacao.setStatus("Pendente");
-        dateConverter(cotacao);
-        CotacaoResponse cotacaoResponse = entitytoResponseConverter(cotacaoRepository.save(cotacao));
+    public CotacaoResponse save(CotacaoRequest cotacao) {
+        CotacaoEntity cotacaoEntity = requestToEntityConverter(cotacao);
+        cotacaoEntity.setTotal(cotacao.getQuantidade() * cotacaoEntity.getProduto().getPreco());
+        cotacaoEntity.setStatus("Pendente");
+        dateConverter(cotacaoEntity);
+        CotacaoResponse cotacaoResponse = entitytoResponseConverter(cotacaoRepository.save(cotacaoEntity));
         return cotacaoResponse;
     }
 
     @Override
     public CotacaoResponse update(CotacaoRequest cotacao, Integer id) {
         CotacaoEntity cotacaoEntity = requestToEntityConverter(cotacao);
+        cotacaoEntity.setId(id);
         cotacaoEntity.setTotal(cotacao.getQuantidade() * cotacaoEntity.getProduto().getPreco());
         dateConverter(cotacaoEntity);
         CotacaoResponse cotacaoResponse = entitytoResponseConverter(cotacaoRepository.save(cotacaoEntity));
