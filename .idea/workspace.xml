@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6cec366-161e-41bb-ad9b-c1fbe9e6c91f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/controller/JsonExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/VendaServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/VendaServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/FormulaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/FormulaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/FormulaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/FormulaService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/FormulaServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/FormulaServiceImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/VendaServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/VendaServiceImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/model/response/RelatorioFinanceiroResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/model/response/RelatorioFinanceiroResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/CotacaoServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/CotacaoServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/PedidoServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/PedidoServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/RelatorioServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/RelatorioServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/migsoft.kotlin_module" beforeDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,28 +28,24 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1SwhOrE29OIRbvTZzmFBKywWxon" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Downloads/BTP-CLOUD-SYSTEM-crud_user/BTP-CLOUD-SYSTEM-crud_user/btp-cs-system-back" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RunManager">
     <configuration name="ApplicationMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="migsoft.ApplicationMain" />
-      <module name="migsoft" />
+      <module name="migsoft-backend" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -59,6 +55,18 @@
         <item itemvalue="Application.ApplicationMain" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -187,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574875227203</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Venda estoque fix">
+      <created>1574895539542</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1574895539542</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -221,6 +236,41 @@
     <MESSAGE value="update" />
     <MESSAGE value="Pedido service update + exceptions + other fixes" />
     <MESSAGE value="Formula produto + SQL Join fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Formula produto + SQL Join fix" />
+    <MESSAGE value="Venda estoque fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Venda estoque fix" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="485" y="75" key="#ApplicationMain" timestamp="1574966253606">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="485" y="75" key="#ApplicationMain/0.0.1536.834@0.0.1536.834" timestamp="1574966253606" />
+    <state x="449" y="145" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1574964191174">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="449" y="145" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.834@0.0.1536.834" timestamp="1574964191174" />
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1574966328060">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1574966328060" />
+    <state width="1493" height="148" key="GridCell.Tab.0.bottom" timestamp="1576698476573">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="148" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1576698476573" />
+    <state width="1493" height="148" key="GridCell.Tab.0.center" timestamp="1576698476573">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="148" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1576698476573" />
+    <state width="1493" height="148" key="GridCell.Tab.0.left" timestamp="1576698476573">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="148" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1576698476573" />
+    <state width="1493" height="148" key="GridCell.Tab.0.right" timestamp="1576698476573">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="148" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1576698476573" />
+    <state x="498" y="0" key="SettingsEditor" timestamp="1574966226806">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="498" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1574966226806" />
   </component>
 </project>

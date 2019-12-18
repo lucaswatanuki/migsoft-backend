@@ -57,10 +57,10 @@ public class PedidoServiceImp implements PedidoService{
     @Override
     public PedidoResponse update(Integer id, PedidoRequest pedidoRequest) {
         PedidoEntity pedidoEntity = pedidoRepository.findById(id).orElse(null);
-        requestToEntityConverter(pedidoRequest);
         dateConverter(pedidoRequest);
         pedidoEntity.setData(pedidoRequest.getData());
         pedidoEntity.setCotacao(cotacaoRepository.findById(pedidoRequest.getCotacaoResponse().getId()).orElse(null));
+        pedidoEntity.setTotal(pedidoRequest.getCotacaoResponse().getTotal());
         PedidoResponse pedidoResponse = entitytoResponseConverter(pedidoRepository.save(pedidoEntity));
         return pedidoResponse;
     }

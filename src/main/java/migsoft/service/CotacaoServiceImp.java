@@ -93,8 +93,7 @@ public class CotacaoServiceImp implements CotacaoService {
 
     @Override
     public CotacaoResponse update(CotacaoRequest cotacao, Integer id) {
-        CotacaoEntity cotacaoEntity = requestToEntityConverter(cotacao);
-        cotacaoEntity.setId(id);
+        CotacaoEntity cotacaoEntity = cotacaoRepository.findById(id).orElse(null);
         cotacaoEntity.setTotal(cotacao.getQuantidade() * cotacaoEntity.getProduto().getPreco());
         dateConverter(cotacaoEntity);
         CotacaoResponse cotacaoResponse = entitytoResponseConverter(cotacaoRepository.save(cotacaoEntity));

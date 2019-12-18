@@ -14,6 +14,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class RelatorioServiceImpl implements RelatorioService {
@@ -46,17 +47,17 @@ public class RelatorioServiceImpl implements RelatorioService {
 
     @Override
     public RelatorioFinanceiroResponse extrairRelatorioFinanceiro() {
-        Double receita = 0.0, despesa = 0.0;
-        for (PedidoEntity pedidoEntity : pedidoRepository.findAll()) {
-            if (pedidoEntity.getStatus().contains("Entregue")) {
-                despesa = despesa + pedidoEntity.getTotal();
-            }
-        }
-        for (VendaEntity vendaEntity : vendaRepository.findAll()) {
-            if (vendaEntity.getStatus().contains("OK")) {
-                receita = receita + vendaEntity.getTotal();
-            }
-        }
+
+        Double despesa = pedidoRepository.findAll().stream()
+                .filter(pedido -> pedido.getStatus().contains("Entregue"))
+                .mapToDouble(value -> value.getTotal()).sum();
+
+
+        Double receita = vendaRepository.findAll().stream()
+                .filter(venda -> venda.getStatus().contains("OK"))
+                .mapToDouble(value -> value.getTotal()).sum();
+
+
         RelatorioFinanceiroResponse relatorio = new RelatorioFinanceiroResponse();
         relatorio.setDespesa(despesa);
         relatorio.setReceita(receita);

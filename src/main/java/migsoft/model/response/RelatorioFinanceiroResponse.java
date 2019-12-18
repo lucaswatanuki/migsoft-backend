@@ -22,4 +22,6 @@ public class RelatorioFinanceiroResponse {
     @JsonProperty("prejuizo")
     private Double prejuizo;
 
+    public RelatorioFinanceiroResponse(Double despesa, Double receita) {
+    }
 }
