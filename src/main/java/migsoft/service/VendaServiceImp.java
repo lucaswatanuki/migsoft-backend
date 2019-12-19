@@ -47,12 +47,11 @@ public class VendaServiceImp implements VendaService {
 
     @Override
     public List<VendaResponse> findAll() {
-        ArrayList<VendaResponse> vendaResponses = new ArrayList<>();
-        for (VendaEntity vendaEntity: vendaRepository.findAll()){
-            VendaResponse vendaResponse = new VendaResponse();
-            vendaResponse = entitytoResponseConverter(vendaEntity);
+        List<VendaResponse> vendaResponses = new ArrayList<>();
+        vendaRepository.findAll().forEach(vendaEntity -> {
+            VendaResponse vendaResponse = entitytoResponseConverter(vendaEntity);
             vendaResponses.add(vendaResponse);
-        }
+        });
         return vendaResponses;
     }
 
@@ -67,10 +66,10 @@ public class VendaServiceImp implements VendaService {
     @Override
     public VendaResponse save(VendaRequest venda) {
         VendaEntity vendaEntity = requestToEntityConverter(venda);
-        if (produtoRepository.findByNome(vendaEntity.getProduto().getNome()) == null){
+        if (produtoRepository.findByNome(vendaEntity.getProduto().getNome()) == null) {
             throw new ProdutoInexistenteException("Produto não cadastrado");
         }
-        if (clienteRepository.findByNome(vendaEntity.getCliente().getNome()) == null){
+        if (clienteRepository.findByNome(vendaEntity.getCliente().getNome()) == null) {
             throw new ClienteInexistenteException("Cliente não cadastrado");
         }
         vendaEntity.setTotal(venda.getQuantidade() * vendaEntity.getProduto().getPreco());
@@ -80,13 +79,12 @@ public class VendaServiceImp implements VendaService {
     }
 
 
-
     @Override
     public VendaResponse update(VendaRequest venda, Integer id) throws EstoqueException {
-        if (produtoRepository.findByNome(venda.getProduto()) == null){
+        if (produtoRepository.findByNome(venda.getProduto()) == null) {
             throw new ProdutoInexistenteException("Produto não cadastrado");
         }
-        if (clienteRepository.findByNome(venda.getCliente()) == null){
+        if (clienteRepository.findByNome(venda.getCliente()) == null) {
             throw new ClienteInexistenteException("Cliente não cadastrado");
         }
         VendaEntity vendaEntity = requestToEntityConverter(venda);
@@ -108,7 +106,7 @@ public class VendaServiceImp implements VendaService {
         return vendaResponse;
     }
 
-    public VendaEntity requestToEntityConverter(VendaRequest vendaRequest){
+    public VendaEntity requestToEntityConverter(VendaRequest vendaRequest) {
         VendaEntity vendaEntity = new VendaEntity();
         vendaEntity.setData(vendaRequest.getData());
         vendaEntity.setProduto(produtoRepository.findByNome(vendaRequest.getProduto()));

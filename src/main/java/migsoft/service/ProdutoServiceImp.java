@@ -37,12 +37,11 @@ public class ProdutoServiceImp implements ProdutoService{
 
     @Override
     public List<ProdutoResponse> findAll() {
-        ArrayList<ProdutoResponse> produtoResponses = new ArrayList<>();
-        for (ProdutoEntity produtoEntity: produtoRepository.findAll()){
-            ProdutoResponse produtoResponse = new ProdutoResponse();
-            produtoResponse = entitytoResponseConverter(produtoEntity);
+        List<ProdutoResponse> produtoResponses = new ArrayList<>();
+        produtoRepository.findAll().forEach(produtoEntity -> {
+            ProdutoResponse produtoResponse = entitytoResponseConverter(produtoEntity);
             produtoResponses.add(produtoResponse);
-        }
+        });
         return produtoResponses;
     }
 

@@ -59,25 +59,22 @@ public class CotacaoServiceImp implements CotacaoService {
 
     @Override
     public List<CotacaoResponse> findAll() {
-        ArrayList<CotacaoResponse> cotacaoResponses = new ArrayList<>();
-        for (CotacaoEntity cotacaoEntity : cotacaoRepository.findAll()) {
-            CotacaoResponse cotacaoResponse = new CotacaoResponse();
-            cotacaoResponse = entitytoResponseConverter(cotacaoEntity);
+        List<CotacaoResponse> cotacaoResponses = new ArrayList<>();
+        cotacaoRepository.findAll().forEach(cotacaoEntity -> {
+            CotacaoResponse cotacaoResponse = entitytoResponseConverter(cotacaoEntity);
             cotacaoResponses.add(cotacaoResponse);
-        }
+        });
         return cotacaoResponses;
     }
 
     @Override
     public List<CotacaoResponse> findOnlyApproved() {
-        ArrayList<CotacaoResponse> cotacaoResponses = new ArrayList<>();
-        for (CotacaoEntity cotacaoEntity : cotacaoRepository.findAll()) {
-            if (cotacaoEntity.getStatus().contains("Aprovado")){
-                CotacaoResponse cotacaoResponse = new CotacaoResponse();
-                cotacaoResponse = entitytoResponseConverter(cotacaoEntity);
-                cotacaoResponses.add(cotacaoResponse);
-            }
-        }
+        List<CotacaoResponse> cotacaoResponses = new ArrayList<>();
+        cotacaoRepository.findAll().stream().filter(cotacao -> cotacao.getStatus().contains("Aprovado"))
+                .forEach(cotacaoEntity -> {
+                    CotacaoResponse cotacaoResponse = entitytoResponseConverter(cotacaoEntity);
+                    cotacaoResponses.add(cotacaoResponse);
+                });
         return cotacaoResponses;
     }
 
@@ -118,7 +115,7 @@ public class CotacaoServiceImp implements CotacaoService {
         return cotacaoResponse;
     }
 
-    public CotacaoEntity requestToEntityConverter(CotacaoRequest cotacaoRequest){
+    public CotacaoEntity requestToEntityConverter(CotacaoRequest cotacaoRequest) {
         CotacaoEntity cotacaoEntity = new CotacaoEntity();
         cotacaoEntity.setProduto(produtoRepository.findByNome(cotacaoRequest.getProduto()));
         cotacaoEntity.setFornecedor(fornecedorRepository.findByNomeFantasia(cotacaoRequest.getFornecedor()));
@@ -128,7 +125,7 @@ public class CotacaoServiceImp implements CotacaoService {
         return cotacaoEntity;
     }
 
-    public void dateConverter(CotacaoEntity cotacao){
+    public void dateConverter(CotacaoEntity cotacao) {
         DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH);
         DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("dd-MM-yyy", Locale.ENGLISH);
         LocalDate date = LocalDate.parse(cotacao.getData(), inputFormatter);

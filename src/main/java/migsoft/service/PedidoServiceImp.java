@@ -35,12 +35,11 @@ public class PedidoServiceImp implements PedidoService{
 
     @Override
     public List<PedidoResponse> findAll() {
-        ArrayList<PedidoResponse> pedidoResponses = new ArrayList<>();
-        for (PedidoEntity pedidoEntity: pedidoRepository.findAll()){
-            PedidoResponse pedidoResponse = new PedidoResponse();
-            pedidoResponse = entitytoResponseConverter(pedidoEntity);
+        List<PedidoResponse> pedidoResponses = new ArrayList<>();
+        pedidoRepository.findAll().forEach(pedidoEntity -> {
+            PedidoResponse pedidoResponse = entitytoResponseConverter(pedidoEntity);
             pedidoResponses.add(pedidoResponse);
-        }
+        });
         return pedidoResponses;
     }
 

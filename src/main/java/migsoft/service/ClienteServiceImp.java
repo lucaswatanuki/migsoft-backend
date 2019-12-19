@@ -37,11 +37,10 @@ public class ClienteServiceImp implements ClienteService{
     @Override
     public List<ClienteResponse> findAll() {
         List<ClienteResponse> clienteResponses = new ArrayList<>();
-        for (ClienteEntity clienteEntity : clienteRepository.findAll()){
-            ClienteResponse clienteResponse = new ClienteResponse();
-            clienteResponse = entitytoResponseConverter(clienteEntity);
+        clienteRepository.findAll().forEach(clienteEntity -> {
+            ClienteResponse clienteResponse = entitytoResponseConverter(clienteEntity);
             clienteResponses.add(clienteResponse);
-        }
+        });
         return clienteResponses;
     }
 

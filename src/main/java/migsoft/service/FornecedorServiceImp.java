@@ -31,25 +31,22 @@ public class FornecedorServiceImp implements FornecedorService {
 
     @Override
     public List<FornecedorResponse> findAll() {
-        ArrayList<FornecedorResponse> fornecedorResponses = new ArrayList<>();
-        for (FornecedorEntity fornecedorEntity : fornecedorRepository.findAll()){
-            FornecedorResponse fornecedorResponse = new FornecedorResponse();
-            fornecedorResponse = entitytoResponseConverter(fornecedorEntity);
+        List<FornecedorResponse> fornecedorResponses = new ArrayList<>();
+        fornecedorRepository.findAll().forEach(fornecedorEntity -> {
+            FornecedorResponse fornecedorResponse = entitytoResponseConverter(fornecedorEntity);
             fornecedorResponses.add(fornecedorResponse);
-        }
+        });
         return fornecedorResponses;
     }
 
     @Override
     public List<FornecedorResponse> findAllActive() {
-        ArrayList<FornecedorResponse> fornecedorResponses = new ArrayList<>();
-        for (FornecedorEntity fornecedorEntity : fornecedorRepository.findAll()) {
-            if (fornecedorEntity.getAtividade().contains("Ativo")) {
-                FornecedorResponse fornecedorResponse = new FornecedorResponse();
-                fornecedorResponse = entitytoResponseConverter(fornecedorEntity);
-                fornecedorResponses.add(fornecedorResponse);
-            }
-        }
+        List<FornecedorResponse> fornecedorResponses = new ArrayList<>();
+        fornecedorRepository.findAll().stream().filter(fornecedor -> fornecedor.getAtividade().contains("Ativo"))
+                .forEach(fornecedorEntity -> {
+                    FornecedorResponse fornecedorResponse = entitytoResponseConverter(fornecedorEntity);
+                    fornecedorResponses.add(fornecedorResponse);
+                });
         return fornecedorResponses;
     }
 
@@ -70,7 +67,7 @@ public class FornecedorServiceImp implements FornecedorService {
         fornecedorRepository.deleteById(id);
     }
 
-    public FornecedorResponse entitytoResponseConverter(FornecedorEntity fornecedorEntity){
+    public FornecedorResponse entitytoResponseConverter(FornecedorEntity fornecedorEntity) {
         FornecedorResponse fornecedorResponse = new FornecedorResponse();
         fornecedorResponse.setId(fornecedorEntity.getId());
         fornecedorResponse.setCnpj(fornecedorEntity.getCnpj());

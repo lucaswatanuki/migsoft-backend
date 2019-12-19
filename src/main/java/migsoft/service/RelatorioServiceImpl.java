@@ -57,7 +57,6 @@ public class RelatorioServiceImpl implements RelatorioService {
                 .filter(venda -> venda.getStatus().contains("OK"))
                 .mapToDouble(value -> value.getTotal()).sum();
 
-
         RelatorioFinanceiroResponse relatorio = new RelatorioFinanceiroResponse();
         relatorio.setDespesa(despesa);
         relatorio.setReceita(receita);

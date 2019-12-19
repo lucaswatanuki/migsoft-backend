@@ -31,12 +31,11 @@ public class FormulaServiceImp implements FormulaService {
 
     @Override
     public List<FormulaResponse> findAll() {
-        ArrayList<FormulaResponse> formulaResponses = new ArrayList<>();
-        for (FormulaProdutoEntity formulaProdutoEntity : formulaRepository.findAll()) {
-            FormulaResponse formulaResponse = new FormulaResponse();
-            formulaResponse = entitytoResponseConverter(formulaProdutoEntity);
+        List<FormulaResponse> formulaResponses = new ArrayList<>();
+        formulaRepository.findAll().forEach(formulaProdutoEntity -> {
+            FormulaResponse formulaResponse = entitytoResponseConverter(formulaProdutoEntity);
             formulaResponses.add(formulaResponse);
-        }
+        });
         return formulaResponses;
     }
 
