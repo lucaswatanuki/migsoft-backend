@@ -83,7 +83,6 @@ public class CotacaoServiceImp implements CotacaoService {
         CotacaoEntity cotacaoEntity = requestToEntityConverter(cotacao);
         cotacaoEntity.setTotal(cotacao.getQuantidade() * cotacaoEntity.getProduto().getPreco());
         cotacaoEntity.setStatus("Pendente");
-        dateConverter(cotacaoEntity);
         CotacaoResponse cotacaoResponse = entitytoResponseConverter(cotacaoRepository.save(cotacaoEntity));
         return cotacaoResponse;
     }
@@ -91,8 +90,9 @@ public class CotacaoServiceImp implements CotacaoService {
     @Override
     public CotacaoResponse update(CotacaoRequest cotacao, Integer id) {
         CotacaoEntity cotacaoEntity = cotacaoRepository.findById(id).orElse(null);
+        cotacaoEntity.setQuantidade(cotacao.getQuantidade());
+        cotacaoEntity.setData(cotacao.getData());
         cotacaoEntity.setTotal(cotacao.getQuantidade() * cotacaoEntity.getProduto().getPreco());
-        dateConverter(cotacaoEntity);
         CotacaoResponse cotacaoResponse = entitytoResponseConverter(cotacaoRepository.save(cotacaoEntity));
         return cotacaoResponse;
     }
@@ -124,12 +124,12 @@ public class CotacaoServiceImp implements CotacaoService {
         cotacaoEntity.setQuantidade(cotacaoRequest.getQuantidade());
         return cotacaoEntity;
     }
-
+/*
     public void dateConverter(CotacaoEntity cotacao) {
-        DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH);
+        DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.);
         DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("dd-MM-yyy", Locale.ENGLISH);
         LocalDate date = LocalDate.parse(cotacao.getData(), inputFormatter);
         String formattedDate = outputFormatter.format(date);
         cotacao.setData(formattedDate);
-    }
+    }*/
 }
