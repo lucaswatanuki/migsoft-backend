@@ -92,6 +92,7 @@ public class CotacaoServiceImp implements CotacaoService {
         CotacaoEntity cotacaoEntity = cotacaoRepository.findById(id).orElse(null);
         cotacaoEntity.setQuantidade(cotacao.getQuantidade());
         cotacaoEntity.setData(cotacao.getData());
+        dateConverter(cotacaoEntity);
         cotacaoEntity.setTotal(cotacao.getQuantidade() * cotacaoEntity.getProduto().getPreco());
         CotacaoResponse cotacaoResponse = entitytoResponseConverter(cotacaoRepository.save(cotacaoEntity));
         return cotacaoResponse;
@@ -124,12 +125,12 @@ public class CotacaoServiceImp implements CotacaoService {
         cotacaoEntity.setQuantidade(cotacaoRequest.getQuantidade());
         return cotacaoEntity;
     }
-/*
+
     public void dateConverter(CotacaoEntity cotacao) {
-        DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.);
+        DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH);
         DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("dd-MM-yyy", Locale.ENGLISH);
         LocalDate date = LocalDate.parse(cotacao.getData(), inputFormatter);
         String formattedDate = outputFormatter.format(date);
         cotacao.setData(formattedDate);
-    }*/
+    }
 }
