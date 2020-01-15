@@ -1,10 +1,8 @@
 package migsoft.service;
 
 import migsoft.model.CotacaoEntity;
-import migsoft.model.request.CotacaoRequest;
-import migsoft.model.response.CotacaoResponse;
-import migsoft.model.response.FornecedorResponse;
-import migsoft.model.response.PedidoResponse;
+import migsoft.controller.request.CotacaoRequest;
+import migsoft.controller.response.CotacaoResponse;
 import migsoft.repository.CotacaoRepository;
 import migsoft.repository.FornecedorRepository;
 import migsoft.repository.ProdutoRepository;

@@ -1,7 +1,7 @@
 package migsoft.service;
 
-import migsoft.model.response.RelatorioFinanceiroResponse;
-import migsoft.model.response.RelatorioProdutos;
+import migsoft.controller.response.RelatorioFinanceiroResponse;
+import migsoft.controller.response.RelatorioProdutos;
 
 import java.util.Date;
 import java.util.List;

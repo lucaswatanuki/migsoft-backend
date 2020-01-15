@@ -1,9 +1,7 @@
 package migsoft.service;
 
-import migsoft.model.PedidoEntity;
-import migsoft.model.request.PedidoRequest;
-import migsoft.model.response.PedidoResponse;
-import migsoft.model.response.ProdutoResponse;
+import migsoft.controller.request.PedidoRequest;
+import migsoft.controller.response.PedidoResponse;
 
 import java.util.List;
 

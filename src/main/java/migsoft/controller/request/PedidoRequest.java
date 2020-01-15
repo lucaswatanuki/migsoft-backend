@@ -1,11 +1,10 @@
-package migsoft.model.request;
+package migsoft.controller.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import migsoft.model.CotacaoEntity;
-import migsoft.model.response.CotacaoResponse;
+import migsoft.controller.response.CotacaoResponse;
 
 @Data
 @AllArgsConstructor

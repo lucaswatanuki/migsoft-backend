@@ -1,9 +1,8 @@
 package migsoft.controller;
 
 import migsoft.Exceptions.EstoqueException;
-import migsoft.model.PedidoEntity;
-import migsoft.model.request.PedidoRequest;
-import migsoft.model.response.PedidoResponse;
+import migsoft.controller.request.PedidoRequest;
+import migsoft.controller.response.PedidoResponse;
 import migsoft.service.EstoqueService;
 import migsoft.service.PedidoService;
 import org.springframework.beans.factory.annotation.Autowired;

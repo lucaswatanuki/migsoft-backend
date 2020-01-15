@@ -1,22 +1,19 @@
-package migsoft.model.request;
+package migsoft.controller.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import migsoft.model.response.ClienteResponse;
-import migsoft.model.response.ProdutoResponse;
-import migsoft.model.response.VendaResponse;
 
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import java.util.Date;
 
+
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-public class VendaRequest {
-
+public class OrcamentoRequest {
     @JsonProperty("id")
     private Integer id;
 

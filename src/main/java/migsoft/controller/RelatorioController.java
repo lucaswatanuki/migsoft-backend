@@ -1,8 +1,8 @@
 package migsoft.controller;
 
-import migsoft.model.request.RelatorioRequest;
-import migsoft.model.response.RelatorioFinanceiroResponse;
-import migsoft.model.response.RelatorioProdutos;
+import migsoft.controller.request.RelatorioRequest;
+import migsoft.controller.response.RelatorioFinanceiroResponse;
+import migsoft.controller.response.RelatorioProdutos;
 import migsoft.service.RelatorioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;

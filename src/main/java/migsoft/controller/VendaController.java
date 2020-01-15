@@ -2,17 +2,15 @@ package migsoft.controller;
 
 import migsoft.Exceptions.EstoqueException;
 import migsoft.Exceptions.Resposta;
+import migsoft.controller.mappers.ProdutoMapper;
+import migsoft.controller.request.VendaRequest;
+import migsoft.controller.response.ProdutoResponse;
+import migsoft.controller.response.VendaResponse;
 import migsoft.model.ProdutoEntity;
-import migsoft.model.VendaEntity;
-import migsoft.model.request.RelatorioRequest;
-import migsoft.model.request.VendaRequest;
-import migsoft.model.response.ItemProdutoResponse;
-import migsoft.model.response.ProdutoResponse;
-import migsoft.model.response.RelatorioProdutos;
-import migsoft.model.response.VendaResponse;
 import migsoft.service.EstoqueService;
 import migsoft.service.ProdutoService;
 import migsoft.service.VendaService;
+import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -54,10 +52,11 @@ public class VendaController {
     @PutMapping(value = "/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public ResponseEntity<Object> putVenda(@PathVariable("id") Integer id, @RequestBody VendaRequest venda) throws EstoqueException {
-        ProdutoResponse produtoResponse = produtoService.findByNome(venda.getProduto());
+        ProdutoEntity produtoEntity = produtoService.findByNome(venda.getProduto());
+        ProdutoResponse produtoResponse = Mappers.getMapper(ProdutoMapper.class).toProdutoResponse(produtoEntity);
         VendaResponse vendaResponse = vendaService.findById(id);
         try {
-            estoqueService.subEstoque(produtoResponse.getId(), venda.getQuantidade() - vendaResponse.getQuantidade());
+            estoqueService.subEstoque(produtoResponse.getIdProduto(), venda.getQuantidade() - vendaResponse.getQuantidade());
             VendaResponse response = vendaService.update(venda, id);
             return ResponseEntity.ok(response);
         } catch (IllegalArgumentException | EstoqueException exception) {

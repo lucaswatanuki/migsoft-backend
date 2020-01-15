@@ -1,8 +1,7 @@
 package migsoft.controller;
 
-import migsoft.model.OrcamentoEntity;
-import migsoft.model.request.OrcamentoRequest;
-import migsoft.model.response.OrcamentoResponse;
+import migsoft.controller.request.OrcamentoRequest;
+import migsoft.controller.response.OrcamentoResponse;
 import migsoft.service.OrcamentoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

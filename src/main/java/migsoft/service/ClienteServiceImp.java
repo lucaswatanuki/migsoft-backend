@@ -2,7 +2,7 @@ package migsoft.service;
 
 import migsoft.Exceptions.ClienteInexistenteException;
 import migsoft.model.ClienteEntity;
-import migsoft.model.response.ClienteResponse;
+import migsoft.controller.response.ClienteResponse;
 import migsoft.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

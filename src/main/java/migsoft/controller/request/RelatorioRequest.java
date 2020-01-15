@@ -1,4 +1,4 @@
-package migsoft.model.request;
+package migsoft.controller.request;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

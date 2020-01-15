@@ -4,20 +4,16 @@ import migsoft.Exceptions.ClienteInexistenteException;
 import migsoft.Exceptions.EstoqueException;
 import migsoft.Exceptions.ProdutoInexistenteException;
 import migsoft.model.VendaEntity;
-import migsoft.model.request.VendaRequest;
-import migsoft.model.response.VendaResponse;
+import migsoft.controller.request.VendaRequest;
+import migsoft.controller.response.VendaResponse;
 import migsoft.repository.ClienteRepository;
 import migsoft.repository.ProdutoRepository;
 import migsoft.repository.VendaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 @Service
 public class VendaServiceImp implements VendaService {

@@ -1,18 +1,14 @@
 package migsoft.controller;
 
-import migsoft.model.CotacaoEntity;
-import migsoft.model.request.CotacaoRequest;
-import migsoft.model.response.CotacaoResponse;
+import migsoft.controller.request.CotacaoRequest;
+import migsoft.controller.response.CotacaoResponse;
 import migsoft.service.CotacaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.util.ReflectionUtils;
 import org.springframework.web.bind.annotation.*;
 
-import java.lang.reflect.Field;
 import java.util.List;
-import java.util.Map;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController

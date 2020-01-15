@@ -1,8 +1,8 @@
 package migsoft.service;
 
 import migsoft.model.CotacaoEntity;
-import migsoft.model.request.CotacaoRequest;
-import migsoft.model.response.CotacaoResponse;
+import migsoft.controller.request.CotacaoRequest;
+import migsoft.controller.response.CotacaoResponse;
 
 import java.util.List;
 

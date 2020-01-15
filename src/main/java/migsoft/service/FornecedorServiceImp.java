@@ -1,7 +1,7 @@
 package migsoft.service;
 
 import migsoft.model.FornecedorEntity;
-import migsoft.model.response.FornecedorResponse;
+import migsoft.controller.response.FornecedorResponse;
 import migsoft.repository.FornecedorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

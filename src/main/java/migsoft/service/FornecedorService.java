@@ -1,7 +1,7 @@
 package migsoft.service;
 
 import migsoft.model.FornecedorEntity;
-import migsoft.model.response.FornecedorResponse;
+import migsoft.controller.response.FornecedorResponse;
 
 import java.util.List;
 

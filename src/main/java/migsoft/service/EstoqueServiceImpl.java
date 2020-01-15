@@ -1,10 +1,6 @@
 package migsoft.service;
 
-import migsoft.Exceptions.EstoqueException;
-import migsoft.model.PedidoEntity;
 import migsoft.model.ProdutoEntity;
-import migsoft.model.response.PedidoResponse;
-import migsoft.model.response.ProdutoResponse;
 import migsoft.repository.PedidoRepository;
 import migsoft.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;

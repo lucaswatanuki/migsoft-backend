@@ -1,31 +1,27 @@
-package migsoft.model.request;
+package migsoft.controller.response;
+
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class CotacaoRequest {
-
+public class OrcamentoResponse {
     @JsonProperty("id")
     private Integer id;
-
     @JsonProperty("data")
-    private String data;
-
-    @JsonProperty("quantidade")
-    private Integer quantidade;
-
+    private Date data;
+    @JsonProperty("cliente")
+    private String cliente;
     @JsonProperty("produto")
     private String produto;
-
-    @JsonProperty("fornecedor")
-    private String fornecedor;
-
-    @JsonProperty("status")
-    private String status;
-
+    @JsonProperty("quantidade")
+    private Integer quantidade;
+    @JsonProperty("total")
+    private Double total;
 }

@@ -2,8 +2,7 @@ package migsoft.service;
 
 import migsoft.Exceptions.ProdutoInexistenteException;
 import migsoft.model.ProdutoEntity;
-import migsoft.model.response.PedidoResponse;
-import migsoft.model.response.ProdutoResponse;
+import migsoft.controller.response.ProdutoResponse;
 import migsoft.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,40 +21,33 @@ public class ProdutoServiceImp implements ProdutoService{
     }
 
     @Override
-    public ProdutoResponse findById(Integer id) {
-        return entitytoResponseConverter(produtoRepository.findById(id).orElse(null));
+    public ProdutoEntity findById(Integer id) {
+        return produtoRepository.findById(id).orElse(null);
     }
 
     @Override
-    public ProdutoResponse findByNome(String nome) {
-        if (produtoRepository.findByNome(nome) == null){
-            throw new ProdutoInexistenteException("Produto não cadastrado");
-        }
-        ProdutoResponse response = entitytoResponseConverter(produtoRepository.findByNome(nome));
-        return response;
+    public ProdutoEntity findByNome(String nome) {
+        return produtoRepository.findByNome(nome);
     }
 
     @Override
-    public List<ProdutoResponse> findAll() {
-        List<ProdutoResponse> produtoResponses = new ArrayList<>();
+    public List<ProdutoEntity> findAll() {
+        List<ProdutoEntity> listaProdutos = new ArrayList<>();
         produtoRepository.findAll().forEach(produtoEntity -> {
-            ProdutoResponse produtoResponse = entitytoResponseConverter(produtoEntity);
-            produtoResponses.add(produtoResponse);
+            listaProdutos.add(produtoEntity);
         });
-        return produtoResponses;
+        return listaProdutos;
     }
 
     @Override
-    public ProdutoResponse save(ProdutoEntity produto) {
-        ProdutoResponse produtoResponse = entitytoResponseConverter(produtoRepository.save(produto));
-        return produtoResponse;
+    public ProdutoEntity save(ProdutoEntity produto) {
+        return produtoRepository.save(produto);
     }
 
 
     @Override
-    public ProdutoResponse update(ProdutoEntity produto) {
-        ProdutoResponse produtoResponse = entitytoResponseConverter(produtoRepository.save(produto));
-        return produtoResponse;
+    public ProdutoEntity update(ProdutoEntity produto) {
+        return produtoRepository.save(produto);
     }
 
     @Override
@@ -63,12 +55,4 @@ public class ProdutoServiceImp implements ProdutoService{
         produtoRepository.deleteById(id);
     }
 
-    public ProdutoResponse entitytoResponseConverter(ProdutoEntity produtoEntity){
-        ProdutoResponse produtoResponse = new ProdutoResponse();
-        produtoResponse.setId(produtoEntity.getId());
-        produtoResponse.setNome(produtoEntity.getNome());
-        produtoResponse.setPreco(produtoEntity.getPreco());
-        produtoResponse.setQtdEstoque(produtoEntity.getQtdEstoque());
-        return produtoResponse;
-    }
 }

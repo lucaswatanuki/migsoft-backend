@@ -4,11 +4,10 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import migsoft.model.response.RelatorioProdutos;
+import migsoft.controller.response.RelatorioProdutos;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
 
 @NoArgsConstructor

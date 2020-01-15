@@ -1,20 +1,16 @@
 package migsoft.service;
 
-import migsoft.model.PedidoEntity;
-import migsoft.model.VendaEntity;
-import migsoft.model.response.RelatorioFinanceiroResponse;
-import migsoft.model.response.RelatorioProdutos;
+import migsoft.controller.response.RelatorioFinanceiroResponse;
+import migsoft.controller.response.RelatorioProdutos;
 import migsoft.repository.PedidoRepository;
 import migsoft.repository.VendaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import java.util.Date;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class RelatorioServiceImpl implements RelatorioService {

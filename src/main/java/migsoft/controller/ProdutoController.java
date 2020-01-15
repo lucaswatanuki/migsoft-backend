@@ -2,11 +2,12 @@ package migsoft.controller;
 
 import migsoft.Exceptions.ProdutoInexistenteException;
 import migsoft.Exceptions.Resposta;
+import migsoft.controller.mappers.ProdutoMapper;
 import migsoft.model.ProdutoEntity;
-import migsoft.model.response.ProdutoResponse;
+import migsoft.controller.response.ProdutoResponse;
 import migsoft.service.ProdutoService;
+import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -25,19 +26,25 @@ public class ProdutoController {
     @PostMapping("")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public ProdutoResponse post(@RequestBody ProdutoEntity produtoEntity) {
-        return produtoService.save(produtoEntity);
+        ProdutoEntity produto = produtoService.save(produtoEntity);
+        ProdutoResponse response = Mappers.getMapper(ProdutoMapper.class).toProdutoResponse(produto);
+        return response;
     }
 
     @GetMapping("/all")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public List<ProdutoResponse> getAll() {
-        return produtoService.findAll();
+        List<ProdutoEntity> listaProduto = produtoService.findAll();
+        List<ProdutoResponse> response = Mappers.getMapper(ProdutoMapper.class).toListaProdutoResponse(listaProduto);
+        return response;
     }
 
     @GetMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public ProdutoResponse getProdutoById(@PathVariable("id") Integer id) {
-        return produtoService.findById(id);
+        ProdutoEntity produto = produtoService.findById(id);
+        ProdutoResponse response = Mappers.getMapper(ProdutoMapper.class).toProdutoResponse(produto);
+        return response;
     }
 
     @GetMapping("/nome/{nome}")
@@ -54,7 +61,9 @@ public class ProdutoController {
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public ProdutoResponse updateProduto(@PathVariable("id") Integer id, @RequestBody ProdutoEntity produto) {
         produto.setId(id);
-        return produtoService.update(produto);
+        ProdutoEntity produtoEntity = produtoService.save(produto);
+        ProdutoResponse response = Mappers.getMapper(ProdutoMapper.class).toProdutoResponse(produto);
+        return response;
     }
 
     @DeleteMapping("/{id}")

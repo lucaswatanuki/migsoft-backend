@@ -1,19 +1,17 @@
-package migsoft.model.request;
-
+package migsoft.controller.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import java.util.Date;
-
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class FormulaRequest {
+@AllArgsConstructor
+public class FormulaResponse {
+
+    @JsonProperty("id")
+    private Integer id;
 
     @JsonProperty("produto")
     private String produto;
@@ -27,5 +25,3 @@ public class FormulaRequest {
     @JsonProperty("quantidade")
     private Integer quantidade;
 }
-
-

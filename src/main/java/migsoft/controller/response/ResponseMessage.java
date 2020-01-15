@@ -1,4 +1,4 @@
-package migsoft.model.response;
+package migsoft.controller.response;
 
 public class ResponseMessage {
 

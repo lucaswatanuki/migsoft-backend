@@ -1,8 +1,8 @@
 package migsoft.service;
 
 import migsoft.model.OrcamentoEntity;
-import migsoft.model.request.OrcamentoRequest;
-import migsoft.model.response.OrcamentoResponse;
+import migsoft.controller.request.OrcamentoRequest;
+import migsoft.controller.response.OrcamentoResponse;
 import migsoft.repository.ClienteRepository;
 import migsoft.repository.OrcamentoRepository;
 import migsoft.repository.ProdutoRepository;

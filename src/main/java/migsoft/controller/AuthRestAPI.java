@@ -1,8 +1,8 @@
 package migsoft.controller;
 
 import migsoft.model.*;
-import migsoft.model.response.JwtResponse;
-import migsoft.model.response.ResponseMessage;
+import migsoft.controller.response.JwtResponse;
+import migsoft.controller.response.ResponseMessage;
 import migsoft.repository.RoleRepository;
 import migsoft.repository.UserRepository;
 import migsoft.security.jwt.JwtProvider;

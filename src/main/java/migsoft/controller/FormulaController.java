@@ -1,8 +1,7 @@
 package migsoft.controller;
 
-import migsoft.model.FormulaProdutoEntity;
-import migsoft.model.request.FormulaRequest;
-import migsoft.model.response.FormulaResponse;
+import migsoft.controller.request.FormulaRequest;
+import migsoft.controller.response.FormulaResponse;
 import migsoft.service.FormulaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package migsoft.model.request;
+package migsoft.controller.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
@@ -9,24 +9,23 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import java.util.Date;
 
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrcamentoRequest {
+public class VendaResponse {
     @JsonProperty("id")
     private Integer id;
-
+    @Temporal(TemporalType.DATE)
+    @JsonProperty("data")
+    private Date data;
     @JsonProperty("cliente")
     private String cliente;
-
     @JsonProperty("produto")
     private String produto;
-
-    @JsonProperty("data")
-    @Temporal(TemporalType.DATE)
-    private Date data;
-
     @JsonProperty("quantidade")
     private Integer quantidade;
+    @JsonProperty("total")
+    private Double total;
+    @JsonProperty("status")
+    private String status;
 }

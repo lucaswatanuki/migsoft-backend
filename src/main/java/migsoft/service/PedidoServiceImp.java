@@ -1,10 +1,8 @@
 package migsoft.service;
 
-import migsoft.model.CotacaoEntity;
 import migsoft.model.PedidoEntity;
-import migsoft.model.request.PedidoRequest;
-import migsoft.model.response.CotacaoResponse;
-import migsoft.model.response.PedidoResponse;
+import migsoft.controller.request.PedidoRequest;
+import migsoft.controller.response.PedidoResponse;
 import migsoft.repository.CotacaoRepository;
 import migsoft.repository.PedidoRepository;
 import org.springframework.beans.factory.annotation.Autowired;

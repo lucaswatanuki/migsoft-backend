@@ -2,11 +2,9 @@ package migsoft.service;
 
 import migsoft.Exceptions.EstoqueException;
 import migsoft.model.VendaEntity;
-import migsoft.model.request.VendaRequest;
-import migsoft.model.response.RelatorioProdutos;
-import migsoft.model.response.VendaResponse;
+import migsoft.controller.request.VendaRequest;
+import migsoft.controller.response.VendaResponse;
 
-import java.util.Date;
 import java.util.List;
 
 public interface VendaService {

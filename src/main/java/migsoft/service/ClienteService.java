@@ -1,8 +1,7 @@
 package migsoft.service;
 
 import migsoft.model.ClienteEntity;
-import migsoft.model.response.ClienteResponse;
-import org.springframework.stereotype.Service;
+import migsoft.controller.response.ClienteResponse;
 
 import java.util.List;
 
