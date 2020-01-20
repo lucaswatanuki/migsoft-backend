@@ -1,4 +1,4 @@
-package migsoft.Exceptions;
+package migsoft.exceptions;
 
 public class ClienteInexistenteException extends RuntimeException {
 

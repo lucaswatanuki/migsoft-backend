@@ -1,7 +1,7 @@
 package migsoft.controller;
 
-import migsoft.Exceptions.EstoqueException;
-import migsoft.Exceptions.Resposta;
+import migsoft.exceptions.EstoqueException;
+import migsoft.exceptions.Resposta;
 import migsoft.controller.mappers.ProdutoMapper;
 import migsoft.controller.request.VendaRequest;
 import migsoft.controller.response.ProdutoResponse;
@@ -52,8 +52,7 @@ public class VendaController {
     @PutMapping(value = "/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public ResponseEntity<Object> putVenda(@PathVariable("id") Integer id, @RequestBody VendaRequest venda) throws EstoqueException {
-        ProdutoEntity produtoEntity = produtoService.findByNome(venda.getProduto());
-        ProdutoResponse produtoResponse = Mappers.getMapper(ProdutoMapper.class).toProdutoResponse(produtoEntity);
+        ProdutoResponse produtoResponse = produtoService.findByNome(venda.getProduto());
         VendaResponse vendaResponse = vendaService.findById(id);
         try {
             estoqueService.subEstoque(produtoResponse.getIdProduto(), venda.getQuantidade() - vendaResponse.getQuantidade());
@@ -67,7 +66,7 @@ public class VendaController {
     @PutMapping("/status/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public VendaResponse setStatus(@PathVariable("id") Integer id) {
-        estoqueService.addEstoque(produtoService.findByNome(vendaService.findById(id).getProduto()).getId(), vendaService.findById(id).getQuantidade());
+        estoqueService.addEstoque(produtoService.findByNome(vendaService.findById(id).getProduto()).getIdProduto(), vendaService.findById(id).getQuantidade());
         return vendaService.cancel(id);
     }
 

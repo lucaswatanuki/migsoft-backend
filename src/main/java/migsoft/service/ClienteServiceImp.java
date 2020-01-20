@@ -1,6 +1,6 @@
 package migsoft.service;
 
-import migsoft.Exceptions.ClienteInexistenteException;
+import migsoft.exceptions.ClienteInexistenteException;
 import migsoft.model.ClienteEntity;
 import migsoft.controller.response.ClienteResponse;
 import migsoft.repository.ClienteRepository;

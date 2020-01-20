@@ -1,8 +1,4 @@
-package migsoft.Exceptions;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+package migsoft.exceptions;
 
 
 public class EstoqueException extends RuntimeException {

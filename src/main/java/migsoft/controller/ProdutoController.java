@@ -1,7 +1,8 @@
 package migsoft.controller;
 
-import migsoft.Exceptions.ProdutoInexistenteException;
-import migsoft.Exceptions.Resposta;
+import migsoft.controller.request.ProdutoRequest;
+import migsoft.exceptions.ProdutoInexistenteException;
+import migsoft.exceptions.Resposta;
 import migsoft.controller.mappers.ProdutoMapper;
 import migsoft.model.ProdutoEntity;
 import migsoft.controller.response.ProdutoResponse;
@@ -25,26 +26,21 @@ public class ProdutoController {
 
     @PostMapping("")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ProdutoResponse post(@RequestBody ProdutoEntity produtoEntity) {
-        ProdutoEntity produto = produtoService.save(produtoEntity);
-        ProdutoResponse response = Mappers.getMapper(ProdutoMapper.class).toProdutoResponse(produto);
-        return response;
+    public ProdutoResponse post(@RequestBody ProdutoRequest request) {
+        return produtoService.save(request);
     }
 
     @GetMapping("/all")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public List<ProdutoResponse> getAll() {
-        List<ProdutoEntity> listaProduto = produtoService.findAll();
-        List<ProdutoResponse> response = Mappers.getMapper(ProdutoMapper.class).toListaProdutoResponse(listaProduto);
+        List<ProdutoResponse> response = produtoService.findAll();
         return response;
     }
 
     @GetMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public ProdutoResponse getProdutoById(@PathVariable("id") Integer id) {
-        ProdutoEntity produto = produtoService.findById(id);
-        ProdutoResponse response = Mappers.getMapper(ProdutoMapper.class).toProdutoResponse(produto);
-        return response;
+        return produtoService.findById(id);
     }
 
     @GetMapping("/nome/{nome}")
@@ -59,11 +55,8 @@ public class ProdutoController {
 
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ProdutoResponse updateProduto(@PathVariable("id") Integer id, @RequestBody ProdutoEntity produto) {
-        produto.setId(id);
-        ProdutoEntity produtoEntity = produtoService.save(produto);
-        ProdutoResponse response = Mappers.getMapper(ProdutoMapper.class).toProdutoResponse(produto);
-        return response;
+    public ProdutoResponse updateProduto(@PathVariable("id") Integer id, @RequestBody ProdutoRequest request) {
+        return produtoService.update(request, id);
     }
 
     @DeleteMapping("/{id}")

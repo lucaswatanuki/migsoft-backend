@@ -17,4 +17,8 @@ public class ProdutoResponse {
     private double precoProduto;
     @JsonProperty("qtdEstoque")
     private Integer qtdEstoqueProduto;
+
+    public Integer getIdProduto() {
+        return idProduto;
+    }
 }

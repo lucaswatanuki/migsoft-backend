@@ -1,6 +1,6 @@
 package migsoft.service;
 
-import migsoft.Exceptions.EstoqueException;
+import migsoft.exceptions.EstoqueException;
 import migsoft.model.VendaEntity;
 import migsoft.controller.request.VendaRequest;
 import migsoft.controller.response.VendaResponse;

@@ -1,7 +1,7 @@
 package migsoft.service;
 
 
-import migsoft.Exceptions.EstoqueException;
+import migsoft.exceptions.EstoqueException;
 import migsoft.model.ProdutoEntity;
 
 public interface EstoqueService {

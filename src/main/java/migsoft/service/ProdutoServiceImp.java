@@ -1,9 +1,11 @@
 package migsoft.service;
 
-import migsoft.Exceptions.ProdutoInexistenteException;
-import migsoft.model.ProdutoEntity;
+import migsoft.controller.mappers.ProdutoMapper;
+import migsoft.controller.request.ProdutoRequest;
 import migsoft.controller.response.ProdutoResponse;
+import migsoft.model.ProdutoEntity;
 import migsoft.repository.ProdutoRepository;
+import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,33 +23,35 @@ public class ProdutoServiceImp implements ProdutoService{
     }
 
     @Override
-    public ProdutoEntity findById(Integer id) {
-        return produtoRepository.findById(id).orElse(null);
+    public ProdutoResponse findById(Integer id) {
+        return Mappers.getMapper(ProdutoMapper.class).toProdutoResponse(produtoRepository.findById(id).orElse(null));
     }
 
     @Override
-    public ProdutoEntity findByNome(String nome) {
-        return produtoRepository.findByNome(nome);
+    public ProdutoResponse findByNome(String nome) {
+        return Mappers.getMapper(ProdutoMapper.class).toProdutoResponse(produtoRepository.findByNome(nome));
     }
 
     @Override
-    public List<ProdutoEntity> findAll() {
-        List<ProdutoEntity> listaProdutos = new ArrayList<>();
+    public List<ProdutoResponse> findAll() {
+        List<ProdutoResponse> listaProdutosResponse = new ArrayList<>();
         produtoRepository.findAll().forEach(produtoEntity -> {
-            listaProdutos.add(produtoEntity);
+            listaProdutosResponse.add(Mappers.getMapper(ProdutoMapper.class).toProdutoResponse(produtoEntity));
         });
-        return listaProdutos;
+        return listaProdutosResponse;
     }
 
     @Override
-    public ProdutoEntity save(ProdutoEntity produto) {
-        return produtoRepository.save(produto);
+    public ProdutoResponse save(ProdutoRequest request) {
+        ProdutoEntity produto = Mappers.getMapper(ProdutoMapper.class).toProdutoEntity(request);
+        return Mappers.getMapper(ProdutoMapper.class).toProdutoResponse(produtoRepository.save(produto));
     }
 
-
     @Override
-    public ProdutoEntity update(ProdutoEntity produto) {
-        return produtoRepository.save(produto);
+    public ProdutoResponse update(ProdutoRequest request, Integer id) {
+        ProdutoEntity produto = Mappers.getMapper(ProdutoMapper.class).toProdutoEntity(request);
+        produto.setId(id);
+        return Mappers.getMapper(ProdutoMapper.class).toProdutoResponse(produtoRepository.save(produto));
     }
 
     @Override

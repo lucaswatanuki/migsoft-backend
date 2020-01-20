@@ -1,15 +1,14 @@
 package migsoft.controller.mappers;
 
-import java.util.ArrayList;
-import java.util.List;
 import javax.annotation.Generated;
+import migsoft.controller.request.ProdutoRequest;
 import migsoft.controller.response.ProdutoResponse;
 import migsoft.model.ProdutoEntity;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2020-01-15T17:22:44-0200",
+    date = "2020-01-20T21:40:57-0200",
     comments = "version: 1.3.0.Beta2, compiler: javac, environment: Java 1.8.0_212 (Oracle Corporation)"
 )
 @Component
@@ -34,16 +33,17 @@ public class ProdutoMapperImpl implements ProdutoMapper {
     }
 
     @Override
-    public List<ProdutoResponse> toListaProdutoResponse(List<ProdutoEntity> lista) {
-        if ( lista == null ) {
+    public ProdutoEntity toProdutoEntity(ProdutoRequest request) {
+        if ( request == null ) {
             return null;
         }
 
-        List<ProdutoResponse> list = new ArrayList<ProdutoResponse>( lista.size() );
-        for ( ProdutoEntity produtoEntity : lista ) {
-            list.add( toProdutoResponse( produtoEntity ) );
-        }
+        ProdutoEntity produtoEntity = new ProdutoEntity();
 
-        return list;
+        produtoEntity.setNome( request.getNome() );
+        produtoEntity.setPreco( request.getPreco() );
+        produtoEntity.setQtdEstoque( request.getQtdEstoque() );
+
+        return produtoEntity;
     }
 }

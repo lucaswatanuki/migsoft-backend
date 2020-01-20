@@ -1,8 +1,8 @@
 package migsoft.service;
 
-import migsoft.Exceptions.ClienteInexistenteException;
-import migsoft.Exceptions.EstoqueException;
-import migsoft.Exceptions.ProdutoInexistenteException;
+import migsoft.exceptions.ClienteInexistenteException;
+import migsoft.exceptions.EstoqueException;
+import migsoft.exceptions.ProdutoInexistenteException;
 import migsoft.model.VendaEntity;
 import migsoft.controller.request.VendaRequest;
 import migsoft.controller.response.VendaResponse;

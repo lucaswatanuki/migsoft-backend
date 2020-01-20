@@ -1,6 +1,6 @@
 package migsoft.controller;
 
-import migsoft.Exceptions.EstoqueException;
+import migsoft.exceptions.EstoqueException;
 import migsoft.controller.request.PedidoRequest;
 import migsoft.controller.response.PedidoResponse;
 import migsoft.service.EstoqueService;

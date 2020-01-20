@@ -1,5 +1,6 @@
 package migsoft.controller.mappers;
 
+import migsoft.controller.request.ProdutoRequest;
 import migsoft.controller.response.ProdutoResponse;
 import migsoft.model.ProdutoEntity;
 import org.mapstruct.Mapper;
@@ -18,5 +19,6 @@ public interface ProdutoMapper {
             @Mapping(source = "entity.qtdEstoque", target = "qtdEstoqueProduto")
     })
     ProdutoResponse toProdutoResponse(ProdutoEntity entity);
-    List<ProdutoResponse> toListaProdutoResponse(List<ProdutoEntity> lista);
+
+    ProdutoEntity toProdutoEntity(ProdutoRequest request);
 }
