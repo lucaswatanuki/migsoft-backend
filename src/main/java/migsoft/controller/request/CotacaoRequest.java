@@ -10,9 +10,6 @@ import lombok.NoArgsConstructor;
 @Data
 public class CotacaoRequest {
 
-    @JsonProperty("id")
-    private Integer id;
-
     @JsonProperty("data")
     private String data;
 

@@ -9,7 +9,7 @@ import java.util.List;
 public interface CotacaoService {
      CotacaoResponse updateStatus(Integer id);
      CotacaoResponse findById(Integer id);
-     CotacaoResponse aprove(Integer id);
+     CotacaoResponse aproveById(Integer id);
      CotacaoEntity getId(Integer id);
      List<CotacaoResponse> findAll();
      List<CotacaoResponse> findOnlyApproved();

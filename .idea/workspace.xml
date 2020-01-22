@@ -2,37 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6cec366-161e-41bb-ad9b-c1fbe9e6c91f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/request/ClienteRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/request/FornecedorRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/request/ProdutoRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/mappers/CotacaoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/generated-sources/annotations/migsoft/controller/mappers/CotacaoMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/Exceptions/ClienteInexistenteException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/exceptions/ClienteInexistenteException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/Exceptions/EstoqueException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/exceptions/EstoqueException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/Exceptions/ProdutoInexistenteException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/exceptions/ProdutoInexistenteException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/Exceptions/Resposta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/exceptions/Resposta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/ClienteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/controller/PedidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/PedidoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/controller/ProdutoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/ProdutoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/controller/VendaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/VendaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/controller/mappers/ProdutoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/mappers/ProdutoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/controller/response/ProdutoResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/response/ProdutoResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/repository/ProdutoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/repository/ProdutoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/ClienteServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/ClienteServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/EstoqueService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/EstoqueService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/ProdutoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/ProdutoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/ProdutoServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/ProdutoServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/VendaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/VendaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/VendaServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/VendaServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/ClienteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/ClienteController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/PedidoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/PedidoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/ProdutoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/ProdutoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/VendaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/VendaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/ClienteServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/ClienteServiceImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/EstoqueService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/EstoqueService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/ProdutoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/ProdutoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/ProdutoServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/ProdutoServiceImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/VendaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/VendaService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/VendaServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/VendaServiceImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/controller/CotacaoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/CotacaoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/controller/request/CotacaoRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/request/CotacaoRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/CotacaoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/CotacaoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/service/CotacaoServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/service/CotacaoServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/CotacaoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/CotacaoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/request/PedidoRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/response/ClienteResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/response/FornecedorResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/response/ItemProdutoResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/response/JwtResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/response/PedidoResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/response/ProdutoResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/response/ResponseMessage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/response/VendaResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/CotacaoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/CotacaoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/CotacaoServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/CotacaoServiceImp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/migsoft/controller/mappers/ProdutoMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/migsoft/controller/mappers/ProdutoMapperImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,8 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -271,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579121887416</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Produto mapper + service refactor and request classes">
+      <created>1579564052507</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1579564052507</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -309,7 +304,8 @@
     <MESSAGE value="Venda estoque fix" />
     <MESSAGE value="update pedido fix + relatorio lambda &amp; stream impl" />
     <MESSAGE value="Map Struct impl (produto) + structure refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="Map Struct impl (produto) + structure refactoring" />
+    <MESSAGE value="Produto mapper + service refactor and request classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Produto mapper + service refactor and request classes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="485" y="75" key="#ApplicationMain" timestamp="1574966253606">
@@ -328,14 +324,18 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="373" y="344" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.834@0.0.1536.834" timestamp="1579114511567" />
-    <state x="566" y="278" width="403" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1579531148833">
+    <state x="566" y="278" width="403" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1579617970152">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="566" y="278" width="403" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.834@0.0.1536.834" timestamp="1579531148833" />
-    <state x="422" y="11" key="CommitChangelistDialog2" timestamp="1579121885699">
+    <state x="566" y="278" width="403" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.834@0.0.1536.834" timestamp="1579617970152" />
+    <state x="422" y="11" key="CommitChangelistDialog2" timestamp="1579564050631">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="422" y="11" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1579121885699" />
+    <state x="422" y="11" key="CommitChangelistDialog2/0.0.1536.834@0.0.1536.834" timestamp="1579564050631" />
+    <state width="281" height="466" key="DebuggerActiveHint" timestamp="1579628866544">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="281" height="466" key="DebuggerActiveHint/0.0.1536.834@0.0.1536.834" timestamp="1579628866544" />
     <state x="93" y="93" width="1350" height="648" key="DiffContextDialog" timestamp="1578685783984">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -344,38 +344,38 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1579190184390" />
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1579563891947">
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1579652558079">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1579563891947" />
-    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1579563891947">
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1579652558079" />
+    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1579652558078">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1579563891947" />
-    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1579563891947">
+    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1579652558078" />
+    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1579652558078">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1579563891947" />
-    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1579563891947">
+    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1579652558078" />
+    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1579652558078">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1579563891947" />
-    <state width="1493" height="265" key="GridCell.Tab.1.bottom" timestamp="1579563210187">
+    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1579652558078" />
+    <state width="1493" height="263" key="GridCell.Tab.1.bottom" timestamp="1579652065840">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="265" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1579563210187" />
-    <state width="1493" height="265" key="GridCell.Tab.1.center" timestamp="1579563210187">
+    <state width="1493" height="263" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1579652065840" />
+    <state width="1493" height="263" key="GridCell.Tab.1.center" timestamp="1579652065840">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="265" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1579563210187" />
-    <state width="1493" height="265" key="GridCell.Tab.1.left" timestamp="1579563210187">
+    <state width="1493" height="263" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1579652065840" />
+    <state width="1493" height="263" key="GridCell.Tab.1.left" timestamp="1579652065840">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="265" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1579563210187" />
-    <state width="1493" height="265" key="GridCell.Tab.1.right" timestamp="1579563210187">
+    <state width="1493" height="263" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1579652065840" />
+    <state width="1493" height="263" key="GridCell.Tab.1.right" timestamp="1579652065840">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="265" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1579563210187" />
+    <state width="1493" height="263" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1579652065840" />
     <state x="147" y="66" key="MergeDialog" timestamp="1578685742705">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -388,10 +388,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="498" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1574966226806" />
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1579121893614">
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1579564065381">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1579121893614" />
+    <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1579564065381" />
     <state x="578" y="334" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578685702830">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

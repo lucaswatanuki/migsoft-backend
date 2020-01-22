@@ -55,7 +55,7 @@ public class CotacaoController {
     @PutMapping("/status/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public CotacaoResponse setStatus(@PathVariable("id") Integer id) {
-        return cotacaoService.aprove(id);
+        return cotacaoService.aproveById(id);
     }
 
     @DeleteMapping("/{id}")

@@ -1,11 +1,14 @@
 package migsoft.service;
 
+import migsoft.controller.mappers.CotacaoMapper;
 import migsoft.model.CotacaoEntity;
 import migsoft.controller.request.CotacaoRequest;
 import migsoft.controller.response.CotacaoResponse;
 import migsoft.repository.CotacaoRepository;
 import migsoft.repository.FornecedorRepository;
 import migsoft.repository.ProdutoRepository;
+import org.mapstruct.Mapping;
+import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,25 +32,23 @@ public class CotacaoServiceImp implements CotacaoService {
         this.fornecedorRepository = fornecedorRepository;
     }
 
-
     @Override
     public CotacaoResponse updateStatus(Integer id) {
         CotacaoEntity cotacao = cotacaoRepository.findById(id).orElse(null);
         cotacao.setStatus("Aprovado");
-        return entitytoResponseConverter(cotacao);
+        return Mappers.getMapper(CotacaoMapper.class).toCotacaoResponse(cotacao);
     }
 
     @Override
     public CotacaoResponse findById(Integer id) {
-        return entitytoResponseConverter(cotacaoRepository.findById(id).orElse(null));
+        return Mappers.getMapper(CotacaoMapper.class).toCotacaoResponse(cotacaoRepository.findById(id).orElse(null));
     }
 
     @Override
-    public CotacaoResponse aprove(Integer id) {
-        CotacaoEntity cotacaoEntity = cotacaoRepository.findById(id).orElse(null);
-        cotacaoEntity.setStatus("Aprovado");
-        CotacaoResponse cotacaoResponse = entitytoResponseConverter(cotacaoRepository.save(cotacaoEntity));
-        return cotacaoResponse;
+    public CotacaoResponse aproveById(Integer id) {
+        CotacaoEntity cotacao = cotacaoRepository.findById(id).orElse(null);
+        cotacao.setStatus("Aprovado");
+        return Mappers.getMapper(CotacaoMapper.class).toCotacaoResponse(cotacaoRepository.save(cotacao));
     }
 
     @Override
@@ -58,10 +59,7 @@ public class CotacaoServiceImp implements CotacaoService {
     @Override
     public List<CotacaoResponse> findAll() {
         List<CotacaoResponse> cotacaoResponses = new ArrayList<>();
-        cotacaoRepository.findAll().forEach(cotacaoEntity -> {
-            CotacaoResponse cotacaoResponse = entitytoResponseConverter(cotacaoEntity);
-            cotacaoResponses.add(cotacaoResponse);
-        });
+        cotacaoRepository.findAll().forEach(cotacaoEntity -> cotacaoResponses.add(Mappers.getMapper(CotacaoMapper.class).toCotacaoResponse(cotacaoEntity)));
         return cotacaoResponses;
     }
 
@@ -69,20 +67,16 @@ public class CotacaoServiceImp implements CotacaoService {
     public List<CotacaoResponse> findOnlyApproved() {
         List<CotacaoResponse> cotacaoResponses = new ArrayList<>();
         cotacaoRepository.findAll().stream().filter(cotacao -> cotacao.getStatus().contains("Aprovado"))
-                .forEach(cotacaoEntity -> {
-                    CotacaoResponse cotacaoResponse = entitytoResponseConverter(cotacaoEntity);
-                    cotacaoResponses.add(cotacaoResponse);
-                });
+                .forEach(cotacaoEntity -> cotacaoResponses.add(Mappers.getMapper(CotacaoMapper.class).toCotacaoResponse(cotacaoEntity)));
         return cotacaoResponses;
     }
 
     @Override
-    public CotacaoResponse save(CotacaoRequest cotacao) {
-        CotacaoEntity cotacaoEntity = requestToEntityConverter(cotacao);
-        cotacaoEntity.setTotal(cotacao.getQuantidade() * cotacaoEntity.getProduto().getPreco());
-        cotacaoEntity.setStatus("Pendente");
-        CotacaoResponse cotacaoResponse = entitytoResponseConverter(cotacaoRepository.save(cotacaoEntity));
-        return cotacaoResponse;
+    public CotacaoResponse save(CotacaoRequest cotacaoRequest) {
+        CotacaoEntity cotacaoEntity = Mappers.getMapper(CotacaoMapper.class).toCotacaoEntity(cotacaoRequest);
+        cotacaoRepository.save(cotacaoEntity);
+        CotacaoResponse response = Mappers.getMapper(CotacaoMapper.class).toCotacaoResponse(cotacaoEntity);
+        return response;
     }
 
     @Override
@@ -92,8 +86,7 @@ public class CotacaoServiceImp implements CotacaoService {
         cotacaoEntity.setData(cotacao.getData());
         dateConverter(cotacaoEntity);
         cotacaoEntity.setTotal(cotacao.getQuantidade() * cotacaoEntity.getProduto().getPreco());
-        CotacaoResponse cotacaoResponse = entitytoResponseConverter(cotacaoRepository.save(cotacaoEntity));
-        return cotacaoResponse;
+        return Mappers.getMapper(CotacaoMapper.class).toCotacaoResponse(cotacaoRepository.save(cotacaoEntity));
     }
 
     @Override
@@ -101,28 +94,6 @@ public class CotacaoServiceImp implements CotacaoService {
         cotacaoRepository.deleteById(id);
     }
 
-
-    public CotacaoResponse entitytoResponseConverter(CotacaoEntity cotacaoEntity) {
-        CotacaoResponse cotacaoResponse = new CotacaoResponse();
-        cotacaoResponse.setId(cotacaoEntity.getId());
-        cotacaoResponse.setData(cotacaoEntity.getData());
-        cotacaoResponse.setFornecedor(cotacaoEntity.getFornecedor().getNomeFantasia());
-        cotacaoResponse.setProduto(cotacaoEntity.getProduto().getNome());
-        cotacaoResponse.setQuantidade(cotacaoEntity.getQuantidade());
-        cotacaoResponse.setTotal(cotacaoEntity.getTotal());
-        cotacaoResponse.setStatus(cotacaoEntity.getStatus());
-        return cotacaoResponse;
-    }
-
-    public CotacaoEntity requestToEntityConverter(CotacaoRequest cotacaoRequest) {
-        CotacaoEntity cotacaoEntity = new CotacaoEntity();
-        cotacaoEntity.setProduto(produtoRepository.findByNome(cotacaoRequest.getProduto()));
-        cotacaoEntity.setFornecedor(fornecedorRepository.findByNomeFantasia(cotacaoRequest.getFornecedor()));
-        cotacaoEntity.setData(cotacaoRequest.getData());
-        cotacaoEntity.setStatus(cotacaoRequest.getStatus());
-        cotacaoEntity.setQuantidade(cotacaoRequest.getQuantidade());
-        return cotacaoEntity;
-    }
 
     public void dateConverter(CotacaoEntity cotacao) {
         DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH);
