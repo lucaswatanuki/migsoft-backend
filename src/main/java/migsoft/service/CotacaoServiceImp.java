@@ -74,6 +74,11 @@ public class CotacaoServiceImp implements CotacaoService {
     @Override
     public CotacaoResponse save(CotacaoRequest cotacaoRequest) {
         CotacaoEntity cotacaoEntity = Mappers.getMapper(CotacaoMapper.class).toCotacaoEntity(cotacaoRequest);
+        cotacaoEntity.setProduto(produtoRepository.findByNome(cotacaoRequest.getProduto()));
+        cotacaoEntity.setFornecedor(fornecedorRepository.findByNomeFantasia(cotacaoRequest.getFornecedor()));
+        cotacaoEntity.setStatus("Pendente");
+        cotacaoEntity.setTotal(cotacaoRequest.getQuantidade() * cotacaoEntity.getProduto().getPreco());
+        dateConverter(cotacaoEntity);
         cotacaoRepository.save(cotacaoEntity);
         CotacaoResponse response = Mappers.getMapper(CotacaoMapper.class).toCotacaoResponse(cotacaoEntity);
         return response;
