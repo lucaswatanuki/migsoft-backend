@@ -1,5 +1,6 @@
 package migsoft.service;
 
+import migsoft.controller.mappers.VendaMapper;
 import migsoft.exceptions.ClienteInexistenteException;
 import migsoft.exceptions.EstoqueException;
 import migsoft.exceptions.ProdutoInexistenteException;
@@ -9,6 +10,7 @@ import migsoft.controller.response.VendaResponse;
 import migsoft.repository.ClienteRepository;
 import migsoft.repository.ProdutoRepository;
 import migsoft.repository.VendaRepository;
+import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,7 +35,7 @@ public class VendaServiceImp implements VendaService {
 
     @Override
     public VendaResponse findById(Integer id) {
-        return entitytoResponseConverter(vendaRepository.findById(id).orElse(null));
+        return Mappers.getMapper(VendaMapper.class).toVendaResponse(vendaRepository.findById(id).orElse(null));
     }
 
     @Override
@@ -45,8 +47,7 @@ public class VendaServiceImp implements VendaService {
     public List<VendaResponse> findAll() {
         List<VendaResponse> vendaResponses = new ArrayList<>();
         vendaRepository.findAll().forEach(vendaEntity -> {
-            VendaResponse vendaResponse = entitytoResponseConverter(vendaEntity);
-            vendaResponses.add(vendaResponse);
+            vendaResponses.add(Mappers.getMapper(VendaMapper.class).toVendaResponse(vendaEntity));
         });
         return vendaResponses;
     }
@@ -55,8 +56,7 @@ public class VendaServiceImp implements VendaService {
     public VendaResponse cancel(Integer id) {
         VendaEntity vendaEntity = vendaRepository.findById(id).orElse(null);
         vendaEntity.setStatus("Cancelado");
-        VendaResponse vendaResponse = entitytoResponseConverter(vendaRepository.save(vendaEntity));
-        return vendaResponse;
+        return Mappers.getMapper(VendaMapper.class).toVendaResponse(vendaRepository.save(vendaEntity));
     }
 
     @Override
@@ -70,8 +70,7 @@ public class VendaServiceImp implements VendaService {
         }
         vendaEntity.setTotal(venda.getQuantidade() * vendaEntity.getProduto().getPreco());
         vendaEntity.setStatus("OK");
-        VendaResponse vendaResponse = entitytoResponseConverter(vendaRepository.save(vendaEntity));
-        return vendaResponse;
+        return Mappers.getMapper(VendaMapper.class).toVendaResponse(vendaRepository.save(vendaEntity));
     }
 
 
@@ -86,20 +85,7 @@ public class VendaServiceImp implements VendaService {
         VendaEntity vendaEntity = requestToEntityConverter(venda);
         vendaEntity.setId(id);
         vendaEntity.setTotal(vendaEntity.getQuantidade() * vendaEntity.getProduto().getPreco());
-        VendaResponse vendaResponse = entitytoResponseConverter(vendaRepository.save(vendaEntity));
-        return vendaResponse;
-    }
-
-    public VendaResponse entitytoResponseConverter(VendaEntity vendaEntity) {
-        VendaResponse vendaResponse = new VendaResponse();
-        vendaResponse.setId(vendaEntity.getId());
-        vendaResponse.setCliente(vendaEntity.getCliente().getNome());
-        vendaResponse.setQuantidade(vendaEntity.getQuantidade());
-        vendaResponse.setTotal(vendaEntity.getTotal());
-        vendaResponse.setProduto(vendaEntity.getProduto().getNome());
-        vendaResponse.setData(vendaEntity.getData());
-        vendaResponse.setStatus(vendaEntity.getStatus());
-        return vendaResponse;
+        return Mappers.getMapper(VendaMapper.class).toVendaResponse(vendaEntity);
     }
 
     public VendaEntity requestToEntityConverter(VendaRequest vendaRequest) {
@@ -110,12 +96,4 @@ public class VendaServiceImp implements VendaService {
         vendaEntity.setQuantidade(vendaRequest.getQuantidade());
         return vendaEntity;
     }
-
- /*   public void dateConverter(VendaEntity venda){
-        DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.ENGLISH);
-        DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("dd-MM-yyy", Locale.ENGLISH);
-        LocalDate date = LocalDate.parse(venda.getData(), inputFormatter);
-        String formattedDate = outputFormatter.format(date);
-        venda.setData(formattedDate);
-    }*/
 }
