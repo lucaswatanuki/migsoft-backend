@@ -1,11 +1,13 @@
 package migsoft.service;
 
+import migsoft.controller.mappers.OrcamentoMapper;
 import migsoft.model.OrcamentoEntity;
 import migsoft.controller.request.OrcamentoRequest;
 import migsoft.controller.response.OrcamentoResponse;
 import migsoft.repository.ClienteRepository;
 import migsoft.repository.OrcamentoRepository;
 import migsoft.repository.ProdutoRepository;
+import org.mapstruct.factory.Mappers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,7 +30,7 @@ public class OrcamentoServiceImp implements OrcamentoService {
 
     @Override
     public OrcamentoResponse findById(Integer id) {
-        return entitytoResponseConverter(orcamentoRepository.findById(id).orElse(null));
+        return Mappers.getMapper(OrcamentoMapper.class).toOrcamentoResponse(orcamentoRepository.findById(id).orElse(null));
     }
 
     @Override
@@ -36,7 +38,6 @@ public class OrcamentoServiceImp implements OrcamentoService {
         ArrayList<OrcamentoResponse> orcamentos = new ArrayList<>();
         for (OrcamentoEntity orcamentoEntity: orcamentoRepository.findAll()){
             OrcamentoResponse orcamentoResponse = new OrcamentoResponse();
-            orcamentoResponse = entitytoResponseConverter(orcamentoEntity);
             orcamentos.add(orcamentoResponse);
         }
         return orcamentos;
