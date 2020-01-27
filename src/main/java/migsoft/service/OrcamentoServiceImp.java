@@ -35,26 +35,27 @@ public class OrcamentoServiceImp implements OrcamentoService {
 
     @Override
     public List<OrcamentoResponse> findAll() {
-        ArrayList<OrcamentoResponse> orcamentos = new ArrayList<>();
-        for (OrcamentoEntity orcamentoEntity: orcamentoRepository.findAll()){
-            OrcamentoResponse orcamentoResponse = new OrcamentoResponse();
-            orcamentos.add(orcamentoResponse);
-        }
-        return orcamentos;
+        ArrayList<OrcamentoResponse> listaOrcamentoResponse = new ArrayList<>();
+        orcamentoRepository.findAll().forEach(orcamentoEntity -> {
+            listaOrcamentoResponse
+                    .add(Mappers.getMapper(OrcamentoMapper.class).toOrcamentoResponse(orcamentoRepository.save(orcamentoEntity)));
+        });
+        return listaOrcamentoResponse;
     }
 
     @Override
     public OrcamentoResponse save(OrcamentoRequest orcamento) {
         OrcamentoEntity orcamentoEntity = requestToEntityConverter(orcamento);
         orcamentoEntity.setTotal(orcamento.getQuantidade() * orcamentoEntity.getProduto().getPreco());
-        return entitytoResponseConverter(orcamentoRepository.save(orcamentoEntity));
+        return Mappers.getMapper(OrcamentoMapper.class).toOrcamentoResponse(orcamentoRepository.save(orcamentoEntity));
     }
 
     @Override
-    public OrcamentoResponse update(OrcamentoRequest orcamento) {
+    public OrcamentoResponse update(OrcamentoRequest orcamento, Integer id) {
         OrcamentoEntity orcamentoEntity = requestToEntityConverter(orcamento);
+        orcamentoEntity.setId(id);
         orcamentoEntity.setTotal(orcamento.getQuantidade() * orcamentoEntity.getProduto().getPreco());
-        return entitytoResponseConverter(orcamentoRepository.save(orcamentoEntity));
+        return Mappers.getMapper(OrcamentoMapper.class).toOrcamentoResponse(orcamentoRepository.save(orcamentoEntity));
     }
 
     @Override
@@ -62,16 +63,6 @@ public class OrcamentoServiceImp implements OrcamentoService {
         orcamentoRepository.deleteById(id);
     }
 
-    public OrcamentoResponse entitytoResponseConverter(OrcamentoEntity orcamentoEntity){
-        OrcamentoResponse orcamentoResponse = new OrcamentoResponse();
-        orcamentoResponse.setId(orcamentoEntity.getId());
-        orcamentoResponse.setData(orcamentoEntity.getData());
-        orcamentoResponse.setCliente(orcamentoEntity.getCliente().getNome());
-        orcamentoResponse.setProduto(orcamentoEntity.getProduto().getNome());
-        orcamentoResponse.setQuantidade(orcamentoEntity.getQuantidade());
-        orcamentoResponse.setTotal(orcamentoEntity.getTotal());
-        return orcamentoResponse;
-    }
 
     public OrcamentoEntity requestToEntityConverter(OrcamentoRequest orcamentoRequest){
         OrcamentoEntity orcamentoEntity = new OrcamentoEntity();

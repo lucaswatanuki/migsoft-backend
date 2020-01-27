@@ -43,8 +43,7 @@ public class OrcamentoController {
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public ResponseEntity<OrcamentoResponse> update(@PathVariable("id") Integer id, @RequestBody OrcamentoRequest orcamento) {
-        orcamento.setId(id);
-        return ResponseEntity.ok(orcamentoService.update(orcamento));
+        return ResponseEntity.ok(orcamentoService.update(orcamento, id));
     }
 
     @DeleteMapping("/{id}")

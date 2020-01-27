@@ -9,6 +9,6 @@ public interface OrcamentoService {
      OrcamentoResponse findById(Integer id);
      List<OrcamentoResponse> findAll();
      OrcamentoResponse save(OrcamentoRequest orcamento);
-     OrcamentoResponse update(OrcamentoRequest orcamento);
+     OrcamentoResponse update(OrcamentoRequest orcamento, Integer id);
      void deleteById(Integer id);
 }
