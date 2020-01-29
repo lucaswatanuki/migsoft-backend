@@ -38,4 +38,5 @@ public class ProdutoEntity {
 
     @ManyToMany(mappedBy = "produto", fetch = FetchType.LAZY)
     private Set<FormulaProdutoEntity> formula;
+
 }

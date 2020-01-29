@@ -48,8 +48,7 @@ public class OrcamentoController {
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<Object> deleteOrcamentoById(@PathVariable Integer id) {
+    public void deleteOrcamentoById(@PathVariable Integer id) {
         orcamentoService.deleteById(id);
-        return ResponseEntity.ok("Orçamento excluido");
     }
 }
