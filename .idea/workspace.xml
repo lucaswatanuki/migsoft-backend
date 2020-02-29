@@ -2,26 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6cec366-161e-41bb-ad9b-c1fbe9e6c91f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/templates/entity/ClienteEntityTemplate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/templates/entity/CotacaoEntityTemplate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/templates/entity/OrcamentoEntityTemplate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/templates/entity/PessoaEntityTemplate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/templates/entity/ProdutoEntityTemplate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/templates/entity/VendaEntityTemplate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/controller/OrcamentoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/controller/OrcamentoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/migsoft/model/ProdutoEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/migsoft/model/ProdutoEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/ClienteEntityTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/ProdutoEntityTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/service/ProdutoServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/service/ProdutoServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/OrcamentoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/OrcamentoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/migsoft/controller/mappers/CotacaoMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/migsoft/controller/mappers/CotacaoMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/migsoft/controller/mappers/OrcamentoMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/migsoft/controller/mappers/OrcamentoMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/migsoft/controller/mappers/ProdutoMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/migsoft/controller/mappers/ProdutoMapperImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/migsoft/controller/mappers/VendaMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/migsoft/controller/mappers/VendaMapperImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/model/ProdutoEntityTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/service/ProdutoServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/service/ProdutoServiceTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,13 +44,14 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Test-BTP" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager" selected="JUnit.ProdutoServiceTest.deveBuscarProdutoPorNome">
+  <component name="RunManager" selected="Application.ApplicationMain">
     <configuration name="ApplicationMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -137,10 +125,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ApplicationMain" />
         <item itemvalue="JUnit.ProdutoServiceTest.deveBuscarProdutoPorNome" />
         <item itemvalue="JUnit.ProdutoServiceTest.deveBuscarProdutoPorId" />
         <item itemvalue="JUnit.ProdutoServiceTest" />
-        <item itemvalue="Application.ApplicationMain" />
         <item itemvalue="JUnit.ClienteEntityTest" />
       </list>
     </recent_temporary>
@@ -432,22 +420,30 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1580320253252" />
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1580328523430">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1638" height="243" key="GridCell.Tab.0.bottom" timestamp="1582923708328">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1580328523430" />
-    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1580328523430">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1638" height="243" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1582923708328" />
+    <state width="1358" height="243" key="GridCell.Tab.0.bottom/0.23.1680.957@0.23.1680.957" timestamp="1582922696907" />
+    <state width="1638" height="243" key="GridCell.Tab.0.center" timestamp="1582923708327">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1580328523430" />
-    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1580328523429">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1638" height="243" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1582923708327" />
+    <state width="1358" height="243" key="GridCell.Tab.0.center/0.23.1680.957@0.23.1680.957" timestamp="1582922696907" />
+    <state width="1638" height="243" key="GridCell.Tab.0.left" timestamp="1582923708326">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1580328523429" />
-    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1580328523430">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state width="1638" height="243" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1582923708326" />
+    <state width="1358" height="243" key="GridCell.Tab.0.left/0.23.1680.957@0.23.1680.957" timestamp="1582922696906" />
+    <state width="1638" height="243" key="GridCell.Tab.0.right" timestamp="1582923708327">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1580328523430" />
+    <state width="1638" height="243" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1582923708327" />
+    <state width="1358" height="243" key="GridCell.Tab.0.right/0.23.1680.957@0.23.1680.957" timestamp="1582922696907" />
     <state width="1493" height="263" key="GridCell.Tab.1.bottom" timestamp="1579748606269">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -472,14 +468,19 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="481" y="133" key="MultipleFileMergeDialog/0.0.1536.834@0.0.1536.834" timestamp="1578685746309" />
-    <state x="498" y="0" key="SettingsEditor" timestamp="1574966226806">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="545" y="23" key="SettingsEditor" timestamp="1582911746018">
+      <screen x="0" y="23" width="1680" height="957" />
     </state>
     <state x="498" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1574966226806" />
+    <state x="545" y="23" key="SettingsEditor/0.23.1680.957@0.23.1680.957" timestamp="1582911746018" />
     <state x="361" y="150" key="Vcs.Push.Dialog.v2" timestamp="1580148492740">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="361" y="150" key="Vcs.Push.Dialog.v2/0.0.1536.834@0.0.1536.834" timestamp="1580148492740" />
+    <state x="517" y="334" key="com.intellij.ide.util.TipDialog" timestamp="1582911516401">
+      <screen x="0" y="23" width="1680" height="957" />
+    </state>
+    <state x="517" y="334" key="com.intellij.ide.util.TipDialog/0.23.1680.957@0.23.1680.957" timestamp="1582911516401" />
     <state x="578" y="334" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1579739656156">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
