@@ -1,0 +1,9 @@
+
+„
+java:S1130N"nRemove the declaration of thrown exception 'migsoft.exceptions.EstoqueException' which is a runtime exception.(ÎşŠÃ
+B
+java:S16021",Remove useless curly braces around statement(†¢
+_
+java:S2259:"IA "NullPointerException" could be thrown; "vendaEntity" is nullable here.(µøê„
+M
+java:S1068"2Remove this unused "estoqueService" private field.(—ñ”ãøÿÿÿÿ
