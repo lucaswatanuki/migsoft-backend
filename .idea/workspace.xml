@@ -4,120 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d6cec366-161e-41bb-ad9b-c1fbe9e6c91f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/a/0a607ef258366e3371e39c7796b44456905725b1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/2/129bfb741e654bdf92707582433ddf57c2b6f36e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/4/24aeb6de5f6060aa6e8b7e87a09b93d1a32a23fa" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/7/27393c23e2ffb740dc25248c384c7c88c5783763" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/c/2cf3b6b64aff07acb79e1b600113cf120862d23a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/0/4040f5036c8976d0ae144e8e0611927628d1a1be" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/a/4aef6b2eb35789b8e55afa3a9acf969daea00717" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/b/4b9c84db40f83ebec2343bfc81d2579163c38db0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/c/5cb2e005ad753b75932f0aaca001919f12587e0a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/4/94afda441d550a1390626a8938c3b43b71f5abca" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/5/9550fa7030d3e67cb62d8006e6c73bb35a0f79ac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/4/c43aca05598aa73adcfceda29390151e0533081b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/d/8/d8d60c6c46892e2c15d416ec33fa9e8e6fac62c4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application-local.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/RelatorioController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/mappers/CotacaoMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/mappers/CotacaoMapperImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/mappers/OrcamentoMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/mappers/OrcamentoMapperImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/mappers/ProdutoMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/mappers/ProdutoMapperImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/mappers/VendaMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/mappers/VendaMapperImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/request/ClienteRequest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/request/CotacaoRequest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/request/FormulaRequest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/request/FornecedorRequest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/request/OrcamentoRequest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/request/PedidoRequest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/request/ProdutoRequest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/request/RelatorioRequest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/request/VendaRequest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/response/ClienteResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/response/CotacaoResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/response/FormulaResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/response/FornecedorResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/response/ItemProdutoResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/response/JwtResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/response/OrcamentoResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/response/PedidoResponse$PedidoResponseBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/response/PedidoResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/response/ProdutoResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/response/RelatorioFinanceiroResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/response/RelatorioProdutos.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/response/ResponseMessage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/response/VendaResponse.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/exceptions/ClienteInexistenteException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/exceptions/EstoqueException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/exceptions/ProdutoInexistenteException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/exceptions/Resposta.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/service/RelatorioService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/migsoft/service/RelatorioServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/migsoft-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/migsoft-1.0-SNAPSHOT.jar.original" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-service.ProdutoServiceTest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/service.ProdutoServiceTest.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/templates/entity/ClienteEntityTemplate$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/templates/entity/ClienteEntityTemplate.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/templates/entity/CotacaoEntityTemplate$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/templates/entity/CotacaoEntityTemplate.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/templates/entity/OrcamentoEntityTemplate$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/templates/entity/OrcamentoEntityTemplate.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/templates/entity/PessoaEntityTemplate$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/templates/entity/PessoaEntityTemplate$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/templates/entity/PessoaEntityTemplate.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/templates/entity/ProdutoEntityTemplate$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/templates/entity/ProdutoEntityTemplate.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/templates/entity/VendaEntityTemplate$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/test-classes/templates/entity/VendaEntityTemplate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/AuthRestAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/AuthRestAPI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/ClienteController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/ClienteController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/ProdutoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/ProdutoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/controller/VendaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/controller/VendaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/ClienteEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/model/ClienteEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/CotacaoEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/model/CotacaoEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/EstoqueEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/model/EstoqueEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/FormulaProdutoEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/model/FormulaProdutoEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/FornecedorEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/model/FornecedorEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/LocalizacaoEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/model/LocalizacaoEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/OrcamentoEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/model/OrcamentoEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/PedidoEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/model/PedidoEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/Pessoa.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/model/Pessoa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/ProdutoEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/model/ProdutoEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/model/VendaEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/model/VendaEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/security/jwt/JwtAuthTokenFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/security/jwt/JwtAuthTokenFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/security/jwt/JwtProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/security/jwt/JwtProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/security/service/UserDetailsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/security/service/UserDetailsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/security/service/UserPrinciple.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/security/service/UserPrinciple.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/ClienteServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/ClienteServiceImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/CotacaoServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/CotacaoServiceImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/EstoqueServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/EstoqueServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/FormulaServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/FormulaServiceImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/FornecedorServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/FornecedorServiceImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/OrcamentoServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/OrcamentoServiceImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/PedidoServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/PedidoServiceImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/ProdutoServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/ProdutoServiceImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/migsoft/service/VendaServiceImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/migsoft/service/VendaServiceImp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/migsoft/controller/mappers/CotacaoMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/migsoft/controller/mappers/CotacaoMapperImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/migsoft/controller/mappers/OrcamentoMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/migsoft/controller/mappers/OrcamentoMapperImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/migsoft/controller/mappers/ProdutoMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/migsoft/controller/mappers/ProdutoMapperImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-sources/annotations/migsoft/controller/mappers/VendaMapperImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/annotations/migsoft/controller/mappers/VendaMapperImpl.java" afterDir="false" />
-    </list>
+    <list default="true" id="d6cec366-161e-41bb-ad9b-c1fbe9e6c91f" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -517,5 +404,9 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state width="1638" height="242" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1603213584203" />
+    <state x="540" y="280" width="600" height="490" key="find.popup" timestamp="1603214535472">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="540" y="280" width="600" height="490" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1603214535472" />
   </component>
 </project>
